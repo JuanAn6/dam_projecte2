@@ -1,0 +1,12 @@
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\bin\Debug\net8.0\DBModel.deps.json
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\bin\Debug\net8.0\DBModel.dll
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\bin\Debug\net8.0\DBModel.pdb
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.csproj.AssemblyReference.cache
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.AssemblyInfoInputs.cache
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.AssemblyInfo.cs
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.csproj.CoreCompileInputs.cache
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.dll
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\refint\DBModel.dll
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.pdb
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\ref\DBModel.dll

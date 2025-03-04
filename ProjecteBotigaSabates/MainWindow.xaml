@@ -8,6 +8,18 @@
         Title="MainWindow" Height="450" Width="800"
         Loaded="Window_Loaded">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        
+        <Button Click="Button_Click" Content="Insert test data" Grid.Column="0" Grid.Row="0"></Button>
 
+        <TextBlock Grid.ColumnSpan="100" x:Name="tb_info" Grid.Row="100" TextWrapping="Wrap"></TextBlock>
     </Grid>
 </Window>

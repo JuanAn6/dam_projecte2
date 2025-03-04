@@ -34,6 +34,38 @@ namespace ProjecteBotigaSabates
             foreach(BsonDocument doc in empresa.Find(new BsonDocument()).ToList()) {
                 Debug.WriteLine(doc.ToJson());
             }
+
+
+            
+        }
+
+        private async void InsertData()
+        {
+            await mongoDBConnection.InsertarDatosProductoAsync();
+            Debug.WriteLine("Data inserted!");
+
+            IMongoCollection<BsonDocument> categories = mongoDBConnection.GetCollection("categories");
+            PrintInfoDocument(categories.Find(new BsonDocument()).FirstOrDefault());
+            IMongoCollection<BsonDocument> productes = mongoDBConnection.GetCollection("productes");
+            PrintInfoDocument(productes.Find(new BsonDocument()).FirstOrDefault());
+            IMongoCollection<BsonDocument> varietats_productes = mongoDBConnection.GetCollection("varietats_productes");
+            PrintInfoDocument(varietats_productes.Find(new BsonDocument()).FirstOrDefault());
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            InsertData();
+            
+            tb_info.Text += "Data inserted!\n";
+
+        }
+
+        private void PrintInfoDocument(BsonDocument doc)
+        {
+            Debug.WriteLine("doc: "+doc.ToString());
+            tb_info.Text += doc.ToString() + "\n";
         }
     }
 }

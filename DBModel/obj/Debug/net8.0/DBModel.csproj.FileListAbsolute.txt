@@ -10,3 +10,4 @@ C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.dll
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\refint\DBModel.dll
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.pdb
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\ref\DBModel.dll
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.sourcelink.json

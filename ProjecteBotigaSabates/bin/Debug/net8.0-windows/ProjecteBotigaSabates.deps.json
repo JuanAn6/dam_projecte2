@@ -9,7 +9,8 @@
       "ProjecteBotigaSabates/1.0.0": {
         "dependencies": {
           "DBModel": "1.0.0",
-          "MongoDB.Driver": "3.2.1"
+          "MongoDB.Driver": "3.2.1",
+          "ViewModel": "1.0.0"
         },
         "runtime": {
           "ProjecteBotigaSabates.dll": {}
@@ -110,6 +111,17 @@
         },
         "runtime": {
           "DBModel.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "ViewModel/1.0.0": {
+        "dependencies": {
+          "DBModel": "1.0.0"
+        },
+        "runtime": {
+          "ViewModel.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -222,6 +234,11 @@
       "hashPath": "zstdsharp.port.0.7.3.nupkg.sha512"
     },
     "DBModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ViewModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

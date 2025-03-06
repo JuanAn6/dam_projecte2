@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjecteBotigaSabates", "ProjecteBotigaSabates\ProjecteBotigaSabates.csproj", "{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBModel", "DBModel\DBModel.csproj", "{7B02BACD-8C48-425F-82E8-212F6B92647A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{93A928E2-E72F-4B8B-8370-F287E5A739BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{7B02BACD-8C48-425F-82E8-212F6B92647A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B02BACD-8C48-425F-82E8-212F6B92647A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B02BACD-8C48-425F-82E8-212F6B92647A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A928E2-E72F-4B8B-8370-F287E5A739BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A928E2-E72F-4B8B-8370-F287E5A739BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A928E2-E72F-4B8B-8370-F287E5A739BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A928E2-E72F-4B8B-8370-F287E5A739BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E71DE1EF-2B31-4CE5-A78B-B68B8BFE796A}
 	EndGlobalSection
 EndGlobal

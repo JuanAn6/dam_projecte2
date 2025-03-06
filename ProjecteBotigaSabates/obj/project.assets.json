@@ -222,6 +222,19 @@
         "runtime": {
           "bin/placeholder/DBModel.dll": {}
         }
+      },
+      "ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "DBModel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModel.dll": {}
+        }
       }
     }
   },
@@ -609,12 +622,18 @@
       "type": "project",
       "path": "../DBModel/DBModel.csproj",
       "msbuildProject": "../DBModel/DBModel.csproj"
+    },
+    "ViewModel/1.0.0": {
+      "type": "project",
+      "path": "../ViewModel/ViewModel.csproj",
+      "msbuildProject": "../ViewModel/ViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "DBModel >= 1.0.0",
-      "MongoDB.Driver >= 3.2.1"
+      "MongoDB.Driver >= 3.2.1",
+      "ViewModel >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -652,6 +671,9 @@
           "projectReferences": {
             "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\DBModel\\DBModel.csproj": {
               "projectPath": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\DBModel\\DBModel.csproj"
+            },
+            "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\ViewModel\\ViewModel.csproj": {
+              "projectPath": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\ViewModel\\ViewModel.csproj"
             }
           }
         }
@@ -688,12 +710,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.Net.Sdk.Compilers.Toolset",
-            "version": "[9.0.200, 9.0.200]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

@@ -1,6 +1,7 @@
 ﻿using DBModel.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace DBModel
@@ -18,6 +19,7 @@ namespace DBModel
             {
                 client = new MongoClient(connectionString);
                 database = client.GetDatabase("project");
+                Debug.WriteLine("StartConnectionDatabase!!!");
             }
 
         }
@@ -25,6 +27,29 @@ namespace DBModel
         public IMongoCollection<BsonDocument> GetCollection(string collectionName)
         {
             return database.GetCollection<BsonDocument>(collectionName);
+        }
+
+        public List<Client> GetClients()
+        {
+            MongoDBConnection mon = new MongoDBConnection();
+            List<Client> clients = new List<Client>();
+            IMongoCollection<BsonDocument> clients_doc = mon.GetCollection("clients");
+            foreach (BsonDocument cli in clients_doc.Find(new BsonDocument()).ToList())
+            {
+                Client c = new Client(
+                    cli.GetElement("_id").Value.AsObjectId,
+                    cli.GetElement("nif").Value.AsString,
+                    cli.GetElement("nom").Value.AsString,
+                    cli.GetElement("cognom").Value.AsString,
+                    cli.GetElement("email").Value.AsString,
+                    new Direccio()
+                );
+
+                clients.Add(c);
+            }
+
+
+            return clients;
         }
 
         public async Task InsertarDatosProductoAsync()
@@ -94,5 +119,8 @@ namespace DBModel
 
             await varietatsCollection.InsertOneAsync(novaVarietat2);
         }
+    
+
+
     }
 }

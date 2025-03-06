@@ -1,0 +1,16 @@
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\bin\Debug\net8.0\ViewModel.deps.json
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\bin\Debug\net8.0\ViewModel.dll
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\bin\Debug\net8.0\ViewModel.pdb
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\bin\Debug\net8.0\DBModel.dll
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\bin\Debug\net8.0\DBModel.pdb
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\obj\Debug\net8.0\ViewModel.csproj.AssemblyReference.cache
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\obj\Debug\net8.0\ViewModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\obj\Debug\net8.0\ViewModel.AssemblyInfoInputs.cache
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\obj\Debug\net8.0\ViewModel.AssemblyInfo.cs
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\obj\Debug\net8.0\ViewModel.csproj.CoreCompileInputs.cache
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\obj\Debug\net8.0\ViewModel.sourcelink.json
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\obj\Debug\net8.0\ViewModel.csproj.Up2Date
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\obj\Debug\net8.0\ViewModel.dll
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\obj\Debug\net8.0\refint\ViewModel.dll
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\obj\Debug\net8.0\ViewModel.pdb
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ViewModel\obj\Debug\net8.0\ref\ViewModel.dll

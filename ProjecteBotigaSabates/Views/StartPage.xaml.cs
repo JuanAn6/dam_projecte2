@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjecteBotigaSabates.StaticContent;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,9 @@ namespace ProjecteBotigaSabates.Views
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow.tb_info.Text = "";
+            mainWindow.tb_user_name.Text = ClientConnected.AuthClient.Nom + " " + ClientConnected.AuthClient.Cognom;
 
         }
     }

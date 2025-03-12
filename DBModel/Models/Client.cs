@@ -37,5 +37,13 @@ namespace DBModel.Models
             Email = email;
             Direccio = direccio;
         }
+
+
+        public override string ToString()
+        {
+            return $"Client: {{ Id: {Id}, Nif: {Nif}, Nom: {Nom}, Cognom: {Cognom}, Email: {Email}, Direccio: {Direccio} }}";
+        }
+
+
     }
 }

@@ -36,3 +36,5 @@ C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\Views\StartPage.g.cs
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\Views\SelectUserPage.baml
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\Views\StartPage.baml
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\Views\ProductsPage.g.cs
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\Views\ProductsPage.baml

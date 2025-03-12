@@ -28,6 +28,6 @@
         <ComboBox x:Name="cb_clients" Grid.Column="1" Grid.Row="1" MinWidth="200" Margin="10"></ComboBox>
         <Button  Content="Start!" Grid.Column="1" Grid.Row="2" Width="100" Click="Button_Click"></Button>
 
-        <TextBlock Grid.ColumnSpan="100" x:Name="tb_info" Grid.Row="100" TextWrapping="Wrap"></TextBlock>
+        <!--<TextBlock Grid.ColumnSpan="100" x:Name="tb_info" Grid.Row="100" TextWrapping="Wrap"></TextBlock>-->
     </Grid>
 </Page>

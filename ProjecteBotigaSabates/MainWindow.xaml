@@ -5,8 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjecteBotigaSabates"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="Window_Loaded">
     <Grid>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Column="0" Grid.Row="0" Margin="10 10 10 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" BorderThickness="0 0 0 0" BorderBrush="Black" Cursor="Hand"
+                    Focusable="True"
+                    MouseLeftButtonDown="Button_SignOut_Click"
+                    >
+                <TextBlock Text="Sign out" Margin="10 0 10 0" ></TextBlock>
+            </Border>
+
+            <TextBlock Grid.Column="2" x:Name="tb_user_name" 
+                       HorizontalAlignment="Right" 
+                       VerticalAlignment="Top" Text="Example Name User" ></TextBlock>
+        
+            <!--Menu-->
+            <Grid x:Name="grid_MainMenu" Grid.Column="1" Margin="20 0 20 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="1" BorderThickness="0 0 0 0" BorderBrush="Black" Cursor="Hand" Focusable="True"
+                        MouseLeftButtonDown="Button_Products_Click"
+                        >
+                    <TextBlock Text="Products" Margin="10 0 10 0"></TextBlock>
+                </Border>
+
+                <Border Grid.Column="2" BorderThickness="1 0 1 0" BorderBrush="Black" Cursor="Hand" Focusable="True">
+                    <TextBlock Text="Categories" Margin="10 0 10 0"></TextBlock>
+                </Border>
+
+                <Border Grid.Column="3" BorderThickness="0 0 0 0" BorderBrush="Black" Cursor="Hand" Focusable="True">
+                    <TextBlock Text="Shop" Margin="10 0 10 0" ></TextBlock>
+                </Border>
+
+            </Grid>
+        
+        </Grid>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Column="0" Grid.Row="1"/>
+        <TextBlock  Grid.ColumnSpan="100" x:Name="tb_info" Grid.Row="100" TextWrapping="Wrap"></TextBlock>
     </Grid>
 </Window>

@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DBModel.Models;
+using ProjecteBotigaSabates.StaticContent;
 
 namespace ProjecteBotigaSabates.Views
 {
@@ -27,28 +28,39 @@ namespace ProjecteBotigaSabates.Views
         {
             InitializeComponent();
         }
-
+        MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
         MongoDBConnection mongoDBConnection;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            mongoDBConnection = new MongoDBConnection();
+            mainWindow.tb_info.Text = "";
+            ClientConnected.AuthClient = null;
+            mainWindow.tb_user_name.Text = "Sign in!";
 
-            IMongoCollection<BsonDocument> empresa = mongoDBConnection.GetCollection("dades_empresa");
-            foreach (BsonDocument doc in empresa.Find(new BsonDocument()).ToList())
+            try
             {
-                Debug.WriteLine(doc.ToJson());
+                mongoDBConnection = new MongoDBConnection();
+
+                IMongoCollection<BsonDocument> empresa = mongoDBConnection.GetCollection("dades_empresa");
+                foreach (BsonDocument doc in empresa.Find(new BsonDocument()).ToList())
+                {
+                    Debug.WriteLine(doc.ToJson());
+                }
+
+
+                List<Client> clients = mongoDBConnection.GetClients();
+
+                List<string> cb_values = clients.Select(item => item.Email).ToList();
+                cb_values = cb_values.Prepend("Selecciona un client").ToList();
+                cb_clients.ItemsSource = cb_values;
+                cb_clients.SelectedIndex = 0;
+
             }
-
-
-            List<Client> clients = mongoDBConnection.GetClients();
-
-            List<string> cb_values = clients.Select(item => item.Email).ToList();
-            cb_values = cb_values.Prepend("Selecciona un client").ToList();
-            cb_clients.ItemsSource = cb_values;
-            cb_clients.SelectedIndex = 0;
-
-
+            catch (Exception ex)
+            {
+               
+                mainWindow.tb_info.Text = "Connection failed! \n Try to restart...";
+            }
 
         }
 
@@ -78,18 +90,34 @@ namespace ProjecteBotigaSabates.Views
         private void Button_Click_Insert_Data(object sender, RoutedEventArgs e)
         {
             InsertData();
-            tb_info.Text += "Data inserted!\n";
+            mainWindow.tb_info.Text += "Data inserted!\n";
         }
 
         private void PrintInfoDocument(BsonDocument doc)
         {
             Debug.WriteLine("doc: " + doc.ToString());
-            tb_info.Text += doc.ToString() + "\n";
+            mainWindow.tb_info.Text += doc.ToString() + "\n";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new StartPage());
+            if(cb_clients.SelectedItem != null)
+            {
+                string mail = (string)cb_clients.SelectedItem;
+
+                Client c = mongoDBConnection.GetClientByMail(mail);
+                if(c == null)
+                {
+                    mainWindow.tb_info.Text = "Selecciona un client valid!";
+                }
+                else
+                {
+                    ClientConnected.AuthClient = c;
+                    Debug.WriteLine(ClientConnected.AuthClient.ToString());
+                    mainWindow.grid_MainMenu.Opacity = 1;
+                    NavigationService.Navigate(new StartPage());
+                }
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ namespace DBModel
     {
         private static IMongoDatabase database;
         private static MongoClient client = null;
+        
 
         public MongoDBConnection()
         {
@@ -20,6 +21,7 @@ namespace DBModel
                 client = new MongoClient(connectionString);
                 database = client.GetDatabase("project");
                 Debug.WriteLine("StartConnectionDatabase!!!");
+                
             }
 
         }
@@ -31,9 +33,9 @@ namespace DBModel
 
         public List<Client> GetClients()
         {
-            MongoDBConnection mon = new MongoDBConnection();
+            MongoDBConnection mongoDB = new MongoDBConnection();
             List<Client> clients = new List<Client>();
-            IMongoCollection<BsonDocument> clients_doc = mon.GetCollection("clients");
+            IMongoCollection<BsonDocument> clients_doc = mongoDB.GetCollection("clients");
             foreach (BsonDocument cli in clients_doc.Find(new BsonDocument()).ToList())
             {
                 Client c = new Client(
@@ -52,6 +54,49 @@ namespace DBModel
             return clients;
         }
 
+
+        public Client GetClientByMail(string mail)
+        {
+            MongoDBConnection mongoDB = new MongoDBConnection();
+            var filter = Builders<BsonDocument>.Filter.Eq("email", mail);
+            var document = mongoDB.GetCollection("clients").Find(filter).FirstOrDefault();
+
+            if (document == null) return null;
+            
+            Client c = new Client(
+                document.GetElement("_id").Value.AsObjectId,
+                document.GetElement("nif").Value.AsString,
+                document.GetElement("nom").Value.AsString,
+                document.GetElement("cognom").Value.AsString,
+                document.GetElement("email").Value.AsString,
+                new Direccio()
+            );
+
+            return c;
+        }
+
+
+        public List<Categoria> GetCategories()
+        {
+            MongoDBConnection mongoDB = new MongoDBConnection();
+            List<Categoria> categoria = new List<Categoria>();
+            IMongoCollection<BsonDocument> categories_doc = mongoDB.GetCollection("clients");
+            foreach (BsonDocument cat in categories_doc.Find(new BsonDocument()).ToList())
+            {
+                var parent = cat.GetElement("parent_id");
+                Categoria c = new Categoria(
+                    cat.GetElement("_id").Value.AsObjectId,
+                    cat.GetElement("nom").Value.AsString,
+                    parent != null ? parent.Value.AsObjectId : null
+                );
+
+                categoria.Add(c);
+            }
+
+            return categoria;
+
+        }
+
         public async Task InsertarDatosProductoAsync()
         {
             database.DropCollection("productes");
@@ -61,12 +106,11 @@ namespace DBModel
             var varietatsCollection = database.GetCollection<VarietatProducte>("varietats_productes");
             var categoriesCollection = database.GetCollection<Categoria>("categories");
 
-            Categoria categoria = new Categoria
-            {
-                Id = ObjectId.GenerateNewId(),
-                Nom = "Esport",
-                ParentId = null
-            };
+            Categoria categoria = new Categoria(
+                ObjectId.GenerateNewId(),
+                "Esport",
+                null
+            );
 
             await categoriesCollection.InsertOneAsync(categoria);
 
@@ -119,8 +163,7 @@ namespace DBModel
 
             await varietatsCollection.InsertOneAsync(novaVarietat2);
         }
-    
 
-
+        
     }
 }

@@ -1,0 +1,160 @@
+Juan Antonio García Jiménez
+
+DADES_EMPRESA
+{
+	_id:
+	nif:
+	nom:
+	domicili_social:
+	ins_reg_merc: inscripcio registre mercantil
+}
+
+COMPTADORS
+{
+	_id: id_Object_Comptadors,
+	comptador: numero_comptador,
+	collection: nom_collection,
+}
+
+TIPUS_IMPOSTOS
+{
+	_id: id_Object_tipus_impost,
+	tipus: 
+	percentatge: 
+}
+
+FACTURES
+{
+	_id:
+	num: numero correlatiu (colecció comptadors)
+	comadna_id:
+	client_id:
+	base_imposable:
+	total:
+	data_factura:
+	enviament:{
+		enviament_id:
+		descripcio:
+		preu:
+		preu_base:
+		impost:
+	}
+}
+
+LINEAS_FACTURA
+{
+	_id:
+	factura_id:
+	quantitat:
+	preu: preu unitat
+	descompte:
+	impost: {
+		impost_id:
+		impost_perentatge:
+	}
+	producte: {
+		varietat_producte_id:
+		nom_producte:
+		color:
+		talla:
+	}
+}
+
+
+CATEGORIES
+{
+	_id:
+	nom:
+	parent_id:
+}
+
+
+
+PRODUCTES
+{
+	_id:
+	codi:
+	nom:
+	descripcio: codi HTML
+	tipus_impost_id:
+	categories: [
+		{
+			categoria_id:
+			grau: pes de la categoria
+		},...
+	]
+}
+
+VARIETATS_PRODUCTE
+{
+	_id:
+	producte_id:
+	img:
+	color:
+	preu:
+	descompte:
+	talles:[
+		{
+			talla:
+			stock:
+		},...
+	]
+}
+
+
+COMANDES
+{
+	_id:
+	client_id:
+	data:
+	finalitzada: //Els usuaris podran tenir una comanda oberta(false) per que fagi de cistell i sigui persistent
+	tarjeta : {
+		cvv:
+		data_caducitat:
+		nom_tarjeta:
+	}
+	enviament:{
+		tipus_enviament_id:
+		preu_enviament:
+	}
+}
+
+TIPUS_ENVIAMENTS
+{
+	_id:
+	descripcio:
+	preu_minim:
+	preu_base:
+	impost_id:
+}
+
+
+LINEAS_COMANDA
+{
+	_id:
+	quantitat:
+	preu:
+	descompte:
+	impost_id:
+	comanda_id:
+	producte: {
+		varietat_producte_id:
+		talla:
+	}
+}
+
+
+CLIENTS
+{
+	_id:
+	nif:
+	nom:
+	cognom:
+	email:
+	direccio: {
+		adreca:
+		cp:
+		poblacio:
+		pais:
+	}
+}

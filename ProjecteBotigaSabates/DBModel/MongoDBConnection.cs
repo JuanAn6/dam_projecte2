@@ -80,14 +80,15 @@ namespace DBModel
         {
             MongoDBConnection mongoDB = new MongoDBConnection();
             List<Categoria> categoria = new List<Categoria>();
-            IMongoCollection<BsonDocument> categories_doc = mongoDB.GetCollection("clients");
+            IMongoCollection<BsonDocument> categories_doc = mongoDB.GetCollection("categories");
             foreach (BsonDocument cat in categories_doc.Find(new BsonDocument()).ToList())
             {
-                var parent = cat.GetElement("parent_id");
+                
+
                 Categoria c = new Categoria(
                     cat.GetElement("_id").Value.AsObjectId,
                     cat.GetElement("nom").Value.AsString,
-                    parent != null ? parent.Value.AsObjectId : null
+                    cat.GetElement("parent_id").Value is BsonNull ? null : cat.GetElement("parent_id").Value.AsObjectId
                 );
 
                 categoria.Add(c);

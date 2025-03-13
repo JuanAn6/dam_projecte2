@@ -52,8 +52,11 @@
                     <TextBlock Text="Products" Margin="10 0 10 0"></TextBlock>
                 </Border>
 
-                <Border Grid.Column="2" BorderThickness="1 0 1 0" BorderBrush="Black" Cursor="Hand" Focusable="True">
-                    <TextBlock Text="Categories" Margin="10 0 10 0"></TextBlock>
+                <Border Grid.Column="2" BorderThickness="1 0 1 0" BorderBrush="Black" Cursor="Hand" Focusable="True" MouseLeftButtonDown="Categorys_click_popup">
+                    <Menu x:Name="menu_categories">
+                        <MenuItem Header="Categories" >
+                        </MenuItem>
+                    </Menu>
                 </Border>
 
                 <Border Grid.Column="3" BorderThickness="0 0 0 0" BorderBrush="Black" Cursor="Hand" Focusable="True">

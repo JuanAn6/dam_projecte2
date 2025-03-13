@@ -30,8 +30,6 @@ C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\ProjecteBotigaSabates.genruntimeconfig.cache
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\ref\ProjecteBotigaSabates.dll
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\ProjecteBotigaSabates.sourcelink.json
-C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\bin\Debug\net8.0-windows\ViewModel.dll
-C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\bin\Debug\net8.0-windows\ViewModel.pdb
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\Views\SelectUserPage.g.cs
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\Views\StartPage.g.cs
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\Views\SelectUserPage.baml

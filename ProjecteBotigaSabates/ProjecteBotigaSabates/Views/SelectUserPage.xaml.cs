@@ -1,5 +1,4 @@
 ﻿using DBModel;
-using ViewModel.Clases;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Collections.ObjectModel;

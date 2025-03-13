@@ -28,7 +28,7 @@
         <TextBlock Text="Juan Shoes" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2" FontSize="40" FontWeight="Black" Margin="20"></TextBlock>
 
         <Button Content="Shop" Grid.Column="1" Grid.Row="3"  Width="100" Height="20" HorizontalAlignment="Left"></Button>
-        <Button Content="Carret" Grid.Column="2" Grid.Row="3"  Width="100" Height="20" HorizontalAlignment="Right"></Button>
+        <Button Content="Basket" Grid.Column="2" Grid.Row="3"  Width="100" Height="20" HorizontalAlignment="Right"></Button>
         
         <!--<TextBlock Grid.ColumnSpan="100" x:Name="tb_info" Grid.Row="100" TextWrapping="Wrap"></TextBlock>-->
 

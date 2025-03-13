@@ -6,6 +6,9 @@ using System.Windows;
 using System.Windows.Controls;
 using ProjecteBotigaSabates.Views;
 using ProjecteBotigaSabates.StaticContent;
+using System.Diagnostics;
+using System.Collections.Generic;
+using ProjecteBotigaSabates.ViewModels;
 
 namespace ProjecteBotigaSabates
 {
@@ -33,8 +36,90 @@ namespace ProjecteBotigaSabates
             MongoDBConnection mongoDB = new MongoDBConnection();
 
             List<Categoria> categories = mongoDB.GetCategories();
+
+            Debug.WriteLine("CATEGORIES: " + categories);
+
+            List<MenuCategoria> cats_menu = new List<MenuCategoria>();
+            
+            foreach (Categoria cat in categories)
+            {
+                if(cat.ParentId == null)
+                {
+                    cats_menu.Add(new MenuCategoria(cat));
+                }
+                else
+                {
+                    MenuCategoria mc = cats_menu.Find((ele) => { return ele.Cat.Id == cat.ParentId; });
+                    if(mc != null)
+                    {
+                        mc.MenuCategories.Add(new MenuCategoria(cat));
+                    }
+                    else
+                    {
+                        searchAndAddMenuCategory(cats_menu, cat);
+                    }
+                }
+
+                
+            }
+
+            AddMenuCategories(cats_menu,(MenuItem)menu_categories.Items[0]);
+
         }
 
+        private void searchAndAddMenuCategory(List<MenuCategoria> cats_menu, Categoria cat)
+        {
+            foreach(MenuCategoria menu_cat_list in cats_menu)
+            {
+                MenuCategoria mc = menu_cat_list.MenuCategories.Find((ele) => { return ele.Cat.Id == cat.ParentId; });
+                if (mc != null)
+                {
+                    mc.MenuCategories.Add(new MenuCategoria(cat));
+                }
+                else
+                {
+                    if(menu_cat_list.MenuCategories.Count > 0)
+                    {
+                        searchAndAddMenuCategory(menu_cat_list.MenuCategories, cat);
+                    }
+                }
+            }
+            
+        }
+
+        private void AddMenuCategories(List<MenuCategoria> cats_menu, MenuItem menu)
+        {
+            foreach (MenuCategoria cat in cats_menu)
+            {
+
+                
+
+                MenuItem menuItem = new MenuItem { Header = cat.Cat.Nom };
+                menuItem.Tag = cat.Cat;
+                
+                Button btn = new Button { Content = "🔍" };
+                btn.Click += MenuItem_Click_Btn;
+                btn.Tag = cat.Cat;
+                menuItem.Icon = btn;
+
+           
+                menu.Items.Add(menuItem);
+                
+                if(cat.MenuCategories.Count > 0)
+                {
+                    AddMenuCategories(cat.MenuCategories, menuItem);
+                }
+            }
+        }
+
+        private void MenuItem_Click_Btn(object sender, RoutedEventArgs e)
+        {
+
+            Categoria cat = (Categoria)((Button)sender).Tag;
+            Debug.WriteLine("CAT CLIK: " + cat);
+            
+        }
+        
 
         private void Button_SignOut_Click(object sender, RoutedEventArgs e)
         {
@@ -56,9 +141,9 @@ namespace ProjecteBotigaSabates
 
         }
 
-
-
-
-        
+        private void Categorys_click_popup(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            
+        }
     }
 }

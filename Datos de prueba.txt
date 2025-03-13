@@ -52,3 +52,59 @@ db.clients.insertMany([
     }
   }
 ])
+
+
+
+db.categories.insertMany(
+[
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff87"),
+    "nom": "Esport",
+    "parent_id": null
+  },
+  {
+    "_id": ObjectId("67c9c2d576079be6a8eaff88"),
+    "nom": "Futbol",
+    "parent_id": ObjectId("67c9c2d476079be6a8eaff87")
+  },
+  {
+    "_id": ObjectId("67c9c2d676079be6a8eaff89"),
+    "nom": "Futbol 11",
+    "parent_id": ObjectId("67c9c2d576079be6a8eaff88")
+  },
+  {
+    "_id": ObjectId("67c9c2d776079be6a8eaff8A"),
+    "nom": "Futbol Sala",
+    "parent_id": ObjectId("67c9c2d576079be6a8eaff88")
+  },
+  {
+    "_id": ObjectId("67c9c2d876079be6a8eaff8B"),
+    "nom": "Basquet",
+    "parent_id": ObjectId("67c9c2d476079be6a8eaff87")
+  },
+  {
+    "_id": ObjectId("67c9c2d976079be6a8eaff8C"),
+    "nom": "Basquet 5x5",
+    "parent_id": ObjectId("67c9c2d876079be6a8eaff8B")
+  },
+  {
+    "_id": ObjectId("67c9c2da76079be6a8eaff8D"),
+    "nom": "Basquet 3x3",
+    "parent_id": ObjectId("67c9c2d876079be6a8eaff8B")
+  },
+  {
+    "_id": ObjectId("67c9c2db76079be6a8eaff8E"),
+    "nom": "Volley",
+    "parent_id": ObjectId("67c9c2d476079be6a8eaff87")
+  },
+  {
+    "_id": ObjectId("67c9c2dc76079be6a8eaff8F"),
+    "nom": "Volley Playa",
+    "parent_id": ObjectId("67c9c2db76079be6a8eaff8E")
+  },
+  {
+    "_id": ObjectId("67c9c2dd76079be6a8eaff90"),
+    "nom": "Volley Pista",
+    "parent_id": ObjectId("67c9c2db76079be6a8eaff8E")
+  }
+])

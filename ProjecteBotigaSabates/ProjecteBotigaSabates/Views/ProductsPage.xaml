@@ -10,6 +10,7 @@
 
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -17,13 +18,19 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" >
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" >
             <Label Content="Search: " />
             <TextBox x:Name="tb_search" VerticalContentAlignment="Center" Width="200" Margin="0 0 20 0" KeyDown="Button_Search_Click" HorizontalAlignment="Center"></TextBox>
             <Button Content="Search" Width="80" Click="Button_Search_Click" HorizontalAlignment="Center"></Button>
         </StackPanel>
 
 
+        <Grid>
+            <!--Filtres de rang, color, preu ... -->
+            <TextBlock Text="Rango"></TextBlock>
+            
+        </Grid>
+        
 
     </Grid>
 </Page>

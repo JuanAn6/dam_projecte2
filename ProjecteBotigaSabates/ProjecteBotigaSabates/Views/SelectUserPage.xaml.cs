@@ -74,7 +74,7 @@ namespace ProjecteBotigaSabates.Views
 
         private async void InsertData()
         {
-            await mongoDBConnection.InsertarDatosProductoAsync();
+            //await mongoDBConnection.InsertarDatosProductoAsync();
             Debug.WriteLine("Data inserted!");
 
             IMongoCollection<BsonDocument> categories = mongoDBConnection.GetCollection("categories");

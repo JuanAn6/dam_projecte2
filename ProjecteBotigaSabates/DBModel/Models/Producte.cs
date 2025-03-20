@@ -10,6 +10,8 @@ namespace DBModel.Models
 {
     public class Producte
     {
+        
+
         [BsonId]
         public ObjectId Id { get; set; }
 
@@ -27,5 +29,24 @@ namespace DBModel.Models
 
         [BsonElement("categories")]
         public List<CategoriaProducte> Categories { get; set; }
+
+        public Producte(ObjectId id, string codi, string nom, string descripcio, ObjectId tipusImpostId, List<CategoriaProducte> categories)
+        {
+            Id = id;
+            Codi = codi;
+            Nom = nom;
+            Descripcio = descripcio;
+            TipusImpostId = tipusImpostId;
+            Categories = categories;
+        }
+
+        public Producte()
+        {
+        }
+
+        public override string? ToString()
+        {
+            return $"Producte: {{ Id: {Id}, Nom: {Nom}, Descripcio: {Descripcio}, TipusImpostId: {TipusImpostId} }}";
+        }
     }
 }

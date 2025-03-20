@@ -15,5 +15,11 @@ namespace DBModel.Models
 
         [BsonElement("grau")]
         public int Grau { get; set; }
+
+        public CategoriaProducte(ObjectId categoriaId, int grau)
+        {
+            CategoriaId = categoriaId;
+            Grau = grau;
+        }
     }
 }

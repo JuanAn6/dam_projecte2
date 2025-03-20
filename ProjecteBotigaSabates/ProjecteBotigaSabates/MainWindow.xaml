@@ -60,7 +60,7 @@
                 </Border>
 
                 <Border Grid.Column="3" BorderThickness="0 0 0 0" BorderBrush="Black" Cursor="Hand" Focusable="True">
-                    <TextBlock Text="Shop" Margin="10 0 10 0" ></TextBlock>
+                    <TextBlock Text="Basket" Margin="10 0 10 0" ></TextBlock>
                 </Border>
 
             </Grid>

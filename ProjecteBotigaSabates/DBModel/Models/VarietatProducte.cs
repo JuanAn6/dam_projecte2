@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace DBModel.Models
 {
@@ -30,5 +31,18 @@ namespace DBModel.Models
 
         [BsonElement("talles")]
         public List<Talla> Talles { get; set; }
+
+        
+
+        public VarietatProducte(ObjectId id, ObjectId producteId, string img, string color, double preu, double descompte, List<Talla> talles)
+        {
+            Id = id;
+            ProducteId = producteId;
+            Img = img;
+            Color = color;
+            Preu = preu;
+            Descompte = descompte;
+            Talles = talles;
+        }
     }
 }

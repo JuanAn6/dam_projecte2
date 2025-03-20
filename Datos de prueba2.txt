@@ -1,0 +1,145 @@
+db.varietat_producte.insertOne({
+	"producte_id":ObjectId("67c9c2d476079be6a8eaff90"),
+	"img":"prod1.png",
+	"color":"Brown",
+	"preu":20,
+	"dto":0,
+});
+
+db.varietat_producte.insertOne({
+	"producte_id":ObjectId("67c9c2d476079be6a8eaff90"),
+	"img":"prod1_red.png",
+	"color":"Red",
+	"preu":25,
+	"dto":0,
+});
+
+
+db.varietat_producte.insertOne({
+	"producte_id":ObjectId("67c9c2d476079be6a8eaff90"),
+	"img":"prod1_yellow.png",
+	"color":"Yellow",
+	"preu":50,
+	"dto":10,
+});
+
+
+
+db.productes.insertMany(
+[
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff90"),
+    "codi": "P002",
+    "nom": "Sabates trail x200",
+    "descripcio": "<p>Sabates per trail running</p>",
+    "tipus_impost_id": ObjectId("67c9c2d476079be6a8eaff89"),
+    "categories": [{ "categoria_id": ObjectId("67c9c2d476079be6a8eaff87"), "grau": 2 }]
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff91"),
+    "codi": "P003",
+    "nom": "Samarreta esportiva",
+    "descripcio": "<p>Samarreta transpirable per esport</p>",
+    "tipus_impost_id": ObjectId("67c9c2d476079be6a8eaff89"),
+    "categories": [{ "categoria_id": ObjectId("67c9c2d476079be6a8eaff87"), "grau": 1 }]
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff92"),
+    "codi": "P004",
+    "nom": "Pantalons curts running",
+    "descripcio": "<p>Pantalons lleugers per córrer</p>",
+    "tipus_impost_id": ObjectId("67c9c2d476079be6a8eaff89"),
+    "categories": [{ "categoria_id": ObjectId("67c9c2d476079be6a8eaff87"), "grau": 2 }]
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff93"),
+    "codi": "P005",
+    "nom": "Mitjons esportius",
+    "descripcio": "<p>Mitjons tècnics per esport</p>",
+    "tipus_impost_id": ObjectId("67c9c2d476079be6a8eaff89"),
+    "categories": [{ "categoria_id": ObjectId("67c9c2d476079be6a8eaff87"), "grau": 1 }]
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff94"),
+    "codi": "P006",
+    "nom": "Motxilla d'hidratació",
+    "descripcio": "<p>Motxilla amb dipòsit per aigua</p>",
+    "tipus_impost_id": ObjectId("67c9c2d476079be6a8eaff89"),
+    "categories": [{ "categoria_id": ObjectId("67c9c2d476079be6a8eaff87"), "grau": 3 }]
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff95"),
+    "codi": "P007",
+    "nom": "Ulleres esportives",
+    "descripcio": "<p>Ulleres de sol per running i ciclisme</p>",
+    "tipus_impost_id": ObjectId("67c9c2d476079be6a8eaff89"),
+    "categories": [{ "categoria_id": ObjectId("67c9c2d476079be6a8eaff87"), "grau": 2 }]
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff96"),
+    "codi": "P008",
+    "nom": "Bambes de bàsquet",
+    "descripcio": "<p>Calçat especial per a bàsquet</p>",
+    "tipus_impost_id": ObjectId("67c9c2d476079be6a8eaff89"),
+    "categories": [{ "categoria_id": ObjectId("67c9c2d476079be6a8eaff87"), "grau": 3 }]
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff97"),
+    "codi": "P009",
+    "nom": "Corda per saltar",
+    "descripcio": "<p>Corda d'alta velocitat per entrenaments</p>",
+    "tipus_impost_id": ObjectId("67c9c2d476079be6a8eaff89"),
+    "categories": [{ "categoria_id": ObjectId("67c9c2d476079be6a8eaff87"), "grau": 1 }]
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff98"),
+    "codi": "P010",
+    "nom": "Guants per gimnàs",
+    "descripcio": "<p>Guants antilliscants per entrenament</p>",
+    "tipus_impost_id": ObjectId("67c9c2d476079be6a8eaff89"),
+    "categories": [{ "categoria_id": ObjectId("67c9c2d476079be6a8eaff87"), "grau": 2 }]
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff99"),
+    "codi": "P011",
+    "nom": "Esterilla de ioga",
+    "descripcio": "<p>Esterilla antilliscant per ioga i pilates</p>",
+    "tipus_impost_id": ObjectId("67c9c2d476079be6a8eaff89"),
+    "categories": [{ "categoria_id": ObjectId("67c9c2d476079be6a8eaff87"), "grau": 3 }]
+  }
+]
+)
+
+db.categories.insertMany(
+[
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff01"),
+    "nom": "Man",
+    "parent_id": null
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff02"),
+    "nom": "Women",
+    "parent_id": null
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff03"),
+    "nom": "Unisex",
+    "parent_id": null
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff04"),
+    "nom": "Boy",
+    "parent_id": null
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff05"),
+    "nom": "Girl",
+    "parent_id": null
+  },
+  {
+    "_id": ObjectId("67c9c2d476079be6a8eaff06"),
+    "nom": "Children",
+    "parent_id": null
+  }
+]);

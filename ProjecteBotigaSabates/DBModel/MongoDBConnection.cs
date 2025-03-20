@@ -84,7 +84,6 @@ namespace DBModel
             foreach (BsonDocument cat in categories_doc.Find(new BsonDocument()).ToList())
             {
                 
-
                 Categoria c = new Categoria(
                     cat.GetElement("_id").Value.AsObjectId,
                     cat.GetElement("nom").Value.AsString,
@@ -97,6 +96,70 @@ namespace DBModel
             return categoria;
 
         }
+
+
+        public List<Producte> GetAllProducts()
+        {
+            MongoDBConnection mongoDB = new MongoDBConnection();
+            List<Producte> products = new List<Producte>();
+            IMongoCollection<BsonDocument> products_doc = mongoDB.GetCollection("productes");
+            foreach (BsonDocument prod in products_doc.Find(new BsonDocument()).ToList())
+            {
+
+                //prod.GetElement("categories").Value.ToList();
+
+                Producte p = new Producte(
+                    prod.GetElement("_id").Value.AsObjectId,
+                    prod.GetElement("codi").Value.AsString,
+                    prod.GetElement("nom").Value.AsString,
+                    prod.GetElement("descripcio").Value.AsString,
+                    prod.GetElement("tipus_impost_id").Value.AsObjectId,
+                    new List<CategoriaProducte>()
+                );
+
+                products.Add(p);
+            }
+
+
+            return products;
+        }
+
+
+        public List<VarietatProducte> GetAllVarietatsOfProducts(string prod)
+        {
+            MongoDBConnection mongoDB = new MongoDBConnection();
+            var filter = Builders<BsonDocument>.Filter.Eq("producte_id",  new ObjectId(prod) );
+            
+            List<VarietatProducte> products = new List<VarietatProducte>();
+            var collection = mongoDB.GetCollection("varietat_producte");
+            List<BsonDocument> products_doc = collection.Find(filter).ToList();
+
+            foreach (BsonDocument vp in products_doc)
+            {
+
+                VarietatProducte p = new VarietatProducte(
+                    vp.GetElement("_id").Value.AsObjectId,
+                    vp.GetElement("producte_id").Value.AsObjectId,
+                    vp.GetElement("img").Value.AsString,
+                    vp.GetElement("color").Value.AsString,
+                    vp.GetElement("preu").Value.AsInt32,
+                    vp.GetElement("dto").Value.AsInt32,
+                    new List<Talla>()
+                );
+
+                products.Add(p);
+            }
+
+
+            return products;
+        }
+
+
+
+
+
+
+        /*
 
         public async Task InsertarDatosProductoAsync()
         {
@@ -165,6 +228,12 @@ namespace DBModel
             await varietatsCollection.InsertOneAsync(novaVarietat2);
         }
 
-        
+
+
+        */
+
+
+
+
     }
 }

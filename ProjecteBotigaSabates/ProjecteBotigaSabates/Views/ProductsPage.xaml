@@ -3,10 +3,11 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:ProjecteBotigaSabates.Views"
+      xmlns:local="clr-namespace:ProjecteBotigaSabates.Views" xmlns:components="clr-namespace:ProjecteBotigaSabates.Components"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProductsPage">
+      Title="ProductsPage"
+      Loaded="Page_Loaded">
 
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
@@ -30,7 +31,44 @@
             <TextBlock Text="Rango"></TextBlock>
             
         </Grid>
-        
 
+        <ListView x:Name="lv_products" ItemsSource="{Binding Products}" Grid.Column="2" Grid.Row="2" Margin="10" 
+                  ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionMode="Single" >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Focusable" Value="False"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+
+                    
+                </Style>
+            </ListView.ItemContainerStyle>
+
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <components:UCProduct Height="300" Margin="10" MyProd="{Binding}" ></components:UCProduct>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+            
+        </ListView>
+        
     </Grid>
 </Page>

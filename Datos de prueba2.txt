@@ -1,3 +1,5 @@
+--Categories producte 1
+
 db.varietat_producte.insertOne({
 	"producte_id":ObjectId("67c9c2d476079be6a8eaff90"),
 	"img":"prod1.png",
@@ -24,6 +26,114 @@ db.varietat_producte.insertOne({
 });
 
 
+--Categories producte 2
+
+db.varietat_producte.insertOne({
+	"producte_id":ObjectId("67c9c2d476079be6a8eaff90"),
+	"img":"prod2.png",
+	"color":"Base",
+	"preu":150,
+	"dto":0,
+});
+
+db.varietat_producte.insertOne({
+	"producte_id":ObjectId("67c9c2d476079be6a8eaff90"),
+	"img":"prod2_pink.png",
+	"color":"Pink",
+	"preu":200,
+	"dto":0,
+});
+
+db.varietat_producte.insertOne({
+	"producte_id":ObjectId("67c9c2d476079be6a8eaff90"),
+	"img":"prod2_red.png",
+	"color":"Red",
+	"preu":350,
+	"dto":0,
+});
+
+
+-- PROD 3
+
+
+db.varietat_producte.insertOne({
+	"producte_id":ObjectId("67e573176c1dcf269b74dd50"),
+	"img":"prod3.png",
+	"color":"Base",
+	"preu":100,
+	"dto":0,
+});
+
+db.varietat_producte.insertOne({
+	"producte_id":ObjectId("67e573176c1dcf269b74dd50"),
+	"img":"prod3_pink.png",
+	"color":"Pink",
+	"preu":95.3,
+	"dto":0,
+});
+
+db.varietat_producte.insertOne({
+	"producte_id":ObjectId("67e573176c1dcf269b74dd50"),
+	"img":"prod3_green.png",
+	"color":"Red",
+	"preu":99.99,
+	"dto":1,
+});
+
+
+
+--PROD 4
+
+
+
+db.varietat_producte.insertOne({
+	"producte_id":ObjectId("67e577266c1dcf269b74dd54"),
+	"img":"prod4.png",
+	"color":"Base",
+	"preu":500.0,
+	"dto":10.0,
+});
+
+db.varietat_producte.insertOne({
+	"producte_id":ObjectId("67e577266c1dcf269b74dd54"),
+	"img":"prod4_blue.png",
+	"color":"Pink",
+	"preu":495.3,
+	"dto":0.0,
+});
+
+db.varietat_producte.insertOne({
+	"producte_id":ObjectId(67e577266c1dcf269b74dd54),
+	"img":"prod4_red.png",
+	"color":"Red",
+	"preu":999.99,
+	"dto":1.0,
+});
+
+
+
+
+
+
+db.productes.insertOne({
+    "codi": "P004",
+    "nom": "Talons marianela",
+    "descripcio": "<p>Sabates per vestir en una cafeteria</p>",
+    "tipus_impost_id": ObjectId("67c9c2d476079be6a8eaff89"),
+    "categories": [{ "categoria_id": ObjectId("67e56c9c23ba4340853c5b99"), "grau": 1 }]
+});
+
+
+
+db.categories.insertOne({
+    "nom": "Informal",
+    "parent_id": null
+});
+
+
+
+
+--Prods de prova
 
 db.productes.insertMany(
 [

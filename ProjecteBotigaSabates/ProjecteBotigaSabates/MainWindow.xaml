@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjecteBotigaSabates"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Icon="/logo.ico"
+        Title="Juan Shoes" Height="450" Width="800"
         Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>

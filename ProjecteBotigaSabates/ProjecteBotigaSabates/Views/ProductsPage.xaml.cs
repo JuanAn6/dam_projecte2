@@ -26,35 +26,195 @@ namespace ProjecteBotigaSabates.Views
     {
         MongoDBConnection mongoDB;
         public ObservableCollection<Producte> Products { get; set; }
-        public ProductsPage()
+
+        private int numPage = 0;
+        private int productsPerPage = 1;
+        private int maxPage = 0;
+        private int countProducts = 0;
+
+        public string catFilter = "";
+        public Categoria cat;
+
+        private List<Categoria> catsBreadCrumbs = new List<Categoria>();
+
+        public ProductsPage(Categoria cat)
         {
             InitializeComponent();
-            
+            this.cat = cat;
+            if(cat != null)
+            {
+                catFilter = cat.Nom;
+            }
+            else
+            {
+                catFilter = "";
+            }
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            
-            Products = new ObservableCollection<Producte>();
             mongoDB = new MongoDBConnection();
-            List<Producte> prods = mongoDB.GetAllProducts();
+            countProducts = mongoDB.GetCountProducts();
             
-            foreach(Producte p in prods)
+            productsPerPage = 5;
+            maxPage = countProducts / productsPerPage;
+            numPage = 0;
+
+            Products = new ObservableCollection<Producte>();
+
+            Debug.WriteLine("LOADPAGE CAT: " + cat);
+            
+            ChangePage();
+
+            this.DataContext = this;
+
+            
+            LoadTreeViewCategories();
+
+            //lv_products.ItemsSource = Products;
+
+        }
+
+        private void ChangePage()
+        {
+            ChangeBreadCrumbs();
+
+            string search = tb_search.Text;
+            List<Producte> prods = mongoDB.GetPageProductsWithFilters(productsPerPage, numPage, search, cat);
+            Debug.WriteLine("ChangePages!");
+            Products.Clear();
+            foreach (Producte p in prods)
             {
                 Debug.WriteLine(p);
                 Products.Add(p);
             }
 
-            //lv_products.ItemsSource = Products;
-            this.DataContext = this;
+            tb_max_page.Text = "" + (maxPage+1);
+            tb_page.Text = "" + (numPage+1);
 
         }
 
         private void Button_Search_Click(object sender, RoutedEventArgs e)
         {
-           
+            //Filter by slider
+            //Filter by price
+            //...
+
+            string search = tb_search.Text;
+            
+            List<Producte> prods = mongoDB.GetPageProductsWithFilters(productsPerPage, numPage, search, cat);
+            Debug.WriteLine("ChangePages!");
+            Products.Clear();
+            foreach (Producte p in prods)
+            {
+                Debug.WriteLine(p);
+                Products.Add(p);
+            }
+
+            tb_max_page.Text = "" + (maxPage + 1);
+            tb_page.Text = "" + (numPage + 1);
+
+            ChangeBreadCrumbs();
+
         }
 
-        
+        private void Button_Previous_Click(object sender, RoutedEventArgs e)
+        {
+            if(numPage - 1 >= 0)
+            {
+                numPage = numPage - 1;
+                ChangePage();
+            }
+        }
+
+        private void Button_Next_Click(object sender, RoutedEventArgs e)
+        {
+            if (numPage + 1 < maxPage)
+            {
+                numPage = numPage + 1;
+                ChangePage();
+            }
+        }
+
+
+        private void ChangeBreadCrumbs()
+        {
+            catsBreadCrumbs.Clear();
+            GetCategoriesParent(cat);
+
+            if(catsBreadCrumbs.Count > 0)
+            {
+                catsBreadCrumbs.Reverse();
+                string content = "Products";
+                foreach(Categoria c in catsBreadCrumbs)
+                {
+                    content = content + " / " + c.Nom;
+                }
+                BreadCrumbs.Text = content;
+            }
+            else
+            {
+                BreadCrumbs.Text = "Products/";
+            }
+        }
+
+        private void GetCategoriesParent(Categoria c)
+        {
+            if(c != null)
+            {
+                catsBreadCrumbs.Add(c);
+                if (c.ParentId != null)
+                {
+                    Categoria c2 = mongoDB.GetCategoriaById(c);
+                    GetCategoriesParent(c2);
+                }
+
+            }
+
+        }
+
+        private void sl_price_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            double val = sl_price.Value;
+
+            sl_price_val.Text = Math.Round(val)+"€";
+
+        }
+
+
+        private void LoadTreeViewCategories()
+        {
+            List<Categoria> categories = mongoDB.GetCategories();
+            foreach(Categoria cat in categories)
+            {
+                if (cat.ParentId == null)
+                {
+                    AddCategoriaTreeView(null, cat, categories);
+                }
+            }
+        }
+
+        private void AddCategoriaTreeView(TreeViewItem item, Categoria parent, List<Categoria> categories)
+        {
+
+            TreeViewItem aux = new TreeViewItem();
+            aux.Header = parent.Nom;
+            aux.Tag = parent;
+            if (item == null)
+            {
+                trv_categories.Items.Add(aux);
+            }
+            else
+            {
+                item.Items.Add(aux);
+            }
+
+            foreach (Categoria cat in categories.Where(c => c.ParentId == parent.Id).ToList())
+            {
+                AddCategoriaTreeView(aux, cat, categories);
+            }
+
+        }
+
     }
 }

@@ -2,6 +2,7 @@
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Diagnostics;
+using System.Runtime.Intrinsics.X86;
 using System.Text.Json;
 
 namespace DBModel
@@ -97,6 +98,32 @@ namespace DBModel
 
         }
 
+        public Categoria GetCategoriaById(Categoria category)
+        {
+            MongoDBConnection mongoDB = new MongoDBConnection();
+            IMongoCollection<BsonDocument> categories_doc = mongoDB.GetCollection("categories");
+
+
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", category.ParentId);
+            BsonDocument cat = categories_doc.Find(filter).First();
+
+            if(cat != null) { 
+
+                Categoria c = new Categoria(
+                    cat.GetElement("_id").Value.AsObjectId,
+                    cat.GetElement("nom").Value.AsString,
+                    cat.GetElement("parent_id").Value is BsonNull ? null : cat.GetElement("parent_id").Value.AsObjectId
+                );
+
+                return c;
+            }
+
+            return null;
+
+        }
+
+
+        
 
         public List<Producte> GetAllProducts()
         {
@@ -124,6 +151,130 @@ namespace DBModel
             return products;
         }
 
+        public int GetCountProducts()
+        {
+            MongoDBConnection mongoDB = new MongoDBConnection();
+            List<Producte> products = new List<Producte>();
+            IMongoCollection<BsonDocument> products_doc = mongoDB.GetCollection("productes");
+            long count = products_doc.CountDocuments(new BsonDocument());
+            
+            //Per el projecte tenim suficient amb un int
+            return (int)count;
+        }
+
+        public List<Producte> GetPageProducts(int productsPerPage, int numPage)
+        {
+            return GetPageProductsWithFilters(productsPerPage, numPage, "", null);
+        }
+
+        public List<Producte> GetPageProductsWithFilters(int productsPerPage, int numPage, string search, Categoria cat)
+        {
+
+            MongoDBConnection mongoDB = new MongoDBConnection();
+            List<Producte> products = new List<Producte>();
+            IMongoCollection<BsonDocument> products_doc = mongoDB.GetCollection("productes");
+            int skipElements = numPage * productsPerPage;
+
+            
+            List<FilterDefinition<BsonDocument>> filters = new List<FilterDefinition<BsonDocument>>();
+
+            //Filtre per busqueda
+            
+            if(!search.Equals(""))
+            {
+                filters.Add(Builders<BsonDocument>.Filter.Eq("nom", new BsonRegularExpression(search, "i")));
+            }
+
+
+
+            //Filtre per categoria
+            if (cat != null)
+            {
+                Debug.WriteLine("RECURSIVA CATS: ");
+                List<Categoria> categories = GetChildrenCategories(cat);
+                foreach (Categoria aux in categories)
+                {
+                    Debug.WriteLine(aux);
+                }
+                if (categories.Count() > 0)
+                {
+                    IEnumerable<ObjectId> categoryId = categories.Select(c_aux => c_aux.Id);
+                    filters.Add(Builders<BsonDocument>.Filter.In("categories.categoria_id", categoryId));
+                }
+            }
+
+            FilterDefinition<BsonDocument> filter = FilterDefinition<BsonDocument>.Empty;
+            if (filters.Count > 0)
+            {
+                filter = Builders<BsonDocument>.Filter.And(filters);
+            }
+
+            //COnsulta:
+            List<BsonDocument> prods_filtred = products_doc.Find(filter).Skip(skipElements).Limit(productsPerPage).ToList();
+
+
+            foreach (BsonDocument prod in prods_filtred)
+                {
+
+                    //prod.GetElement("categories").Value.ToList();
+
+                    Producte p = new Producte(
+                        prod.GetElement("_id").Value.AsObjectId,
+                        prod.GetElement("codi").Value.AsString,
+                        prod.GetElement("nom").Value.AsString,
+                        prod.GetElement("descripcio").Value.AsString,
+                        prod.GetElement("tipus_impost_id").Value.AsObjectId,
+                        new List<CategoriaProducte>()
+                    );
+
+                    products.Add(p);
+                }
+
+
+            return products;
+        }
+
+        private List<Categoria> GetChildrenCategories(Categoria cat)
+        {
+            List<Categoria> cats = new List<Categoria>();
+            cats.Add(cat);
+            List<Categoria> cats_child = GetChildrenCategoriaByCategory(cat);
+
+            foreach (Categoria aux in cats_child)
+            {
+                List<Categoria> cats_aux = GetChildrenCategories(aux);
+                foreach (Categoria aux2 in cats_aux)
+                {
+                    cats.Add(aux2);
+                }
+            }
+
+            return cats;
+        }
+
+        public List<Categoria> GetChildrenCategoriaByCategory(Categoria category)
+        {
+
+
+            MongoDBConnection mongoDB = new MongoDBConnection();
+            List<Categoria> categoria = new List<Categoria>();
+            IMongoCollection<BsonDocument> categories_doc = mongoDB.GetCollection("categories");
+            var filter = Builders<BsonDocument>.Filter.Eq("parent_id", category.Id);
+            foreach (BsonDocument cat in categories_doc.Find(filter).ToList())
+            {
+
+                Categoria c = new Categoria(
+                    cat.GetElement("_id").Value.AsObjectId,
+                    cat.GetElement("nom").Value.AsString,
+                    cat.GetElement("parent_id").Value is BsonNull ? null : cat.GetElement("parent_id").Value.AsObjectId
+                );
+
+                categoria.Add(c);
+            }
+
+            return categoria;
+
+        }
 
         public List<VarietatProducte> GetAllVarietatsOfProducts(string prod)
         {
@@ -142,8 +293,8 @@ namespace DBModel
                     vp.GetElement("producte_id").Value.AsObjectId,
                     vp.GetElement("img").Value.AsString,
                     vp.GetElement("color").Value.AsString,
-                    vp.GetElement("preu").Value.AsInt32,
-                    vp.GetElement("dto").Value.AsInt32,
+                    vp.GetElement("preu").Value.AsDouble,
+                    vp.GetElement("dto").Value.AsDouble,
                     new List<Talla>()
                 );
 

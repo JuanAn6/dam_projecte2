@@ -26,12 +26,19 @@ namespace ProjecteBotigaSabates.Views
             InitializeComponent();
         }
 
+        private MainWindow mainWindow;
+
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow = Application.Current.MainWindow as MainWindow;
             mainWindow.tb_info.Text = "";
             mainWindow.tb_user_name.Text = ClientConnected.AuthClient.Nom + " " + ClientConnected.AuthClient.Cognom;
 
+        }
+
+        private void Button_Products_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.MainFrame.Navigate(new ProductsPage(null));   
         }
     }
 }

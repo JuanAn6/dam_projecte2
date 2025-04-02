@@ -9,11 +9,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="3.2.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DBModel\DBModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="logo.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

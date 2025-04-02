@@ -9,6 +9,7 @@ using ProjecteBotigaSabates.StaticContent;
 using System.Diagnostics;
 using System.Collections.Generic;
 using ProjecteBotigaSabates.ViewModels;
+using System.Windows.Input;
 
 namespace ProjecteBotigaSabates
 {
@@ -95,6 +96,7 @@ namespace ProjecteBotigaSabates
                 
 
                 MenuItem menuItem = new MenuItem { Header = cat.Cat.Nom };
+                //menuItem.PreviewMouseLeftButtonDown += MenuItem_Click_Btn_MenuItem;
                 menuItem.Tag = cat.Cat;
                 
                 Button btn = new Button { Content = "🔍" };
@@ -111,15 +113,32 @@ namespace ProjecteBotigaSabates
                 }
             }
         }
+        /*
+        private void MenuItem_Click_Btn_MenuItem(object sender, MouseButtonEventArgs e)
+        {
+            Categoria cat = (Categoria)((MenuItem)sender).Tag;
+            Debug.WriteLine("CAT CLIK: " + cat);
+            e.Handled = true;
+        }
+        */
 
         private void MenuItem_Click_Btn(object sender, RoutedEventArgs e)
         {
 
             Categoria cat = (Categoria)((Button)sender).Tag;
             Debug.WriteLine("CAT CLIK: " + cat);
-            
+            if (ClientConnected.AuthClient != null)
+            {
+                MainFrame.Navigate(new ProductsPage(cat));
+                tb_info.Text = "";
+            }
+            else
+            {
+                tb_info.Text = "Select valid user!";
+            }
+
         }
-        
+
 
         private void Button_SignOut_Click(object sender, RoutedEventArgs e)
         {
@@ -131,7 +150,7 @@ namespace ProjecteBotigaSabates
         {
             if(ClientConnected.AuthClient != null)
             {
-                MainFrame.Navigate(new ProductsPage());
+                MainFrame.Navigate(new ProductsPage(null));
                 tb_info.Text = "";
             }
             else

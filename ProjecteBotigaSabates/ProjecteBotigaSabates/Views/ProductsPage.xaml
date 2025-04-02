@@ -17,22 +17,45 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" >
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" >
+            <TextBlock Text="BreadCrumbs" x:Name="BreadCrumbs" ></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" >
             <Label Content="Search: " />
-            <TextBox x:Name="tb_search" VerticalContentAlignment="Center" Width="200" Margin="0 0 20 0" KeyDown="Button_Search_Click" HorizontalAlignment="Center"></TextBox>
+            <TextBox x:Name="tb_search" VerticalContentAlignment="Center" Width="200" Margin="0 0 20 0" KeyUp="Button_Search_Click" HorizontalAlignment="Center"></TextBox>
             <Button Content="Search" Width="80" Click="Button_Search_Click" HorizontalAlignment="Center"></Button>
         </StackPanel>
-
-
-        <Grid>
-            <!--Filtres de rang, color, preu ... -->
-            <TextBlock Text="Rango"></TextBlock>
+        
+        
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
             
+
+            <!--Filtres de rang, color, preu ... -->
+            <TextBlock Text="Filtres" Grid.Row="0"></TextBlock>
+            <StackPanel Orientation="Vertical" Grid.Row="1">
+                <TextBlock x:Name="sl_price_val" />
+                <Slider Margin="10, 0, 0, 0" 
+                    Width="100" Orientation="Horizontal" HorizontalAlignment="Left" 
+                    Value="50" Minimum="0" Maximum="100" 
+                    SmallChange="1" LargeChange="10"
+                    TickPlacement="BottomRight" TickFrequency="10"
+                    ValueChanged="sl_price_ValueChanged"
+                    x:Name="sl_price"/>
+            
+            </StackPanel>
+
+            <TreeView x:Name="trv_categories" Grid.Row="2" ></TreeView>
         </Grid>
 
-        <ListView x:Name="lv_products" ItemsSource="{Binding Products}" Grid.Column="2" Grid.Row="2" Margin="10" 
+        <ListView x:Name="lv_products" ItemsSource="{Binding Products}" Grid.Column="2" Grid.Row="1" Margin="10" 
                   ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionMode="Single" >
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -69,6 +92,23 @@
             
             
         </ListView>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="1" Margin="10" Content="Previous" Click="Button_Previous_Click" />
+            <TextBlock Grid.Column="2" Margin="10" x:Name="tb_page" Text="0" />
+            <TextBlock Grid.Column="3" Margin="10" x:Name="tb_max_page" Text="/0" />
+            <Button Grid.Column="4" Margin="10" Content="Next" Click="Button_Next_Click"/>
+
+        </Grid>
         
     </Grid>
 </Page>

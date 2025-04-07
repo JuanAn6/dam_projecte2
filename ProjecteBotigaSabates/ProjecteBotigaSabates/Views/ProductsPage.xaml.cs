@@ -35,6 +35,8 @@ namespace ProjecteBotigaSabates.Views
         public string catFilter = "";
         public Categoria cat;
 
+        private int slideValue = 0;
+
         private List<Categoria> catsBreadCrumbs = new List<Categoria>();
 
         public ProductsPage(Categoria cat)
@@ -80,7 +82,7 @@ namespace ProjecteBotigaSabates.Views
             ChangeBreadCrumbs();
 
             string search = tb_search.Text;
-            List<Producte> prods = mongoDB.GetPageProductsWithFilters(productsPerPage, numPage, search, cat);
+            List<Producte> prods = mongoDB.GetPageProductsWithFilters(productsPerPage, numPage, search, cat, slideValue);
             Debug.WriteLine("ChangePages!");
             Products.Clear();
             foreach (Producte p in prods)
@@ -96,26 +98,7 @@ namespace ProjecteBotigaSabates.Views
 
         private void Button_Search_Click(object sender, RoutedEventArgs e)
         {
-            //Filter by slider
-            //Filter by price
-            //...
-
-            string search = tb_search.Text;
-            
-            List<Producte> prods = mongoDB.GetPageProductsWithFilters(productsPerPage, numPage, search, cat);
-            Debug.WriteLine("ChangePages!");
-            Products.Clear();
-            foreach (Producte p in prods)
-            {
-                Debug.WriteLine(p);
-                Products.Add(p);
-            }
-
-            tb_max_page.Text = "" + (maxPage + 1);
-            tb_page.Text = "" + (numPage + 1);
-
-            ChangeBreadCrumbs();
-
+            ChangePage();
         }
 
         private void Button_Previous_Click(object sender, RoutedEventArgs e)
@@ -179,6 +162,7 @@ namespace ProjecteBotigaSabates.Views
 
             sl_price_val.Text = Math.Round(val)+"€";
 
+            slideValue = (int)Math.Round(val);
         }
 
 
@@ -200,6 +184,7 @@ namespace ProjecteBotigaSabates.Views
             TreeViewItem aux = new TreeViewItem();
             aux.Header = parent.Nom;
             aux.Tag = parent;
+            aux.Selected += Aux_Selected_Category;
             if (item == null)
             {
                 trv_categories.Items.Add(aux);
@@ -215,6 +200,37 @@ namespace ProjecteBotigaSabates.Views
             }
 
         }
+
+        private void Aux_Selected_Category(object sender, RoutedEventArgs e)
+        {
+            TreeViewItem aux = (TreeViewItem)sender;
+            Categoria cat_aux = (Categoria)aux.Tag;
+            Debug.WriteLine("CATTREVIEW: " + cat_aux.Nom);
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow.MainFrame.Navigate(new ProductsPage(cat_aux));
+
+            e.Handled = true;
+        }
+
+        private void Button_Slide_Filter_Click(object sender, RoutedEventArgs e)
+        {
+            ChangePage();
+        }
+
+        private void lv_products_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+            int index = ((ListView)sender).SelectedIndex;
+
+            Debug.WriteLine("ShowPROD: " + index);
+            if(index != -1)
+            {
+                MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+                mainWindow.MainFrame.Navigate(new ViewProductPage(Products.ElementAt(index)));
+            }
+
+        }
+
 
     }
 }

@@ -38,7 +38,7 @@ namespace ProjecteBotigaSabates.Views
 
         private void Button_Products_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.MainFrame.Navigate(new ProductsPage(null));   
+            mainWindow.MainFrame.Navigate(new ProductsPage(null));
         }
     }
 }

@@ -164,10 +164,10 @@ namespace DBModel
 
         public List<Producte> GetPageProducts(int productsPerPage, int numPage)
         {
-            return GetPageProductsWithFilters(productsPerPage, numPage, "", null);
+            return GetPageProductsWithFilters(productsPerPage, numPage, "", null, 0);
         }
 
-        public List<Producte> GetPageProductsWithFilters(int productsPerPage, int numPage, string search, Categoria cat)
+        public List<Producte> GetPageProductsWithFilters(int productsPerPage, int numPage, string search, Categoria cat, int slideVal)
         {
 
             MongoDBConnection mongoDB = new MongoDBConnection();
@@ -175,12 +175,12 @@ namespace DBModel
             IMongoCollection<BsonDocument> products_doc = mongoDB.GetCollection("productes");
             int skipElements = numPage * productsPerPage;
 
-            
+
             List<FilterDefinition<BsonDocument>> filters = new List<FilterDefinition<BsonDocument>>();
 
             //Filtre per busqueda
-            
-            if(!search.Equals(""))
+
+            if (!search.Equals(""))
             {
                 filters.Add(Builders<BsonDocument>.Filter.Eq("nom", new BsonRegularExpression(search, "i")));
             }
@@ -201,6 +201,25 @@ namespace DBModel
                     IEnumerable<ObjectId> categoryId = categories.Select(c_aux => c_aux.Id);
                     filters.Add(Builders<BsonDocument>.Filter.In("categories.categoria_id", categoryId));
                 }
+            }
+
+            //Filtre per preu
+
+            if (slideVal != 0)
+            {
+                List<ObjectId> ids = new List<ObjectId>();
+                IMongoCollection<BsonDocument> var_products_doc = mongoDB.GetCollection("varietat_producte");
+                
+                List<BsonDocument> vars = var_products_doc.Find(Builders<BsonDocument>.Filter.Gt("preu", (double)slideVal)).ToList();
+
+                foreach (BsonDocument var_prod in vars)
+                {
+                    Debug.WriteLine("a:" + var_prod.GetElement("producte_id").Value.AsObjectId);
+                    ids.Add(var_prod.GetElement("producte_id").Value.AsObjectId);
+                }
+
+                filters.Add(Builders<BsonDocument>.Filter.In("_id", ids));
+
             }
 
             FilterDefinition<BsonDocument> filter = FilterDefinition<BsonDocument>.Empty;
@@ -288,14 +307,29 @@ namespace DBModel
             foreach (BsonDocument vp in products_doc)
             {
 
+                List<Talla> talles = new List<Talla>();
+
+                if (vp.Contains("talles"))
+                {
+                    foreach (var talla in vp.GetElement("talles").Value.AsBsonArray)
+                    {
+                        BsonDocument t = talla.AsBsonDocument;
+                        int numTalla = t.GetElement("talla").Value.AsInt32;
+                        int tallaStock= t.GetElement("stock").Value.AsInt32;
+                        talles.Add(new Talla(numTalla, tallaStock));
+                    }
+
+                }
+
+
                 VarietatProducte p = new VarietatProducte(
                     vp.GetElement("_id").Value.AsObjectId,
                     vp.GetElement("producte_id").Value.AsObjectId,
                     vp.GetElement("img").Value.AsString,
                     vp.GetElement("color").Value.AsString,
-                    vp.GetElement("preu").Value.AsDouble,
-                    vp.GetElement("dto").Value.AsDouble,
-                    new List<Talla>()
+                    (vp.GetElement("preu").Value.IsInt32 ? vp.GetElement("preu").Value.AsInt32 : vp.GetElement("preu").Value.AsDouble),
+                    (vp.GetElement("dto").Value.IsInt32 ? vp.GetElement("dto").Value.AsInt32 : vp.GetElement("dto").Value.AsDouble),
+                    talles
                 );
 
                 products.Add(p);

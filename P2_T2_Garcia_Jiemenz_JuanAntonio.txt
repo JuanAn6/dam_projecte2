@@ -137,10 +137,9 @@ LINEAS_COMANDA
 	descompte:
 	impost_id:
 	comanda_id:
-	producte: {
-		varietat_producte_id:
-		talla:
-	}
+	varietat_producte_id:
+	talla:
+	
 }
 
 

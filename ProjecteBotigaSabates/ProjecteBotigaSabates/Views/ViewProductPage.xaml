@@ -1,0 +1,104 @@
+﻿<Page x:Class="ProjecteBotigaSabates.Views.ViewProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjecteBotigaSabates.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ViewProductPage"
+      Loaded="Page_Loaded">
+
+
+
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Product page" />
+        
+        <Image x:Name="main_img" Grid.Column="0" Grid.Row="0" Width="200" Margin="0 0 15 0"></Image>
+
+        <Grid Grid.Column="1" Grid.Row="0" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Talla:" Margin="10 0 10 0"/>
+            <ComboBox Grid.Column="0" Grid.Row="1" Margin="10 0 10 10" x:Name="cb_talles" SelectionChanged="cb_talles_SelectionChanged"/>
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="Stock: " x:Name="tb_stock" Margin="10 0 10 10"/>
+            
+            <TextBlock Grid.Column="0" Grid.Row="3" Text="Qunatity: " Margin="10 0 10 10"/>
+            <TextBox Grid.Column="0" Grid.Row="4"  x:Name="tb_qunatity" Margin="10 0 10 10"/>
+
+            <Button Grid.Column="0" Grid.Row="5" Content="Add to basket" Click="Button_Click_Add_To_Basket" Margin="10 0 10 10"/>
+            <TextBlock Grid.Column="0" Grid.Row="6" Text="" x:Name="tb_info_add" Margin="10 0 10 10" TextWrapping="Wrap"/>
+
+        </Grid>
+       
+
+        <ListView x:Name="lv_imgs" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0 10 15 0"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+            ScrollViewer.VerticalScrollBarVisibility="Disabled"
+            SelectionChanged="lv_imgs_SelectionChanged"
+            >       
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                    <Setter Property="Margin" Value="1"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Image Source="{Binding ImageUrl}" Width="50" Height="50"></Image>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+
+
+        <Grid Grid.Column="2" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="tb_name"  Grid.Row="0" FontSize="20"></TextBlock>
+            <WebBrowser x:Name="wb_desc" Grid.Row="1" ></WebBrowser>
+
+            <TextBlock Text="Price:" x:Name="tb_preu"  Grid.Row="2"></TextBlock>
+            <TextBlock Text="Color:" x:Name="tb_color"  Grid.Row="3"></TextBlock>
+
+        </Grid>
+
+    </Grid>
+</Page>

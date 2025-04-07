@@ -65,7 +65,7 @@ namespace ProjecteBotigaSabates.Components
             
             lv_imgs.ItemsSource = OCvareitats;
             lv_imgs.SelectedIndex = 0;
-
+           
         }
 
         private void lv_imgs_SelectionChanged(object sender, SelectionChangedEventArgs e)

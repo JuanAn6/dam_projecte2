@@ -36,7 +36,7 @@
                 
                 <TextBlock Text="Price:" x:Name="tb_preu"  Grid.Row="2"></TextBlock>
                 <TextBlock Text="Color:" x:Name="tb_color"  Grid.Row="3"></TextBlock>
-                
+
             </Grid>
 
             <ListView x:Name="lv_imgs" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0 10 15 0"

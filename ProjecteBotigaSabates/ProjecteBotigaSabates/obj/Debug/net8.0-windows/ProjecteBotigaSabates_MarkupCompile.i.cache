@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;HAS_UNO;UNO_HAS_FRAMEWORKELEMENT_MEASUREOVERRIDE;UNO_HAS_NO_IDEPENDENCYOBJECT;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\App.xaml
-5-94374470
+6808157418
 
-14-830817544
+162021829947
 220-330783810
-Components\UCProduct.xaml;MainWindow.xaml;Views\ProductsPage.xaml;Views\SelectUserPage.xaml;Views\StartPage.xaml;
+Components\UCProduct.xaml;MainWindow.xaml;Views\ProductsPage.xaml;Views\SelectUserPage.xaml;Views\StartPage.xaml;Views\ViewProductPage.xaml;
 
 True
 

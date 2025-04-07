@@ -19,6 +19,9 @@
     <Compile Update="Views\StartPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ViewProductPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">

@@ -10,10 +10,16 @@ namespace DBModel.Models
     public class Talla
     {
         [BsonElement("talla")]
-        public string NomTalla { get; set; }
+        public int NumTalla { get; set; }
 
         [BsonElement("stock")]
         public int Stock { get; set; }
+
+        public Talla(int numTalla, int stock)
+        {
+            NumTalla = numTalla;
+            Stock = stock;
+        }
     }
     
 }

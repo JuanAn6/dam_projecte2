@@ -32,7 +32,7 @@ namespace DBModel.Models
         public DateTime DataFactura { get; set; }
 
         [BsonElement("enviament")]
-        public Enviament Enviament { get; set; }
+        public TipusEnviament Enviament { get; set; }
 
     }
 }

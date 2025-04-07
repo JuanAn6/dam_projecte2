@@ -53,3 +53,5 @@ C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\bin\Debug\net8.
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\bin\Debug\net8.0-windows\Uno.Xaml.dll
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\bin\Debug\net8.0-windows\Uno.dll
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\ProjecteBotigaSabates.d-bfalse.GeneratedMSBuildEditorConfig.editorconfig
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\Views\ViewProductPage.g.cs
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\Views\ViewProductPage.baml

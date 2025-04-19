@@ -101,6 +101,15 @@ VARIETATS_PRODUCTE
 	]
 }
 
+TIPUS_ENVIAMENTS
+{
+	_id:
+	descripcio:
+	preu_minim:
+	preu_base:
+	impost_id:
+}
+
 
 COMANDES
 {
@@ -119,16 +128,6 @@ COMANDES
 	}
 }
 
-TIPUS_ENVIAMENTS
-{
-	_id:
-	descripcio:
-	preu_minim:
-	preu_base:
-	impost_id:
-}
-
-
 LINEAS_COMANDA
 {
 	_id:
@@ -139,7 +138,6 @@ LINEAS_COMANDA
 	comanda_id:
 	varietat_producte_id:
 	talla:
-	
 }
 
 

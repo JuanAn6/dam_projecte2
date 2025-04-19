@@ -162,6 +162,49 @@ namespace DBModel
             return (int)count;
         }
 
+        public Producte GetProductById(ObjectId prod_id)
+        {
+            MongoDBConnection mongoDB = new MongoDBConnection();
+            
+            IMongoCollection<BsonDocument> products_doc = mongoDB.GetCollection("productes");
+            BsonDocument prod = products_doc.Find(Builders<BsonDocument>.Filter.Eq("_id", prod_id)).ToList().First();
+
+            if (prod != null)
+            {
+                Producte p = new Producte(
+                    prod.GetElement("_id").Value.AsObjectId,
+                    prod.GetElement("codi").Value.AsString,
+                    prod.GetElement("nom").Value.AsString,
+                    prod.GetElement("descripcio").Value.AsString,
+                    prod.GetElement("tipus_impost_id").Value.AsObjectId,
+                    new List<CategoriaProducte>()
+                );
+
+
+                IMongoCollection<BsonDocument> impost_doc = mongoDB.GetCollection("tipus_impostos");
+                BsonDocument impost = impost_doc.Find(Builders<BsonDocument>.Filter.Eq("_id", p.TipusImpostId)).ToList().First();
+
+                if(impost != null)
+                {
+                    TipusImpost ti = new TipusImpost(
+                        impost.GetElement("_id").Value.AsObjectId,
+                        impost.GetElement("tipus").Value.AsString,
+                        (impost.GetElement("percentatge").Value.IsInt32 ? impost.GetElement("percentatge").Value.AsInt32 : impost.GetElement("percentatge").Value.AsDouble)
+                    );
+                    p.Impost = ti;
+                }
+
+                return p;
+            }
+            else
+            {
+                return null;
+            }
+
+            
+        }
+
+
         public List<Producte> GetPageProducts(int productsPerPage, int numPage)
         {
             return GetPageProductsWithFilters(productsPerPage, numPage, "", null, 0);
@@ -337,6 +380,46 @@ namespace DBModel
 
 
             return products;
+        }
+
+        public Comanda GetOpenOrder(Client authClient)
+        {
+            MongoDBConnection mongoDB = new MongoDBConnection();
+            
+            List<FilterDefinition<BsonDocument>> filters = new List<FilterDefinition<BsonDocument>>();
+            filters.Add(Builders<BsonDocument>.Filter.Eq("finalitzada", false));
+            filters.Add(Builders<BsonDocument>.Filter.Eq("client_id", authClient.Id));
+            FilterDefinition<BsonDocument> filter = FilterDefinition<BsonDocument>.Empty;
+            filter = Builders<BsonDocument>.Filter.And(filters);
+            
+
+            List<VarietatProducte> products = new List<VarietatProducte>();
+            var collection = mongoDB.GetCollection("varietat_producte");
+
+            List<BsonDocument> comandes_doc = collection.Find(filter).ToList();
+
+            if(comandes_doc.Count() == 1)
+            {
+                BsonDocument cm = comandes_doc[0];
+                Comanda comanda = new Comanda();
+                comanda.Id = cm.GetElement("_id").Value.AsObjectId.ToString();
+                comanda.ClientId = cm.GetElement("client_id").Value.AsObjectId.ToString();
+                comanda.Data = ((DateTime) (cm.GetElement("data").Value.IsBsonNull? new DateTime() : cm.GetElement("data").Value ));
+                comanda.Finalitzada = cm.GetElement("data").Value.AsBoolean;
+
+                return comanda;
+            }
+            else
+            {
+                return null;
+            }
+            
+
+        }
+
+        public void SaveActualBasket()
+        {
+            throw new NotImplementedException();
         }
 
 

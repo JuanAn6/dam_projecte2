@@ -38,11 +38,11 @@ namespace ProjecteBotigaSabates.Views
 
         ObservableCollection<ViewModelVarietatProducte> OCvareitats = new ObservableCollection<ViewModelVarietatProducte>();
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             
             tb_name.Text = Prod.Nom;
-            wb_desc.NavigateToString(Prod.Descripcio);
+            ChangeDesc();
 
             MongoDBConnection mongoDB = new MongoDBConnection();
             List<VarietatProducte> varietats = mongoDB.GetAllVarietatsOfProducts(Prod.Id.ToString());
@@ -55,6 +55,14 @@ namespace ProjecteBotigaSabates.Views
 
             lv_imgs.ItemsSource = OCvareitats;
             lv_imgs.SelectedIndex = 0;
+        }
+
+        private async void ChangeDesc()
+        {
+            await wb_desc.EnsureCoreWebView2Async();
+            //wb_desc.NavigateToString(MyProd.Descripcio);
+            string a = @"<html><body>" + Prod.Descripcio + "</body></html>";
+            wb_desc.NavigateToString(a);
         }
 
         private void lv_imgs_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -119,8 +127,28 @@ namespace ProjecteBotigaSabates.Views
             
             if (index != -1 && Talles[index].Stock > 0 && Int32.TryParse(tb_qunatity.Text, out quantity) && quantity > 0 && Talles[index].Stock >= quantity)
             {
-                BasketData.Products.Add(new LineaComanda() );
-                tb_info_add.Text = "Product added!";
+                int find_index = BasketData.Products.FindIndex(e => e.Talla.NumTalla == Talles[index].NumTalla && e.Vareitat.Equals(VarietatSelected.prod));
+                Debug.WriteLine("LINEACOMANDA REPE?: " + find_index + " - "+ BasketData.Products.Count());
+                if (find_index != -1)
+                {
+                    //Si en las lineas de la comanda ja existeix la varietat amb la talla a la cistella només s'afegeix la quantiatat al registre ja creat
+                    if(quantity + BasketData.Products[find_index].Quantitat <= Talles[index].Stock)
+                    {
+                        BasketData.Products[find_index].Quantitat = BasketData.Products[find_index].Quantitat + quantity;
+                        tb_info_add.Text = "Product added!";
+                    }
+                    else
+                    {
+                        tb_info_add.Text = "Stock Excedeed!";
+                    }
+                }
+                else
+                {
+                    BasketData.Products.Add(new LineaComanda(quantity, VarietatSelected.prod, Talles[index]));
+                    tb_info_add.Text = "Product added!";
+                }
+
+                
             }
             else
             {

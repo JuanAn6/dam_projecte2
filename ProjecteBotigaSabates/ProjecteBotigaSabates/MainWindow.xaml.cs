@@ -160,9 +160,17 @@ namespace ProjecteBotigaSabates
 
         }
 
-        private void Categorys_click_popup(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Button_Basket_Click(object sender, MouseButtonEventArgs e)
         {
-            
+            if (ClientConnected.AuthClient != null)
+            {
+                MainFrame.Navigate(new BasketPage());
+                tb_info.Text = "";
+            }
+            else
+            {
+                tb_info.Text = "Select valid user!";
+            }
         }
     }
 }

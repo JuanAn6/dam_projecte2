@@ -27,6 +27,8 @@ namespace DBModel.Models
         [BsonElement("tipus_impost_id")]
         public ObjectId TipusImpostId { get; set; }
 
+        public TipusImpost Impost { get; set; }
+
         [BsonElement("categories")]
         public List<CategoriaProducte> Categories { get; set; }
 

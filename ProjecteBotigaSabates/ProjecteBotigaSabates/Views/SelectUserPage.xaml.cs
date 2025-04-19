@@ -35,7 +35,6 @@ namespace ProjecteBotigaSabates.Views
             mainWindow.tb_info.Text = "";
             ClientConnected.AuthClient = null;
             mainWindow.tb_user_name.Text = "Sign in!";
-            BasketData basket = new BasketData();
 
             try
             {

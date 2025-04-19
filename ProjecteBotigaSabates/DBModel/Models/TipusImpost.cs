@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DBModel.Models
 {
-    public class TipusImpostos
+    public class TipusImpost
     {
         [BsonId]
         public ObjectId Id { get; set; }
@@ -18,5 +18,12 @@ namespace DBModel.Models
 
         [BsonElement("percentatge")]
         public double Percentatge { get; set; }
+
+        public TipusImpost(ObjectId id, string tipus, double percentatge)
+        {
+            this.Id = id;
+            this.Tipus = tipus;
+            this.Percentatge = percentatge;
+        }
     }
 }

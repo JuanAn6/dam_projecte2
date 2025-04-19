@@ -5,16 +5,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace DBModel.Models
 {
-    public class LineaComanda
+    public class LineaComanda : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+    
         [BsonId]
         public ObjectId? Id { get; set; }
 
+        private int qt;
+
         [BsonElement("quantitat")]
-        public int Quantitat { get; set; }
+        public int Quantitat
+        {
+            get { return qt; }
+            set {
+                qt = value;
+                Preu = Preu * qt;
+            } 
+        }
 
         [BsonElement("preu")]
         public double Preu { get; set; }
@@ -29,16 +41,22 @@ namespace DBModel.Models
         public VarietatProducte Vareitat { get; set; }
 
         [BsonElement("talla")]
-        public Talla talla { get; set; }
+        public Talla Talla { get; set; }
+
+        public string ComandaId { get; set; }
 
         public LineaComanda(int quantitat, VarietatProducte vp, Talla talla)
         {
             Id = null;
             Descompte = 0;
-            Preu = vp.Preu * quantitat;
-            Impost = null;!!
-
+            Preu = vp.Preu;
+            Quantitat = quantitat;
+            Impost = null;
+            Vareitat = vp;
+            Talla = talla;
+            
         }
+
 
     }
 }

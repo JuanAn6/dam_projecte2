@@ -29,6 +29,6 @@ namespace DBModel.Models
         public Impost Impost { get; set; }
 
         [BsonElement("producte")]
-        public ProducteDetallat Producte { get; set; }
+        public VarietatProducte Producte { get; set; }
     }
 }

@@ -29,6 +29,13 @@ namespace DBModel.Models
 
         [BsonElement("enviament")]
         public Enviament Enviament { get; set; }
+
+
+        public Comanda()
+        {
+
+        }
+
     }
 
     public class Tarjeta

@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,6 +19,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace ProjecteBotigaSabates.Components
 {
@@ -47,12 +50,14 @@ namespace ProjecteBotigaSabates.Components
 
         ObservableCollection<ViewModelVarietatProducte> OCvareitats = new ObservableCollection<ViewModelVarietatProducte>();
 
-        private void uc_Loaded(object sender, RoutedEventArgs e)
+        private async void uc_Loaded(object sender, RoutedEventArgs e)
         {
             //Debug.WriteLine("MYPROD: " + MyProd.ToString());
 
             tb_name.Text = MyProd.Nom;
-            wb_desc.NavigateToString(MyProd.Descripcio);
+
+            ChangeDesc();
+            
 
             MongoDBConnection mongoDB = new MongoDBConnection();
             List<VarietatProducte> varietats = mongoDB.GetAllVarietatsOfProducts(MyProd.Id.ToString());
@@ -66,6 +71,14 @@ namespace ProjecteBotigaSabates.Components
             lv_imgs.ItemsSource = OCvareitats;
             lv_imgs.SelectedIndex = 0;
            
+        }
+
+        private async void ChangeDesc()
+        {
+            await wb_desc.EnsureCoreWebView2Async();
+            //wb_desc.NavigateToString(MyProd.Descripcio);
+            string a = @"<html><body style='background:#f7f7f7;'>" + MyProd.Descripcio+"</body></html>";
+            wb_desc.NavigateToString(a);
         }
 
         private void lv_imgs_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
              xmlns:local="clr-namespace:ProjecteBotigaSabates.Components"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="300"
@@ -32,8 +33,7 @@
                     <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <TextBlock x:Name="tb_name"  Grid.Row="0" FontSize="20"></TextBlock>
-                <WebBrowser x:Name="wb_desc" Grid.Row="1" ></WebBrowser>
-                
+                <wv2:WebView2 x:Name="wb_desc" Grid.Row="1" MinHeight="150" MinWidth="200" ></wv2:WebView2>
                 <TextBlock Text="Price:" x:Name="tb_preu"  Grid.Row="2"></TextBlock>
                 <TextBlock Text="Color:" x:Name="tb_color"  Grid.Row="3"></TextBlock>
 

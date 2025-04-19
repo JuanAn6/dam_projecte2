@@ -34,6 +34,8 @@ namespace ProjecteBotigaSabates.Views
             mainWindow.tb_info.Text = "";
             mainWindow.tb_user_name.Text = ClientConnected.AuthClient.Nom + " " + ClientConnected.AuthClient.Cognom;
 
+            BasketData basket = new BasketData();
+
         }
 
         private void Button_Products_Click(object sender, RoutedEventArgs e)

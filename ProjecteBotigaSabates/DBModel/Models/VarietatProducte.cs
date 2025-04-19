@@ -44,5 +44,12 @@ namespace DBModel.Models
             Descompte = descompte;
             Talles = talles;
         }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is VarietatProducte producte &&
+                   Id.Equals(producte.Id) &&
+                   ProducteId.Equals(producte.ProducteId);
+        }
     }
 }

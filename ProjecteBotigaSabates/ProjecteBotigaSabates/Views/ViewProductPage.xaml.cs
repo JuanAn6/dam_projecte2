@@ -145,6 +145,8 @@ namespace ProjecteBotigaSabates.Views
                 else
                 {
                     BasketData.Products.Add(new LineaComanda(quantity, VarietatSelected.prod, Talles[index]));
+                    MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+                    mainWindow.tb_number_lines.Text = "" + BasketData.CountLines();
                     tb_info_add.Text = "Product added!";
                 }
 

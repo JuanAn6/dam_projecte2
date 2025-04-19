@@ -36,6 +36,8 @@ namespace ProjecteBotigaSabates.Views
 
             BasketData basket = new BasketData();
 
+            mainWindow.tb_number_lines.Text = ""+BasketData.CountLines();
+
         }
 
         private void Button_Products_Click(object sender, RoutedEventArgs e)

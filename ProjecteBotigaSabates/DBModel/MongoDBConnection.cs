@@ -465,6 +465,15 @@ namespace DBModel
             return lineas;
         }
 
+        public async Task DeleteLine(ObjectId id)
+        {
+            var colection = database.GetCollection<LineaComanda>("lineas_comanda");
+
+            var filter = Builders<LineaComanda>.Filter.Eq(c => c.Id, id);
+            DeleteResult result = await colection.DeleteOneAsync(filter);
+            Debug.WriteLine("DeleteLine! "+result.DeletedCount);
+        }
+
 
 
 

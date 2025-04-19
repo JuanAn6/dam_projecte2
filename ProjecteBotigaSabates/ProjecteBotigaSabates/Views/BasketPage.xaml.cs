@@ -55,9 +55,11 @@ namespace ProjecteBotigaSabates.Views
         {
             if(lv_lines.SelectedIndex != -1)
             {
+                
                 LineaComanda l = LineasComanda[lv_lines.SelectedIndex];
-                BasketData.Products.Remove(l);
+                BasketData.RemoveLine(l);
                 LineasComanda.Remove(l);
+
             }
         }
 

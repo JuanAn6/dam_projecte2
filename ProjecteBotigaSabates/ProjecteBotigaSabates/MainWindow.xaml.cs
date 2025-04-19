@@ -145,6 +145,7 @@ namespace ProjecteBotigaSabates
             MainFrame.Navigate(new SelectUserPage());
             grid_MainMenu.Opacity = 0;
             BasketData.Reset();
+            tb_number_lines.Text = "" + BasketData.CountLines();
         }
 
         private void Button_Products_Click(object sender, RoutedEventArgs e)
@@ -153,6 +154,7 @@ namespace ProjecteBotigaSabates
             {
                 MainFrame.Navigate(new ProductsPage(null));
                 tb_info.Text = "";
+                tb_number_lines.Text = "" + BasketData.CountLines();
             }
             else
             {
@@ -167,6 +169,7 @@ namespace ProjecteBotigaSabates
             {
                 MainFrame.Navigate(new BasketPage());
                 tb_info.Text = "";
+                tb_number_lines.Text = "" + BasketData.CountLines();
             }
             else
             {

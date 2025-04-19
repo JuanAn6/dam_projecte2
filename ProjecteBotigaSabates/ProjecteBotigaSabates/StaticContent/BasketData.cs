@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ProjecteBotigaSabates.StaticContent
 {
@@ -53,17 +54,6 @@ namespace ProjecteBotigaSabates.StaticContent
 
         }
 
-        public static void AddLine(LineaComanda linea)
-        {
-            if (!Comanda.Id.ToString().Equals(""))
-            {
-                linea.ComandaId = Comanda.Id;
-            }
-
-            Products.Add(linea);
-
-        }
-
         public static List<LineaComanda> getLineasComanda()
         {
             return Products;
@@ -80,44 +70,57 @@ namespace ProjecteBotigaSabates.StaticContent
                 ObjectId aux_id = await db.SaveActualBasket(Comanda);
                 Debug.WriteLine("Insert: " + aux_id.ToString());
                 Comanda.Id = aux_id;
-
-                foreach (LineaComanda l in Products)
-                {
-
-                    l.ComandaId = BasketData.Comanda.Id;
-                    Producte prod = db.GetProductById(l.Vareitat.ProducteId);
-                    l.Impost = prod.Impost;
-                    l.Descompte = l.Vareitat.Descompte;
-                    l.Id = await db.SaveActualBasketLine(l);
-                    Debug.WriteLine("Insert line: " + l.Id.ToString());
-
-                }
-
             }
             else
             {
                 await db.UpdateActualBasket(Comanda);
+            }
 
-                foreach (LineaComanda l in Products)
+            foreach (LineaComanda l in Products)
+            {
+                l.ComandaId = BasketData.Comanda.Id;
+                Producte prod = db.GetProductById(l.Vareitat.ProducteId);
+                l.Impost = prod.Impost;
+                l.Descompte = l.Vareitat.Descompte;
+                if(l.Id != ObjectId.Empty)
                 {
-                    l.ComandaId = BasketData.Comanda.Id;
-                    Producte prod = db.GetProductById(l.Vareitat.ProducteId);
-                    l.Impost = prod.Impost;
-                    l.Descompte = l.Vareitat.Descompte;
                     l.Id = await db.UpdateActualBasketLine(l);
                     Debug.WriteLine("Update line: " + l.Id.ToString());
                 }
+                else
+                {
+                    l.Id = await db.SaveActualBasketLine(l);
+                    Debug.WriteLine("Inseert line: " + l.Id.ToString());
+                }
+
 
             }
 
-            
 
+
+        }
+
+        public static int CountLines()
+        {
+            return Products.Count();
         }
 
         internal static void Reset()
         {
             Comanda = null;
             Products.Clear();
+
+        }
+
+        public static async void RemoveLine(LineaComanda l)
+        {
+            MongoDBConnection db = new MongoDBConnection();
+            await db.DeleteLine(l.Id);
+            Products.Remove(l);
+            
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow.tb_number_lines.Text = "" + BasketData.CountLines();
+
 
         }
     }

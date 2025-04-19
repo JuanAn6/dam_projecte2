@@ -62,7 +62,10 @@
 
                 <Border Grid.Column="3" BorderThickness="0 0 0 0" BorderBrush="Black" Cursor="Hand" Focusable="True"
                         MouseLeftButtonDown="Button_Basket_Click">
-                    <TextBlock Text="Basket" Margin="10 0 10 0" ></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Basket" Margin="10 0 2 0" ></TextBlock>
+                        <TextBlock Text="" x:Name="tb_number_lines" ></TextBlock>
+                    </StackPanel>
                 </Border>
 
             </Grid>

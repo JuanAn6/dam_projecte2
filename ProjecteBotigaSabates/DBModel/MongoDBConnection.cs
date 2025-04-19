@@ -4,6 +4,7 @@ using MongoDB.Driver;
 using System.Diagnostics;
 using System.Runtime.Intrinsics.X86;
 using System.Text.Json;
+using Windows.Storage;
 
 namespace DBModel
 {
@@ -382,19 +383,18 @@ namespace DBModel
             return products;
         }
 
-        public Comanda GetOpenOrder(Client authClient)
+        public Comanda GetOpenOrder(ObjectId id)
         {
             MongoDBConnection mongoDB = new MongoDBConnection();
             
             List<FilterDefinition<BsonDocument>> filters = new List<FilterDefinition<BsonDocument>>();
             filters.Add(Builders<BsonDocument>.Filter.Eq("finalitzada", false));
-            filters.Add(Builders<BsonDocument>.Filter.Eq("client_id", authClient.Id));
-            FilterDefinition<BsonDocument> filter = FilterDefinition<BsonDocument>.Empty;
-            filter = Builders<BsonDocument>.Filter.And(filters);
-            
+            Debug.WriteLine("Client_id: " + id.ToString());
+            filters.Add(Builders<BsonDocument>.Filter.Eq("client_id", id));
 
-            List<VarietatProducte> products = new List<VarietatProducte>();
-            var collection = mongoDB.GetCollection("varietat_producte");
+            FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.And(filters);
+
+            var collection = mongoDB.GetCollection("comandes");
 
             List<BsonDocument> comandes_doc = collection.Find(filter).ToList();
 
@@ -402,10 +402,10 @@ namespace DBModel
             {
                 BsonDocument cm = comandes_doc[0];
                 Comanda comanda = new Comanda();
-                comanda.Id = cm.GetElement("_id").Value.AsObjectId.ToString();
-                comanda.ClientId = cm.GetElement("client_id").Value.AsObjectId.ToString();
+                comanda.Id = cm.GetElement("_id").Value.AsObjectId;
+                comanda.ClientId = id;
                 comanda.Data = ((DateTime) (cm.GetElement("data").Value.IsBsonNull? new DateTime() : cm.GetElement("data").Value ));
-                comanda.Finalitzada = cm.GetElement("data").Value.AsBoolean;
+                comanda.Finalitzada = cm.GetElement("finalitzada").Value.AsBoolean;
 
                 return comanda;
             }
@@ -417,9 +417,52 @@ namespace DBModel
 
         }
 
-        public void SaveActualBasket()
+        public async Task<ObjectId> SaveActualBasket(Comanda c)
         {
-            throw new NotImplementedException();
+            Debug.WriteLine("Comanda: "+c);
+            await database.GetCollection<Comanda>("comandes").InsertOneAsync(c);
+            return c.Id;
+        }
+
+        public async Task UpdateActualBasket(Comanda comanda)
+        {
+            var coleccion = database.GetCollection<Comanda>("comandes");
+
+            var filter = Builders<Comanda>.Filter.Eq(c => c.Id, comanda.Id);
+            var update = Builders<Comanda>.Update.Set(c => c.Data, DateTime.Now);
+
+            await coleccion.UpdateOneAsync(filter, update);
+
+        }
+
+
+        public async Task<ObjectId> SaveActualBasketLine(LineaComanda l)
+        {
+            await database.GetCollection<LineaComanda>("lineas_comanda").InsertOneAsync(l);
+            return l.Id;
+        }
+
+        public async Task<ObjectId> UpdateActualBasketLine(LineaComanda l)
+        {
+            var coleccion = database.GetCollection<LineaComanda>("lineas_comanda");
+            var filter = Builders<LineaComanda>.Filter.Eq(line => line.Id, l.Id);
+            await coleccion.ReplaceOneAsync(filter, l);
+            return l.Id;
+        }
+
+        public List<LineaComanda> GetLineasComanda(ObjectId id)
+        {
+            MongoDBConnection mongoDB = new MongoDBConnection();
+            List<LineaComanda> lineas = new List<LineaComanda>();
+            var lineas_colection = database.GetCollection<LineaComanda>("lineas_comanda");
+            var filter = Builders<LineaComanda>.Filter.Eq("comanda_id", id);
+            foreach (LineaComanda l in lineas_colection.Find(filter).ToList())
+            {
+                Debug.WriteLine("LineaLoad: " + l.Id);
+                lineas.Add(l);
+            }
+
+            return lineas;
         }
 
 

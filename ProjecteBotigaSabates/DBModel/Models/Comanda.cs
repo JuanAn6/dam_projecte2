@@ -12,11 +12,11 @@ namespace DBModel.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
         [BsonElement("client_id")]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string ClientId { get; set; }
+        public ObjectId ClientId { get; set; }
 
         [BsonElement("data")]
         public DateTime Data { get; set; }

@@ -26,7 +26,7 @@ namespace DBModel.Models
         public double Descompte { get; set; }
 
         [BsonElement("impost")]
-        public Impost Impost { get; set; }
+        public TipusImpost Impost { get; set; }
 
         [BsonElement("producte")]
         public VarietatProducte Producte { get; set; }

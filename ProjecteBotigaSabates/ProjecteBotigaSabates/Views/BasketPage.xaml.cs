@@ -1,5 +1,6 @@
 ﻿using DBModel;
 using DBModel.Models;
+using MongoDB.Bson;
 using ProjecteBotigaSabates.StaticContent;
 using ProjecteBotigaSabates.ViewModels;
 using System;
@@ -160,12 +161,10 @@ namespace ProjecteBotigaSabates.Views
         }
 
 
-        private void Button_Save_Basket_Click(object sender, RoutedEventArgs e)
+        private async void Button_Save_Basket_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("Save Basket!");
-            MongoDBConnection db = new MongoDBConnection();
-            db.SaveActualBasket();
-            
+            BasketData.SaveBasketData();
+
             //Mostrar mensaje de que se ha guardado correctamente?
 
         }

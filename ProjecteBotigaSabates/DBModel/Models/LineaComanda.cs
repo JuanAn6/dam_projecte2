@@ -14,20 +14,11 @@ namespace DBModel.Models
         public event PropertyChangedEventHandler PropertyChanged;
     
         [BsonId]
-        public ObjectId? Id { get; set; }
-
-        private int qt;
+        public ObjectId Id { get; set; }
 
         [BsonElement("quantitat")]
-        public int Quantitat
-        {
-            get { return qt; }
-            set {
-                qt = value;
-                Preu = Preu * qt;
-            } 
-        }
-
+        public int Quantitat { get; set; }
+        
         [BsonElement("preu")]
         public double Preu { get; set; }
 
@@ -35,7 +26,7 @@ namespace DBModel.Models
         public double Descompte { get; set; }
 
         [BsonElement("impost")]
-        public Impost Impost { get; set; }
+        public TipusImpost Impost { get; set; }
 
         [BsonElement("varietat_producte_id")]
         public VarietatProducte Vareitat { get; set; }
@@ -43,11 +34,12 @@ namespace DBModel.Models
         [BsonElement("talla")]
         public Talla Talla { get; set; }
 
-        public string ComandaId { get; set; }
+        [BsonElement("comanda_id")]
+        public ObjectId ComandaId { get; set; }
 
         public LineaComanda(int quantitat, VarietatProducte vp, Talla talla)
         {
-            Id = null;
+
             Descompte = 0;
             Preu = vp.Preu;
             Quantitat = quantitat;

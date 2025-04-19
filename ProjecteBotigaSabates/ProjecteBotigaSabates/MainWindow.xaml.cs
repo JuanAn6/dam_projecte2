@@ -144,6 +144,7 @@ namespace ProjecteBotigaSabates
         {
             MainFrame.Navigate(new SelectUserPage());
             grid_MainMenu.Opacity = 0;
+            BasketData.Reset();
         }
 
         private void Button_Products_Click(object sender, RoutedEventArgs e)

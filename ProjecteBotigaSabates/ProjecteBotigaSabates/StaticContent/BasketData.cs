@@ -66,7 +66,7 @@ namespace ProjecteBotigaSabates.StaticContent
             Debug.WriteLine("Save Basket!");
             MongoDBConnection db = new MongoDBConnection();
 
-            if (Comanda.Id == null)
+            if (Comanda.Id.Equals(ObjectId.Empty))
             {
                 Comanda.Data = DateTime.Now;
                 ObjectId aux_id = await db.SaveActualBasket(Comanda);

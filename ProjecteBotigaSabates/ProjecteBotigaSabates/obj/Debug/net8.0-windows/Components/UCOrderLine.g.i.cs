@@ -149,7 +149,7 @@ namespace ProjecteBotigaSabates.Components {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProjecteBotigaSabates;V1.0.0.0;component/components/ucorderline.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ProjecteBotigaSabates;component/components/ucorderline.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Components\UCOrderLine.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

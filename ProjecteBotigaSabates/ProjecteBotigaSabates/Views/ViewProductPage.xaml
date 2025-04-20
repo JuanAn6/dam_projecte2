@@ -18,11 +18,18 @@
             <ColumnDefinition Width="200"></ColumnDefinition>
             <ColumnDefinition Width="200"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
+
+        <StackPanel Grid.RowSpan="2" Grid.Column="3" Orientation="Vertical" >
+            <TextBox x:Name="tb_set_stock" Width="120" HorizontalAlignment="Center" Margin="5"/>
+            <Button Content="Set stock selected size" Width="120" Click="Button_Set_Stock_Click" HorizontalAlignment="Center" Margin="5"></Button>
+            <TextBlock x:Name="tb_info_stock" Width="120" HorizontalAlignment="Center" Margin="5"/>
+        </StackPanel>
         
         <Image x:Name="main_img" Grid.Column="0" Grid.Row="0" Width="200" Margin="0 0 15 0"></Image>
 

@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.Runtime.Intrinsics.X86;
 using System.Text.Json;
 using Windows.Storage;
+using Windows.UI.Xaml.Shapes;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DBModel
 {
@@ -372,7 +374,7 @@ namespace DBModel
                     vp.GetElement("img").Value.AsString,
                     vp.GetElement("color").Value.AsString,
                     (vp.GetElement("preu").Value.IsInt32 ? vp.GetElement("preu").Value.AsInt32 : vp.GetElement("preu").Value.AsDouble),
-                    (vp.GetElement("dto").Value.IsInt32 ? vp.GetElement("dto").Value.AsInt32 : vp.GetElement("dto").Value.AsDouble),
+                    (vp.GetElement("descompte").Value.IsInt32 ? vp.GetElement("descompte").Value.AsInt32 : vp.GetElement("descompte").Value.AsDouble),
                     talles
                 );
 
@@ -481,81 +483,87 @@ namespace DBModel
         }
 
 
-
-        /*
-
-        public async Task InsertarDatosProductoAsync()
+        //Return the number of documents updated
+        public async Task<long> SetStockVarietat(ObjectId id , Talla talla, int stock)
         {
-            database.DropCollection("productes");
-            database.DropCollection("varietats_productes");
-            database.DropCollection("categories");
-            var productesCollection = database.GetCollection<Producte>("productes");
-            var varietatsCollection = database.GetCollection<VarietatProducte>("varietats_productes");
-            var categoriesCollection = database.GetCollection<Categoria>("categories");
+            Debug.WriteLine("id: " + id + " - " + talla.NumTalla + " - " + stock);
 
-            Categoria categoria = new Categoria(
-                ObjectId.GenerateNewId(),
-                "Esport",
-                null
+            var aux_talla = Convert.ToInt32(talla.NumTalla);
+
+
+            var filter = Builders<BsonDocument>.Filter.And(
+                Builders<BsonDocument>.Filter.Eq("_id", id),
+                Builders<BsonDocument>.Filter.ElemMatch<BsonValue>("talles", new BsonDocument("talla", aux_talla))
             );
+            var update = Builders<BsonDocument>.Update.Set("talles.$.stock", stock);
+            
+            var collection = database.GetCollection<BsonDocument>("varietat_producte");
 
-            await categoriesCollection.InsertOneAsync(categoria);
+            UpdateResult result = await collection.UpdateOneAsync(filter, update);
 
-            Producte nouProducte = new Producte
-            {
-                Id = ObjectId.GenerateNewId(),
-                Codi = "P001",
-                Nom = "Sabates running x100",
-                Descripcio = "<p>Sabates de running</p>",
-                TipusImpostId = ObjectId.GenerateNewId(),
-                Categories = new List<CategoriaProducte>
-                {
-                    new CategoriaProducte { CategoriaId = categoria.Id , Grau = 1 }
-                }
-            };
-
-            await productesCollection.InsertOneAsync(nouProducte);
-
-            VarietatProducte novaVarietat = new VarietatProducte
-            {
-                Id = ObjectId.GenerateNewId(),
-                ProducteId = nouProducte.Id,
-                Img = "sabates_running_blue.jpg",
-                Color = "Blau",
-                Preu = 19.99,
-                Descompte = 0,
-                Talles = new List<Talla>
-                {
-                    new Talla { NomTalla = "M", Stock = 10 },
-                    new Talla { NomTalla = "L", Stock = 5 }
-                }
-            };
-
-            await varietatsCollection.InsertOneAsync(novaVarietat);
-
-            VarietatProducte novaVarietat2 = new VarietatProducte
-            {
-                Id = ObjectId.GenerateNewId(),
-                ProducteId = nouProducte.Id,
-                Img = "sabatas_running_red.jpg",
-                Color = "Vermell",
-                Preu = 21.99,
-                Descompte = 0,
-                Talles = new List<Talla>
-                {
-                    new Talla { NomTalla = "M", Stock = 8 },
-                    new Talla { NomTalla = "L", Stock = 15 }
-                }
-            };
-
-            await varietatsCollection.InsertOneAsync(novaVarietat2);
+            return result.ModifiedCount;
         }
 
+        public async Task<long> CloseOrder(Comanda comanda)
+        {
 
+            var collection = database.GetCollection<Comanda>("comandes");
+            var filter = Builders<Comanda>.Filter.Eq(c => c.Id, comanda.Id);
 
-        */
+            var result = await collection.ReplaceOneAsync(filter, comanda);
 
+            return result.ModifiedCount;
+        }
 
+        public int GetStockTallaVarietat(ObjectId id, Talla talla)
+        {
+            var filter = Builders<VarietatProducte>.Filter.And(
+                Builders<VarietatProducte>.Filter.Eq("_id", id),
+                Builders<VarietatProducte>.Filter.ElemMatch<BsonValue>("talles", new BsonDocument("talla", talla.NumTalla))
+            );
+
+            var collection = database.GetCollection<VarietatProducte>("varietat_producte");
+            VarietatProducte var = collection.Find(filter).ToList().First();
+
+            Talla t = var.Talles.Find(e => e.NumTalla == talla.NumTalla);
+            int stock = t.Stock;
+
+            return stock;
+        }
+
+        public string GetSerialNumber(string name)
+        {
+            var collection = database.GetCollection<BsonDocument>("comptadors");
+            var filter = Builders<BsonDocument>.Filter.Eq("collection", name);
+
+            BsonDocument result = collection.Find(filter).ToList().First();
+            string number = result.GetElement("comptador").Value.AsString;
+
+            string year = number.Split("-")[0].Substring(1);
+            int num = Int32.Parse(number.Split("-")[1]);
+            
+            if(Int32.Parse(year) != DateTime.Now.Year)
+            {
+                num = 1;
+                year = "" + DateTime.Now.Year;
+            }
+            else
+            {
+                num++;
+            }
+
+            string new_number = "F" + year + "-" + num.ToString("D6");
+            var update = Builders<BsonDocument>.Update.Set("comptadoe", new_number);
+            collection.UpdateOneAsync(filter, update);
+
+            return number;
+        }
+
+        public async Task<ObjectId> SaveFactura(Factura f)
+        {
+            await database.GetCollection<Factura>("factures").InsertOneAsync(f);
+            return f.Id;
+        }
 
 
     }

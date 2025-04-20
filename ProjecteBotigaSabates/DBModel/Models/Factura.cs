@@ -14,7 +14,7 @@ namespace DBModel.Models
         public ObjectId Id { get; set; }
 
         [BsonElement("num")]
-        public int Numero { get; set; }
+        public string Numero { get; set; }
 
         [BsonElement("comanda_id")]
         public ObjectId ComandaId { get; set; }
@@ -31,8 +31,14 @@ namespace DBModel.Models
         [BsonElement("data_factura")]
         public DateTime DataFactura { get; set; }
 
+        [BsonElement("tarjeta")]
+        public Tarjeta Tarjeta { get; set; }
+
         [BsonElement("enviament")]
-        public TipusEnviament Enviament { get; set; }
+        public Enviament Enviament { get; set; }
+        
+        [BsonElement("lineas_factura")]
+        public List<LineaFactura> LineasFactura{ get; set; }
 
     }
 }

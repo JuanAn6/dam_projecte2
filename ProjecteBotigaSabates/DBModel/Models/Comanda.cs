@@ -40,11 +40,14 @@ namespace DBModel.Models
 
     public class Tarjeta
     {
+        [BsonElement("numero")]
+        public string Numero { get; set; }
+        
         [BsonElement("cvv")]
-        public string CVV { get; set; }
+        public int CVV { get; set; }
 
         [BsonElement("data_caducitat")]
-        public string DataCaducitat { get; set; }
+        public DateTime DataCaducitat { get; set; }
 
         [BsonElement("nom_tarjeta")]
         public string NomTarjeta { get; set; }
@@ -54,9 +57,15 @@ namespace DBModel.Models
     {
         [BsonElement("tipus_enviament_id")]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string EnviamentId { get; set; }
+        public ObjectId EnviamentId { get; set; }
 
         [BsonElement("preu_enviament")]
-        public decimal PreuEnviament { get; set; }
+        public double PreuEnviament { get; set; }
+
+        [BsonElement("preu_base")]
+        public double PreuBase { get; set; }
+
+        [BsonElement("impost")]
+        public double Impost { get; set; }
     }
 }

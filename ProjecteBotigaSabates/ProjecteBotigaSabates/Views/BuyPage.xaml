@@ -11,9 +11,11 @@
 
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
@@ -46,17 +48,35 @@
         </StackPanel>
 
         <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="0 0 0 10">
-            <Button x:Name="btn_master_card" Margin="10">
-                <Image x:Name="img_master_card" Source="/master_card.png"  Margin="10" Width="50" Height="50"></Image>
-            </Button>
+            <RadioButton x:Name="rb_master_card" GroupName="Tarjetas" Margin="10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/master_card.png" Width="50" Height="50" Margin="5"/>
+                    <TextBlock Text="MasterCard" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                </StackPanel>
+            </RadioButton>
 
-            <Button x:Name="btn_visa" Margin="10">
-                <Image x:Name="img_visa" Source="/visa.jpg" Margin="10" Width="50" Height="50"></Image>
-            </Button>
+            <RadioButton x:Name="rb_visa" GroupName="Tarjetas" Margin="10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/visa.jpg" Width="50" Height="50" Margin="5"/>
+                    <TextBlock Text="Visa" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                </StackPanel>
+            </RadioButton>
         </StackPanel>
 
-        <Image Grid.Row="6" Source="visa.jpg" Margin="10" Width="50" Height="50"></Image>
+        <StackPanel Orientation="Vertical" Grid.Row="6" Margin="0 0 0 10">
+            <TextBlock x:Name="tb_base_enviament" FontSize="15" Margin="0 0 0 5"></TextBlock>
+            <TextBlock x:Name="tb_total_enviament" FontSize="15" Margin="0 0 0 5"></TextBlock>
+            <TextBlock x:Name="tb_base_comanda" FontSize="15" Margin="0 0 0 5"></TextBlock>
+            <TextBlock x:Name="tb_total_comanda" FontSize="15" FontWeight="Bold" ></TextBlock>
+        </StackPanel>
 
+        <StackPanel Orientation="Vertical" Grid.Row="7" Margin="0 0 0 10">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Cancel" x:Name="btn_cancel" Height="50" Width="100" Click="Button_Cancel_Order_Click" />
+                <Button Content="Buy" x:Name="btn_save" Height="50" Width="100" Margin="10 0 10 0" Click="Button_Finish_Order_Click"/>
+            </StackPanel>
+            <TextBlock x:Name="tb_info" Width="300" Margin="0 10 0 10" HorizontalAlignment="Left"/>
+        </StackPanel>
 
     </Grid>
 </Page>

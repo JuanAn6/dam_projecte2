@@ -161,5 +161,44 @@ namespace ProjecteBotigaSabates.Views
             }
 
         }
+
+
+        private async void Button_Set_Stock_Click(object sender, RoutedEventArgs e)
+        {
+            tb_info_stock.Text = "";
+            string aux = tb_set_stock.Text;
+            int stock = 0;
+            if (Int32.TryParse(aux, out stock) && stock >= 0)
+            {
+                int index = cb_talles.SelectedIndex;
+                if (index != -1)
+                {
+                    MongoDBConnection db = new MongoDBConnection();
+                    long result = await db.SetStockVarietat(VarietatSelected.prod.Id, Talles[index], stock);
+                    Debug.WriteLine("Update stock: " + result);
+                    if(result > 0)
+                    {
+                        tb_stock.Text = "Stock: "+stock;
+                    }
+                    else
+                    {
+                        tb_info_stock.Text = "Error updating";
+                    }
+                }
+                else
+                {
+                    tb_info_stock.Text = "Not valid size";
+                }
+            }
+            else
+            {
+                tb_info_stock.Text = "Not valid stock";
+            }
+
+        }
+
+        
+
+
     }
 }

@@ -10,11 +10,6 @@ namespace DBModel.Models
 {
     public class LineaFactura
     {
-        [BsonId]
-        public ObjectId Id { get; set; }
-
-        [BsonElement("factura_id")]
-        public ObjectId FacturaId { get; set; }
 
         [BsonElement("quantitat")]
         public int Quantitat { get; set; }
@@ -26,9 +21,22 @@ namespace DBModel.Models
         public double Descompte { get; set; }
 
         [BsonElement("impost")]
-        public TipusImpost Impost { get; set; }
+        public double Impost { get; set; }
+
+        [BsonElement("base")]
+        public double Base { get; set; }
+
+        [BsonElement("import_total")]
+        public double ImportTotal { get; set; }
+
+        [BsonElement("varitat")]
+        public VarietatProducte Varietat { get; set; }
+        
+        [BsonElement("num_talla")]
+        public int NumTalla { get; set; }
 
         [BsonElement("producte")]
-        public VarietatProducte Producte { get; set; }
+        public Producte Producte { get; set; }
+
     }
 }

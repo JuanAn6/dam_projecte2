@@ -111,6 +111,7 @@ namespace ProjecteBotigaSabates.StaticContent
         {
             Comanda = null;
             Products.Clear();
+            Enviament = null;
 
         }
 

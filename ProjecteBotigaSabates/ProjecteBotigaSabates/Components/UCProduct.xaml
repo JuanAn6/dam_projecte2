@@ -31,11 +31,13 @@
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <TextBlock x:Name="tb_name"  Grid.Row="0" FontSize="20"></TextBlock>
                 <wv2:WebView2 x:Name="wb_desc" Grid.Row="1" MinHeight="150" MinWidth="200" ></wv2:WebView2>
-                <TextBlock Text="Price:" x:Name="tb_preu"  Grid.Row="2"></TextBlock>
-                <TextBlock Text="Color:" x:Name="tb_color"  Grid.Row="3"></TextBlock>
+                <TextBlock Text="Color:" x:Name="tb_color"  Grid.Row="2"></TextBlock>
+                <TextBlock Text="Price:" x:Name="tb_preu"  Grid.Row="3"></TextBlock>
+                <TextBlock Text="Discount:" x:Name="tb_dto" Grid.Row="4"></TextBlock>
 
             </Grid>
 

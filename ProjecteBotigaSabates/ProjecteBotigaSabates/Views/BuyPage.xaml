@@ -1,0 +1,62 @@
+﻿<Page x:Class="ProjecteBotigaSabates.Views.BuyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjecteBotigaSabates.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BuyPage"
+      Loaded="Page_Loaded">
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Card information" FontSize="15" Margin="10"></TextBlock>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 0 0 10">
+            <TextBlock Text="Name: " Margin="10 0 10 0" Width="100"></TextBlock>
+            <TextBox x:Name="tb_card_name" Margin="0 0 10 0" Width="200"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 0 0 10">
+            <TextBlock Text="Number: " Margin="10 0 10 0" Width="100"></TextBlock>
+            <TextBox x:Name="tb_card_number" Margin="0 0 10 0" Width="200"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0 0 0 10">
+            <TextBlock Text="CVV: " Margin="10 0 10 0" Width="100"></TextBlock>
+            <TextBox x:Name="tb_card_cvv" Margin="0 0 10 0" Width="70"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0 0 0 10">
+            <TextBlock Text="Expire date: " Margin="10 0 10 0" Width="100"></TextBlock>
+            <DatePicker x:Name="tb_card_date" Margin="0 0 10 0" Width="200" SelectedDateFormat="Short"></DatePicker>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="0 0 0 10">
+            <Button x:Name="btn_master_card" Margin="10">
+                <Image x:Name="img_master_card" Source="/master_card.png"  Margin="10" Width="50" Height="50"></Image>
+            </Button>
+
+            <Button x:Name="btn_visa" Margin="10">
+                <Image x:Name="img_visa" Source="/visa.jpg" Margin="10" Width="50" Height="50"></Image>
+            </Button>
+        </StackPanel>
+
+        <Image Grid.Row="6" Source="visa.jpg" Margin="10" Width="50" Height="50"></Image>
+
+
+    </Grid>
+</Page>

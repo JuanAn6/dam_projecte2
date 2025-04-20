@@ -16,6 +16,9 @@
     <Compile Update="Views\BasketPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\BuyPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ProductsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -17,6 +17,8 @@ namespace ProjecteBotigaSabates.StaticContent
         public static Comanda Comanda;
         public static List<LineaComanda> Products;
 
+        public static TipusEnviament Enviament;
+
         private MongoDBConnection MongoDB;
 
         public BasketData()
@@ -105,7 +107,7 @@ namespace ProjecteBotigaSabates.StaticContent
             return Products.Count();
         }
 
-        internal static void Reset()
+        public static void Reset()
         {
             Comanda = null;
             Products.Clear();

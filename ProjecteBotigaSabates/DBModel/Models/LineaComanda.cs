@@ -49,6 +49,18 @@ namespace DBModel.Models
             
         }
 
+        public LineaComanda(int quantitat, VarietatProducte vp, Talla talla, TipusImpost impost)
+        {
+
+            Descompte = 0;
+            Preu = vp.Preu;
+            Quantitat = quantitat;
+            Impost = impost;
+            Vareitat = vp;
+            Talla = talla;
+
+        }
+
 
     }
 }

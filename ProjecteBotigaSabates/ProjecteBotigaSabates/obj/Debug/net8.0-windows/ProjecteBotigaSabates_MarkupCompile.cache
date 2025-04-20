@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;HAS_UNO;UNO_HAS_FRAMEWORKELEMENT_MEASUREOVERRIDE;UNO_HAS_NO_IDEPENDENCYOBJECT
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\App.xaml
-883946071
+9282453772
 31822253360
-15159406170
+162111970619
 22437150172
-Components\UCOrderLine.xaml;Components\UCProduct.xaml;MainWindow.xaml;Views\BasketPage.xaml;Views\ProductsPage.xaml;Views\SelectUserPage.xaml;Views\StartPage.xaml;Views\ViewProductPage.xaml;
+Components\UCOrderLine.xaml;Components\UCProduct.xaml;MainWindow.xaml;Views\BasketPage.xaml;Views\BuyPage.xaml;Views\ProductsPage.xaml;Views\SelectUserPage.xaml;Views\StartPage.xaml;Views\ViewProductPage.xaml;
 
 False
 

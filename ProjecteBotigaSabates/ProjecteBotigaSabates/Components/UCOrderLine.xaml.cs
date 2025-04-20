@@ -2,6 +2,7 @@
 using DBModel.Models;
 using ProjecteBotigaSabates.StaticContent;
 using ProjecteBotigaSabates.ViewModels;
+using ProjecteBotigaSabates.Views;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -145,6 +146,11 @@ namespace ProjecteBotigaSabates.Components
             {
                 btn_minus.IsEnabled = true;
             }
+
+            //Update total de la cistella
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            BasketPage bp = (BasketPage)mainWindow.MainFrame.Content;
+            bp.UpdateTotal();
 
         }
 

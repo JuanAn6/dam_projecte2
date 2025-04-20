@@ -90,8 +90,10 @@ namespace ProjecteBotigaSabates.Components
             {
                 main_img.Source = vmvp.ImageUrl;
                 tb_preu.Text = "Price: " + vmvp.prod.Preu + " €";
+                tb_dto.Text = "Discount: " + vmvp.prod.Descompte + "% "+(vmvp.prod.Preu - (vmvp.prod.Preu * (vmvp.prod.Descompte / 100))) + "€";
                 tb_color.Text = "Color: " + vmvp.prod.Color;
             }
+
         }
     }
 }

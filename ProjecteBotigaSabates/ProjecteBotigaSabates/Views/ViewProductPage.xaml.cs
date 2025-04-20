@@ -144,7 +144,10 @@ namespace ProjecteBotigaSabates.Views
                 }
                 else
                 {
-                    BasketData.Products.Add(new LineaComanda(quantity, VarietatSelected.prod, Talles[index]));
+                    MongoDBConnection db = new MongoDBConnection();
+                    Producte p = db.GetProductById(VarietatSelected.prod.ProducteId);
+
+                    BasketData.Products.Add(new LineaComanda(quantity, VarietatSelected.prod, Talles[index], p.Impost));
                     MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
                     mainWindow.tb_number_lines.Text = "" + BasketData.CountLines();
                     tb_info_add.Text = "Product added!";

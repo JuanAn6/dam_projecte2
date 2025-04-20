@@ -74,3 +74,5 @@ C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\Components\UCOrderLine.baml
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\ProjecteBotigaSabates.csproj.Fody.CopyLocal.cache
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\ProjecteBotigaSabates.csproj.Fody.RuntimeCopyLocal.cache
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\Views\BuyPage.g.cs
+C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\Views\BuyPage.baml

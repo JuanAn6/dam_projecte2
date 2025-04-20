@@ -10,8 +10,8 @@ namespace DBModel.Models
 {
     public class TipusEnviament
     {
-        [BsonElement("enviament_id")]
-        public ObjectId EnviamentId { get; set; }
+        [BsonElement("_id")]
+        public ObjectId Id { get; set; }
 
         [BsonElement("descripcio")]
         public string Descripcio { get; set; }
@@ -23,6 +23,6 @@ namespace DBModel.Models
         public double PreuBase { get; set; }
 
         [BsonElement("impost")]
-        public double Impost { get; set; }
+        public TipusImpost Impost { get; set; }
     }
 }

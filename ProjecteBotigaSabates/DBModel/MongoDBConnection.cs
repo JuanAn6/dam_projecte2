@@ -475,7 +475,10 @@ namespace DBModel
         }
 
 
-
+        public List<TipusEnviament> GetTipusEnviament()
+        {
+            return database.GetCollection<TipusEnviament>("tipus_enviament").Find(new BsonDocument()).ToList();
+        }
 
 
 

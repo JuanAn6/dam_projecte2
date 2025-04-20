@@ -71,24 +71,31 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="70" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="Finish and buy" Height="50" Margin="10" Width="150" 
-                        
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0">
+                <TextBlock x:Name="tb_total_enviament" Text="Shipping: " FontSize="15" Margin="10"></TextBlock>
+                <TextBlock x:Name="tb_total_base" FontSize="15" Margin="10"></TextBlock>
+                <TextBlock x:Name="tb_total_comanda" FontSize="15" FontWeight="Bold" Margin="10"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+                <ComboBox x:Name="cb_tipus_enviament" Margin="10" Width="150" SelectionChanged="cb_tipus_enviament_SelectionChanged"/>
+                <Button Content="Finish and buy" Margin="10" Width="150" 
                         Click="Button_Finish_Click"/>
-                <Button Content="Save basket" Height="50" Margin="10" Width="150" 
+                <Button Content="Save basket" Margin="10" Width="150" 
                         Click="Button_Save_Basket_Click"/>
             </StackPanel>
 
-
-            <!--<TextBlock x:Name="tb_total_comanda" Grid.Row="0" Text="{Binding Total}" ></TextBlock>-->
-
+            <TextBlock x:Name="tb_info_comanda" HorizontalAlignment="Center" Grid.Row="2" Margin="10"></TextBlock>
+            
             <!--<TextBlock Text="Zona de detalle de producto cuando haces click" Grid.Row="1" />-->
 
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>

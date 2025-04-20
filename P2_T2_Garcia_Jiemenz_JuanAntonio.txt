@@ -119,6 +119,7 @@ COMANDES
 	finalitzada: //Els usuaris podran tenir una comanda oberta(false) per que fagi de cistell i sigui persistent
 	tarjeta : {
 		cvv:
+		numero:
 		data_caducitat:
 		nom_tarjeta:
 	}

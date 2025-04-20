@@ -28,8 +28,10 @@ namespace ProjecteBotigaSabates.Views
     public partial class BasketPage : Page
     {
         public ObservableCollection<LineaComanda> LineasComanda { get; set; }
+        public List<TipusEnviament> TipusEnviaments;
+        public double total_impost = 0;
+        public double total_base = 0;
 
-        public double Total { get; set; }
 
         public BasketPage()
         {
@@ -44,6 +46,14 @@ namespace ProjecteBotigaSabates.Views
             {
                 LineasComanda.Add(lc);
                 Debug.WriteLine("Linea add: " + lc.ToString());
+            }
+            
+            MongoDBConnection db = new MongoDBConnection();
+            TipusEnviaments = db.GetTipusEnviament();
+
+            foreach (TipusEnviament te in TipusEnviaments)
+            {
+                cb_tipus_enviament.Items.Add(te.Descripcio);
             }
 
             this.DataContext = this;
@@ -64,16 +74,16 @@ namespace ProjecteBotigaSabates.Views
         }
 
 
-        private void UpdateTotal()
+        public void UpdateTotal()
         {
-            Total = 0;
-            Total = LineasComanda.Sum(i => i.Quantitat * i.Vareitat.Preu);
+            total_impost = LineasComanda.Sum(i => ((i.Quantitat * i.Vareitat.Preu) * (1 - (i.Vareitat.Descompte / 100))) * ((i.Impost.Percentatge / 100) + 1));
+            total_base = LineasComanda.Sum(i => (i.Quantitat * i.Vareitat.Preu) * (1 - (i.Vareitat.Descompte / 100)));
+            tb_total_base.Text = "Base: " + total_base + "€";
+            tb_total_comanda.Text = "Total: "+ total_impost + "€";
 
-            foreach(LineaComanda l in LineasComanda)
-            {
-                Debug.WriteLine("LINEA preu: " + l);
-            }
-
+            ChangeShippingPrice();
+            ChangePreview();
+            tb_info_comanda.Text = "";
         }
 
         private void ClearPreview()
@@ -107,7 +117,7 @@ namespace ProjecteBotigaSabates.Views
             tb_preu.Text = "Preu /u: " + OrderLine.Vareitat.Preu;
 
             tb_dto.Text = "Descompte: " + OrderLine.Vareitat.Descompte;
-            tb_qunatitat.Text = OrderLine.Quantitat + "";
+            tb_qunatitat.Text = "Quantitat: " + OrderLine.Quantitat;
 
             tb_talla.Text = "Talla: " + OrderLine.Talla.NumTalla + "";
 
@@ -134,17 +144,14 @@ namespace ProjecteBotigaSabates.Views
 
         private void lv_lines_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int aux_index = lv_lines.SelectedIndex;
-            if (aux_index != -1)
-            {
-                PreviewProd(aux_index);
-            }
-            else
-            {
-                ClearPreview();
-            }
+            ChangePreview();
         }
         private void lv_lines_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ChangePreview();
+        }
+
+        private void ChangePreview()
         {
             int aux_index = lv_lines.SelectedIndex;
             if (aux_index != -1)
@@ -160,6 +167,23 @@ namespace ProjecteBotigaSabates.Views
         private void Button_Finish_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("Show check and pay window!");
+            int index = cb_tipus_enviament.SelectedIndex;
+            tb_info_comanda.Text = "";
+
+
+            if (index != -1)
+            {
+                BasketData.Enviament = TipusEnviaments[index];
+
+                MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+                mainWindow.MainFrame.Navigate(new BuyPage());
+
+            }
+            else
+            {
+                tb_info_comanda.Text = "The shipping type is not valid!";
+            }
+
         }
 
 
@@ -171,7 +195,30 @@ namespace ProjecteBotigaSabates.Views
 
         }
 
+        private void cb_tipus_enviament_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ChangeShippingPrice();
+        }
 
-
+        private void ChangeShippingPrice()
+        {
+            int index = cb_tipus_enviament.SelectedIndex;
+            
+            if (index != -1)
+            {
+                if (TipusEnviaments[index].PreuBase > total_base)
+                {
+                    tb_total_enviament.Text = "Shipping: " + TipusEnviaments[index].Preu + "€";
+                }
+                else
+                {
+                    tb_total_enviament.Text = "Shipping: 0€ ";
+                }
+            }
+            else
+            {
+                tb_total_enviament.Text = "Shipping: 0€";
+            }
+        }
     }
 }

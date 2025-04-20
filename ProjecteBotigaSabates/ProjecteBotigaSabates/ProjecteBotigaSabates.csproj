@@ -10,6 +10,17 @@
 
   <ItemGroup>
     <None Remove="logo.ico" />
+    <None Remove="master_card.png" />
+    <None Remove="visa.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="master_card.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="visa.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

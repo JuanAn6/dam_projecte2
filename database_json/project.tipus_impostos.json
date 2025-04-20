@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "66144a97a7f5e926e80b0123"
+  },
+  "tipus": "IVA General",
+  "percentatge": 21
+},
+{
+  "_id": {
+    "$oid": "66144a97a7f5e926e80b0124"
+  },
+  "tipus": "IVA Reduit",
+  "percentatge": 10
+},
+{
+  "_id": {
+    "$oid": "66144a97a7f5e926e80b0125"
+  },
+  "tipus": "IVA SuperReduit",
+  "percentatge": 4
+}]

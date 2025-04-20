@@ -1,0 +1,9 @@
+[{
+  "_id": {
+    "$oid": "67b4dbd050f1721124544ca7"
+  },
+  "nif": "A12345678",
+  "nom": "Example Company",
+  "domicili_social": "123 Main St, Example City",
+  "ins_reg_merc": "Volume 1, Folio 2, Section 3"
+}]

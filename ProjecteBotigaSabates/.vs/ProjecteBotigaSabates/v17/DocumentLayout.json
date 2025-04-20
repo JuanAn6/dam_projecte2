@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7B02BACD-8C48-425F-82E8-212F6B92647A}|DBModel\\DBModel.csproj|c:\\dam2\\m13\\project2\\projectebotigasabates\\dbmodel\\mongodbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B02BACD-8C48-425F-82E8-212F6B92647A}|DBModel\\DBModel.csproj|solutionrelative:dbmodel\\mongodbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|c:\\dam2\\m13\\project2\\projectebotigasabates\\projectebotigasabates\\views\\buypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|solutionrelative:projectebotigasabates\\views\\buypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|c:\\dam2\\m13\\project2\\projectebotigasabates\\projectebotigasabates\\views\\buypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|solutionrelative:projectebotigasabates\\views\\buypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B02BACD-8C48-425F-82E8-212F6B92647A}|DBModel\\DBModel.csproj|c:\\dam2\\m13\\project2\\projectebotigasabates\\dbmodel\\mongodbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B02BACD-8C48-425F-82E8-212F6B92647A}|DBModel\\DBModel.csproj|solutionrelative:dbmodel\\mongodbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B02BACD-8C48-425F-82E8-212F6B92647A}|DBModel\\DBModel.csproj|c:\\dam2\\m13\\project2\\projectebotigasabates\\dbmodel\\models\\lineafactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -88,7 +88,7 @@
         },
         {
           "DockedHeight": 205,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -108,12 +108,11 @@
               "RelativeToolTip": "DBModel\\Models\\VarietatProducte.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAuwAsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T10:55:00.931Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T10:55:00.931Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "BasketPage.xaml.cs",
               "DocumentMoniker": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\BasketPage.xaml.cs",
               "RelativeDocumentMoniker": "ProjecteBotigaSabates\\Views\\BasketPage.xaml.cs",
@@ -121,8 +120,7 @@
               "RelativeToolTip": "ProjecteBotigaSabates\\Views\\BasketPage.xaml.cs",
               "ViewState": "AgIAAKYAAAAAAAAAAAAnwLIAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T10:29:56.893Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T10:29:56.893Z"
             },
             {
               "$type": "Document",
@@ -134,8 +132,7 @@
               "RelativeToolTip": "DBModel\\Models\\LineaFactura.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAYwCAAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T09:32:18.313Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T09:32:18.313Z"
             },
             {
               "$type": "Document",
@@ -147,12 +144,11 @@
               "RelativeToolTip": "DBModel\\Models\\Comanda.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAjwDsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T09:25:01.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T09:25:01.186Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Factura.cs",
               "DocumentMoniker": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\DBModel\\Models\\Factura.cs",
               "RelativeDocumentMoniker": "DBModel\\Models\\Factura.cs",
@@ -160,45 +156,42 @@
               "RelativeToolTip": "DBModel\\Models\\Factura.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAYwCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T09:24:30.629Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T09:24:30.629Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "BasketPage.xaml",
               "DocumentMoniker": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\BasketPage.xaml",
               "RelativeDocumentMoniker": "ProjecteBotigaSabates\\Views\\BasketPage.xaml",
               "ToolTip": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\BasketPage.xaml",
               "RelativeToolTip": "ProjecteBotigaSabates\\Views\\BasketPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-20T09:17:46.27Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T09:17:46.27Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "BuyPage.xaml.cs",
               "DocumentMoniker": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\BuyPage.xaml.cs",
               "RelativeDocumentMoniker": "ProjecteBotigaSabates\\Views\\BuyPage.xaml.cs",
               "ToolTip": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\BuyPage.xaml.cs",
               "RelativeToolTip": "ProjecteBotigaSabates\\Views\\BuyPage.xaml.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAswEcAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-20T00:04:11.585Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "BuyPage.xaml",
               "DocumentMoniker": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\BuyPage.xaml",
               "RelativeDocumentMoniker": "ProjecteBotigaSabates\\Views\\BuyPage.xaml",
               "ToolTip": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\BuyPage.xaml",
               "RelativeToolTip": "ProjecteBotigaSabates\\Views\\BuyPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-19T23:23:01.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T23:23:01.176Z"
             },
             {
               "$type": "Document",
@@ -210,18 +203,17 @@
               "RelativeToolTip": "ProjecteBotigaSabates\\StaticContent\\BasketData.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAQwD8AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T22:44:29.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T22:44:29.293Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "MongoDBConnection.cs",
               "DocumentMoniker": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\DBModel\\MongoDBConnection.cs",
               "RelativeDocumentMoniker": "DBModel\\MongoDBConnection.cs",
               "ToolTip": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\DBModel\\MongoDBConnection.cs",
               "RelativeToolTip": "DBModel\\MongoDBConnection.cs",
-              "ViewState": "AgIAABoCAAAAAAAAAAAmwDcCAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABoCAAAAAAAAAAAmwCsCAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-19T22:38:22.264Z",
               "EditorCaption": ""

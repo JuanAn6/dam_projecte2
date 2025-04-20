@@ -118,7 +118,7 @@ namespace ProjecteBotigaSabates.Components {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProjecteBotigaSabates;component/components/ucproduct.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ProjecteBotigaSabates;V1.0.0.0;component/components/ucproduct.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Components\UCProduct.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

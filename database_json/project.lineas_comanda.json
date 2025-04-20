@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "68041bf2c34ad8c7e5f1fbc7"
+  },
+  "quantitat": 2,
+  "preu": 20,
+  "descompte": 10,
+  "impost": {
+    "_id": {
+      "$oid": "66144a97a7f5e926e80b0123"
+    },
+    "tipus": "IVA General",
+    "percentatge": 21
+  },
+  "varietat_producte_id": {
+    "_id": {
+      "$oid": "67d9c052d1a965167e544ca7"
+    },
+    "producte_id": {
+      "$oid": "67c9c2d476079be6a8eaff88"
+    },
+    "img": "prod1.png",
+    "color": "White",
+    "preu": 20,
+    "descompte": 10,
+    "talles": [
+      {
+        "talla": 40,
+        "stock": 10
+      },
+      {
+        "talla": 41,
+        "stock": 12
+      },
+      {
+        "talla": 42,
+        "stock": 11
+      }
+    ]
+  },
+  "talla": {
+    "talla": 40,
+    "stock": 10
+  },
+  "comanda_id": {
+    "$oid": "6803c8cd794f4c54d7898f47"
+  }
+},
+{
+  "_id": {
+    "$oid": "6804dc9904244df79546fbe7"
+  },
+  "quantitat": 1,
+  "preu": 20,
+  "descompte": 10,
+  "impost": {
+    "_id": {
+      "$oid": "66144a97a7f5e926e80b0123"
+    },
+    "tipus": "IVA General",
+    "percentatge": 21
+  },
+  "varietat_producte_id": {
+    "_id": {
+      "$oid": "67d9c052d1a965167e544ca7"
+    },
+    "producte_id": {
+      "$oid": "67c9c2d476079be6a8eaff88"
+    },
+    "img": "prod1.png",
+    "color": "White",
+    "preu": 20,
+    "descompte": 10,
+    "talles": [
+      {
+        "talla": 40,
+        "stock": 27
+      },
+      {
+        "talla": 41,
+        "stock": 12
+      },
+      {
+        "talla": 42,
+        "stock": 11
+      }
+    ]
+  },
+  "talla": {
+    "talla": 40,
+    "stock": 27
+  },
+  "comanda_id": {
+    "$oid": "6803cc4e1016cf26b50297b9"
+  }
+}]

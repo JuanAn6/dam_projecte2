@@ -1,0 +1,111 @@
+[{
+  "_id": {
+    "$oid": "67c9c2d476079be6a8eaff87"
+  },
+  "nom": "Esport",
+  "parent_id": null
+},
+{
+  "_id": {
+    "$oid": "67c9c2d576079be6a8eaff88"
+  },
+  "nom": "Futbol",
+  "parent_id": {
+    "$oid": "67c9c2d476079be6a8eaff87"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c9c2d776079be6a8eaff8a"
+  },
+  "nom": "Futbol Sala",
+  "parent_id": {
+    "$oid": "67c9c2d576079be6a8eaff88"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c9c2d876079be6a8eaff8b"
+  },
+  "nom": "Basquet",
+  "parent_id": {
+    "$oid": "67c9c2d476079be6a8eaff87"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c9c2d976079be6a8eaff8c"
+  },
+  "nom": "Basquet 5x5",
+  "parent_id": {
+    "$oid": "67c9c2d876079be6a8eaff8b"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c9c2da76079be6a8eaff8d"
+  },
+  "nom": "Basquet 3x3",
+  "parent_id": {
+    "$oid": "67c9c2d876079be6a8eaff8b"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c9c2db76079be6a8eaff8e"
+  },
+  "nom": "Volley",
+  "parent_id": {
+    "$oid": "67c9c2d476079be6a8eaff87"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c9c2dc76079be6a8eaff8f"
+  },
+  "nom": "Volley Playa",
+  "parent_id": {
+    "$oid": "67c9c2db76079be6a8eaff8e"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c9c2dd76079be6a8eaff90"
+  },
+  "nom": "Volley Pista",
+  "parent_id": {
+    "$oid": "67c9c2db76079be6a8eaff8e"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e56c3723ba4340853c5b95"
+  },
+  "nom": "Formal",
+  "parent_id": null
+},
+{
+  "_id": {
+    "$oid": "67e56c5823ba4340853c5b96"
+  },
+  "nom": "Sabates",
+  "parent_id": {
+    "$oid": "67e56c3723ba4340853c5b95"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e56c9c23ba4340853c5b99"
+  },
+  "nom": "Talons",
+  "parent_id": {
+    "$oid": "67e56c3723ba4340853c5b95"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e572fd6c1dcf269b74dd4f"
+  },
+  "nom": "Informal",
+  "parent_id": null
+}]

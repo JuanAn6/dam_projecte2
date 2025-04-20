@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "67c9c2d476079be6a8eaff88"
+  },
+  "codi": "P001",
+  "nom": "Sabates running x100",
+  "descripcio": "<p>Sabates de running</p>",
+  "tipus_impost_id": {
+    "$oid": "66144a97a7f5e926e80b0123"
+  },
+  "categories": [
+    {
+      "categoria_id": {
+        "$oid": "67c9c2d476079be6a8eaff87"
+      },
+      "grau": 1
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67c9c2d476079be6a8eaff90"
+  },
+  "codi": "P002",
+  "nom": "Sabates oxford 40s",
+  "descripcio": "<p>Sabates per trail running</p>",
+  "tipus_impost_id": {
+    "$oid": "66144a97a7f5e926e80b0123"
+  },
+  "categories": [
+    {
+      "categoria_id": {
+        "$oid": "67e56c5823ba4340853c5b96"
+      },
+      "grau": 2
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67e573176c1dcf269b74dd50"
+  },
+  "codi": "P003",
+  "nom": "Sabates Nike s4500",
+  "descripcio": "<p style='color: #ccc;'>Sabates per vestir i anar comode</p>",
+  "tipus_impost_id": {
+    "$oid": "66144a97a7f5e926e80b0123"
+  },
+  "categories": [
+    {
+      "categoria_id": {
+        "$oid": "67e572fd6c1dcf269b74dd4f"
+      },
+      "grau": 1
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67e577266c1dcf269b74dd54"
+  },
+  "codi": "P004",
+  "nom": "Talons marianela",
+  "descripcio": "<p>Sabates per vestir en una cafeteria</p>",
+  "tipus_impost_id": {
+    "$oid": "66144a97a7f5e926e80b0123"
+  },
+  "categories": [
+    {
+      "categoria_id": {
+        "$oid": "67e56c9c23ba4340853c5b99"
+      },
+      "grau": 1
+    }
+  ]
+}]

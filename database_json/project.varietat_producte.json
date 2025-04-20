@@ -1,0 +1,221 @@
+[{
+  "_id": {
+    "$oid": "67d9c052d1a965167e544ca7"
+  },
+  "producte_id": {
+    "$oid": "67c9c2d476079be6a8eaff88"
+  },
+  "img": "prod1.png",
+  "color": "White",
+  "preu": 20,
+  "talles": [
+    {
+      "talla": 40,
+      "stock": 26
+    },
+    {
+      "talla": 41,
+      "stock": 12
+    },
+    {
+      "talla": 42,
+      "stock": 11
+    }
+  ],
+  "descompte": 10
+},
+{
+  "_id": {
+    "$oid": "67dc31b887e68c466cbb5ae5"
+  },
+  "producte_id": {
+    "$oid": "67c9c2d476079be6a8eaff88"
+  },
+  "img": "prod1_red.png",
+  "color": "Red",
+  "preu": 25,
+  "talles": [
+    {
+      "talla": 40,
+      "stock": 20
+    },
+    {
+      "talla": 41,
+      "stock": 13
+    },
+    {
+      "talla": 42,
+      "stock": 61
+    }
+  ],
+  "descompte": 0
+},
+{
+  "_id": {
+    "$oid": "67dc31be87e68c466cbb5ae6"
+  },
+  "producte_id": {
+    "$oid": "67c9c2d476079be6a8eaff88"
+  },
+  "img": "prod1_yellow.png",
+  "color": "Yellow",
+  "preu": 50,
+  "talles": [
+    {
+      "talla": 40,
+      "stock": 25
+    },
+    {
+      "talla": 41,
+      "stock": 23
+    },
+    {
+      "talla": 42,
+      "stock": 11
+    }
+  ],
+  "descompte": 10
+},
+{
+  "_id": {
+    "$oid": "67e56eee6c1dcf269b74dd4c"
+  },
+  "producte_id": {
+    "$oid": "67c9c2d476079be6a8eaff90"
+  },
+  "img": "prod2.png",
+  "color": "Base",
+  "preu": 150,
+  "talles": [
+    {
+      "talla": 40,
+      "stock": 20
+    },
+    {
+      "talla": 41,
+      "stock": 13
+    },
+    {
+      "talla": 42,
+      "stock": 61
+    }
+  ],
+  "descompte": 0
+},
+{
+  "_id": {
+    "$oid": "67e56ef96c1dcf269b74dd4d"
+  },
+  "producte_id": {
+    "$oid": "67c9c2d476079be6a8eaff90"
+  },
+  "img": "prod2_pink.png",
+  "color": "Pink",
+  "preu": 200,
+  "talles": [
+    {
+      "talla": 40,
+      "stock": 20
+    },
+    {
+      "talla": 41,
+      "stock": 13
+    },
+    {
+      "talla": 42,
+      "stock": 61
+    }
+  ],
+  "descompte": 0
+},
+{
+  "_id": {
+    "$oid": "67e56efd6c1dcf269b74dd4e"
+  },
+  "producte_id": {
+    "$oid": "67c9c2d476079be6a8eaff90"
+  },
+  "img": "prod2_red.png",
+  "color": "Red",
+  "preu": 350,
+  "talles": [],
+  "descompte": 0
+},
+{
+  "_id": {
+    "$oid": "67e573676c1dcf269b74dd51"
+  },
+  "producte_id": {
+    "$oid": "67e573176c1dcf269b74dd50"
+  },
+  "img": "prod3.png",
+  "color": "Base",
+  "preu": 100,
+  "talles": [],
+  "descompte": 0
+},
+{
+  "_id": {
+    "$oid": "67e5736b6c1dcf269b74dd52"
+  },
+  "producte_id": {
+    "$oid": "67e573176c1dcf269b74dd50"
+  },
+  "img": "prod3_pink.png",
+  "color": "Pink",
+  "preu": 95.3,
+  "talles": [],
+  "descompte": 0
+},
+{
+  "_id": {
+    "$oid": "67e5736e6c1dcf269b74dd53"
+  },
+  "producte_id": {
+    "$oid": "67e573176c1dcf269b74dd50"
+  },
+  "img": "prod3_green.png",
+  "color": "Red",
+  "preu": 99.99,
+  "talles": [],
+  "descompte": 1
+},
+{
+  "_id": {
+    "$oid": "67e57bb46c1dcf269b74dd55"
+  },
+  "producte_id": {
+    "$oid": "67e577266c1dcf269b74dd54"
+  },
+  "img": "prod4.png",
+  "color": "Base",
+  "preu": 500,
+  "talles": [],
+  "descompte": 10
+},
+{
+  "_id": {
+    "$oid": "67e57bb86c1dcf269b74dd56"
+  },
+  "producte_id": {
+    "$oid": "67e577266c1dcf269b74dd54"
+  },
+  "img": "prod4_blue.png",
+  "color": "Pink",
+  "preu": 495.3,
+  "talles": [],
+  "descompte": 0
+},
+{
+  "_id": {
+    "$oid": "67e57bc96c1dcf269b74dd57"
+  },
+  "producte_id": {
+    "$oid": "67e577266c1dcf269b74dd54"
+  },
+  "img": "prod4_red.png",
+  "color": "Red",
+  "preu": 999.99,
+  "talles": [],
+  "descompte": 1
+}]

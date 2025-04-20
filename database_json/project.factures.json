@@ -1,0 +1,178 @@
+[{
+  "_id": {
+    "$oid": "6804db3a934d167a6d2f87dd"
+  },
+  "num": "F2025-000001",
+  "comanda_id": {
+    "$oid": "6803c8cd794f4c54d7898f47"
+  },
+  "client_id": {
+    "$oid": "67c9b3a9aca2e57839544ca7"
+  },
+  "base_imposable": 36,
+  "total": 55.660000000000004,
+  "data_factura": {
+    "$date": "2025-04-20T11:32:10.134Z"
+  },
+  "tarjeta": {
+    "numero": "1111 1111 1111 1111",
+    "cvv": 123,
+    "data_caducitat": {
+      "$date": "2025-08-08T22:00:00.000Z"
+    },
+    "nom_tarjeta": "Juan"
+  },
+  "enviament": {
+    "tipus_enviament_id": {
+      "$oid": "68042210da53a6c9b91e0626"
+    },
+    "preu_enviament": 12.1,
+    "preu_base": 10,
+    "impost": 21
+  },
+  "lineas_factura": [
+    {
+      "quantitat": 2,
+      "preu": 20,
+      "descompte": 10,
+      "impost": 21,
+      "base": 36,
+      "import_total": 43.56,
+      "varitat": {
+        "_id": {
+          "$oid": "67d9c052d1a965167e544ca7"
+        },
+        "producte_id": {
+          "$oid": "67c9c2d476079be6a8eaff88"
+        },
+        "img": "prod1.png",
+        "color": "White",
+        "preu": 20,
+        "descompte": 10,
+        "talles": [
+          {
+            "talla": 40,
+            "stock": 10
+          },
+          {
+            "talla": 41,
+            "stock": 12
+          },
+          {
+            "talla": 42,
+            "stock": 11
+          }
+        ]
+      },
+      "num_talla": 40,
+      "producte": {
+        "_id": {
+          "$oid": "67c9c2d476079be6a8eaff88"
+        },
+        "codi": "P001",
+        "nom": "Sabates running x100",
+        "descripcio": "<p>Sabates de running</p>",
+        "tipus_impost_id": {
+          "$oid": "66144a97a7f5e926e80b0123"
+        },
+        "Impost": {
+          "_id": {
+            "$oid": "66144a97a7f5e926e80b0123"
+          },
+          "tipus": "IVA General",
+          "percentatge": 21
+        },
+        "categories": []
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6804dc9904244df79546fbe8"
+  },
+  "num": "F2025-000001",
+  "comanda_id": {
+    "$oid": "6803cc4e1016cf26b50297b9"
+  },
+  "client_id": {
+    "$oid": "67c9b3a9aca2e57839544ca8"
+  },
+  "base_imposable": 18,
+  "total": 33.88,
+  "data_factura": {
+    "$date": "2025-04-20T11:38:01.132Z"
+  },
+  "tarjeta": {
+    "numero": "1111111111111111",
+    "cvv": 123,
+    "data_caducitat": {
+      "$date": "2025-06-18T22:00:00.000Z"
+    },
+    "nom_tarjeta": "Maria"
+  },
+  "enviament": {
+    "tipus_enviament_id": {
+      "$oid": "68042210da53a6c9b91e0626"
+    },
+    "preu_enviament": 12.1,
+    "preu_base": 10,
+    "impost": 21
+  },
+  "lineas_factura": [
+    {
+      "quantitat": 1,
+      "preu": 20,
+      "descompte": 10,
+      "impost": 21,
+      "base": 18,
+      "import_total": 21.78,
+      "varitat": {
+        "_id": {
+          "$oid": "67d9c052d1a965167e544ca7"
+        },
+        "producte_id": {
+          "$oid": "67c9c2d476079be6a8eaff88"
+        },
+        "img": "prod1.png",
+        "color": "White",
+        "preu": 20,
+        "descompte": 10,
+        "talles": [
+          {
+            "talla": 40,
+            "stock": 27
+          },
+          {
+            "talla": 41,
+            "stock": 12
+          },
+          {
+            "talla": 42,
+            "stock": 11
+          }
+        ]
+      },
+      "num_talla": 40,
+      "producte": {
+        "_id": {
+          "$oid": "67c9c2d476079be6a8eaff88"
+        },
+        "codi": "P001",
+        "nom": "Sabates running x100",
+        "descripcio": "<p>Sabates de running</p>",
+        "tipus_impost_id": {
+          "$oid": "66144a97a7f5e926e80b0123"
+        },
+        "Impost": {
+          "_id": {
+            "$oid": "66144a97a7f5e926e80b0123"
+          },
+          "tipus": "IVA General",
+          "percentatge": 21
+        },
+        "categories": []
+      }
+    }
+  ]
+}]

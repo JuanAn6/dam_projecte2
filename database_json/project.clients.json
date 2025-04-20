@@ -1,0 +1,64 @@
+[{
+  "_id": {
+    "$oid": "67c9b3a9aca2e57839544ca7"
+  },
+  "nif": "12345678A",
+  "nom": "Joan",
+  "cognom": "Garcia",
+  "email": "joan.garcia@example.com",
+  "direccio": {
+    "adreca": "Carrer de la Pau, 12",
+    "cp": "08001",
+    "poblacio": "Barcelona",
+    "pais": "España"
+  },
+  "password": "joan"
+},
+{
+  "_id": {
+    "$oid": "67c9b3a9aca2e57839544ca8"
+  },
+  "nif": "87654321B",
+  "nom": "Maria",
+  "cognom": "Lopez",
+  "email": "maria.lopez@example.com",
+  "direccio": {
+    "adreca": "Avenida de la Luz, 34",
+    "cp": "28010",
+    "poblacio": "Madrid",
+    "pais": "España"
+  },
+  "password": "maria"
+},
+{
+  "_id": {
+    "$oid": "67c9b3a9aca2e57839544ca9"
+  },
+  "nif": "11223344C",
+  "nom": "Carlos",
+  "cognom": "Fernandez",
+  "email": "carlos.fernandez@example.com",
+  "direccio": {
+    "adreca": "Calle Mayor, 56",
+    "cp": "41003",
+    "poblacio": "Sevilla",
+    "pais": "España"
+  },
+  "password": "carlos"
+},
+{
+  "_id": {
+    "$oid": "67c9b3a9aca2e57839544caa"
+  },
+  "nif": "55667788D",
+  "nom": "Laura",
+  "cognom": "Martinez",
+  "email": "laura.martinez@example.com",
+  "direccio": {
+    "adreca": "Gran Via, 89",
+    "cp": "46002",
+    "poblacio": "Valencia",
+    "pais": "España"
+  },
+  "password": "laura"
+}]

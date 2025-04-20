@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "68042210da53a6c9b91e0626"
+  },
+  "descripcio": "Entrega urgent (1 a 2 dies laborals)",
+  "preu": 10,
+  "preu_base": 200,
+  "impost": {
+    "tipus": "Iva General",
+    "percentatge": 21
+  }
+},
+{
+  "_id": {
+    "$oid": "6804253fda53a6c9b91e062b"
+  },
+  "descripcio": "Entrega estandar (2 a 5 dies laborals)",
+  "preu": 5,
+  "preu_base": 100,
+  "impost": {
+    "tipus": "Iva General",
+    "percentatge": 21
+  }
+},
+{
+  "_id": {
+    "$oid": "6804256bda53a6c9b91e062c"
+  },
+  "descripcio": "Enviament gratuït (5 a 10 dies laborals)",
+  "preu": 0,
+  "preu_base": 0,
+  "impost": {
+    "tipus": "Iva General",
+    "percentatge": 21
+  }
+}]

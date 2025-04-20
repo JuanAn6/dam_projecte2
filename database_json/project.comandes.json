@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "6803c8cd794f4c54d7898f47"
+  },
+  "client_id": {
+    "$oid": "67c9b3a9aca2e57839544ca7"
+  },
+  "data": {
+    "$date": "2025-04-20T11:32:10.094Z"
+  },
+  "finalitzada": true,
+  "tarjeta": {
+    "numero": "1111 1111 1111 1111",
+    "cvv": 123,
+    "data_caducitat": {
+      "$date": "2025-08-08T22:00:00.000Z"
+    },
+    "nom_tarjeta": "Juan"
+  },
+  "enviament": {
+    "tipus_enviament_id": {
+      "$oid": "68042210da53a6c9b91e0626"
+    },
+    "preu_enviament": 12.1,
+    "preu_base": 10,
+    "impost": 21
+  }
+},
+{
+  "_id": {
+    "$oid": "6803cc4e1016cf26b50297b9"
+  },
+  "client_id": {
+    "$oid": "67c9b3a9aca2e57839544ca8"
+  },
+  "data": {
+    "$date": "2025-04-20T11:38:01.083Z"
+  },
+  "finalitzada": true,
+  "tarjeta": {
+    "numero": "1111111111111111",
+    "cvv": 123,
+    "data_caducitat": {
+      "$date": "2025-06-18T22:00:00.000Z"
+    },
+    "nom_tarjeta": "Maria"
+  },
+  "enviament": {
+    "tipus_enviament_id": {
+      "$oid": "68042210da53a6c9b91e0626"
+    },
+    "preu_enviament": 12.1,
+    "preu_base": 10,
+    "impost": 21
+  }
+}]

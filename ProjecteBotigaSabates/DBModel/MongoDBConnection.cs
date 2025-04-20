@@ -553,7 +553,7 @@ namespace DBModel
             }
 
             string new_number = "F" + year + "-" + num.ToString("D6");
-            var update = Builders<BsonDocument>.Update.Set("comptadoe", new_number);
+            var update = Builders<BsonDocument>.Update.Set("comptador", new_number);
             collection.UpdateOneAsync(filter, update);
 
             return number;

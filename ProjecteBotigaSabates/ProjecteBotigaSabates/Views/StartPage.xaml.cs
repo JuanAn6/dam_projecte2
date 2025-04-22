@@ -1,4 +1,5 @@
-﻿using ProjecteBotigaSabates.StaticContent;
+﻿using DBModel.Models;
+using ProjecteBotigaSabates.StaticContent;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,15 @@ namespace ProjecteBotigaSabates.Views
         private void Button_Products_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.MainFrame.Navigate(new ProductsPage(null));
+        }
+
+        private void Button_Basket_Click(object sender, RoutedEventArgs e)
+        {
+            //mainWindow.MainFrame.Navigate(new BasketPage(null));
+
+
+            Report.DownloadReport("F2025-000004");
+
         }
     }
 }

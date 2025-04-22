@@ -237,6 +237,14 @@ namespace ProjecteBotigaSabates.Views
             btn_cancel.IsEnabled = false;
             btn_save.IsEnabled = false;
 
+
+            //Enviar el report(factura) per mail, també el guardare en filesystem
+
+            Report.DownloadReport(f.Numero);
+
+
+
+            //Reinicia la cistella per poder continuar
             BasketData.Reset();
             tb_info.Text = "Done!";
 

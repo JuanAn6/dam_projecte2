@@ -10,7 +10,6 @@
         "dependencies": {
           "DBModel": "1.0.0",
           "Microsoft.Web.WebView2": "1.0.3179.45",
-          "MongoDB.Driver": "3.2.1",
           "PropertyChanged.Fody": "4.1.0",
           "Microsoft.Web.WebView2.Core": "1.0.3179.45",
           "Microsoft.Web.WebView2.WinForms": "1.0.3179.45",

@@ -13,3 +13,17 @@ C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.sour
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.d-bfalse.GeneratedMSBuildEditorConfig.editorconfig
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.csproj.Fody.CopyLocal.cache
 C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.csproj.Fody.RuntimeCopyLocal.cache
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\bin\Debug\net8.0\DBModel.deps.json
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\bin\Debug\net8.0\DBModel.dll
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\bin\Debug\net8.0\DBModel.pdb
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.csproj.AssemblyReference.cache
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.d-bfalse.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.AssemblyInfoInputs.cache
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.AssemblyInfo.cs
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.csproj.CoreCompileInputs.cache
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.csproj.Fody.CopyLocal.cache
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.csproj.Fody.RuntimeCopyLocal.cache
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.dll
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\refint\DBModel.dll
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\DBModel.pdb
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\obj\Debug\net8.0\ref\DBModel.dll

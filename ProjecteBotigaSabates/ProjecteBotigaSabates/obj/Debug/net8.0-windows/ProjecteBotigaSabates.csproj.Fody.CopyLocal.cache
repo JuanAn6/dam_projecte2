@@ -1,32 +1,32 @@
-C:\Users\Juan Antonio\.nuget\packages\dnsclient\1.6.1\lib\net5.0\DnsClient.dll
-C:\Users\Juan Antonio\.nuget\packages\microsoft.extensions.logging.abstractions\2.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\Juan Antonio\.nuget\packages\mongodb.bson\3.2.1\lib\net6.0\MongoDB.Bson.dll
-C:\Users\Juan Antonio\.nuget\packages\mongodb.driver\3.2.1\lib\net6.0\MongoDB.Driver.dll
-C:\Users\Juan Antonio\.nuget\packages\sharpcompress\0.30.1\lib\net5.0\SharpCompress.dll
-C:\Users\Juan Antonio\.nuget\packages\snappier\1.0.0\lib\net5.0\Snappier.dll
-C:\Users\Juan Antonio\.nuget\packages\system.runtime.interopservices.windowsruntime\4.3.0\lib\netstandard1.3\System.Runtime.InteropServices.WindowsRuntime.dll
-C:\Users\Juan Antonio\.nuget\packages\uno.diagnostics.eventing\2.0.1\lib\net5.0\Uno.Diagnostics.Eventing.dll
-C:\Users\Juan Antonio\.nuget\packages\uno.fonts.fluent\2.6.1\lib\netstandard1.0\Uno.Fonts.Fluent.dll
-C:\Users\Juan Antonio\.nuget\packages\uno.foundation.logging\5.6.81\lib\net8.0\Uno.Foundation.Logging.dll
-C:\Users\Juan Antonio\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.Foundation.dll
-C:\Users\Juan Antonio\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.Composition.dll
-C:\Users\Juan Antonio\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.Dispatching.dll
-C:\Users\Juan Antonio\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.FluentTheme.dll
-C:\Users\Juan Antonio\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.FluentTheme.v1.dll
-C:\Users\Juan Antonio\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.FluentTheme.v2.dll
-C:\Users\Juan Antonio\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.Toolkit.dll
-C:\Users\Juan Antonio\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.dll
-C:\Users\Juan Antonio\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.Xaml.dll
-C:\Users\Juan Antonio\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.dll
-C:\Users\Juan Antonio\.nuget\packages\zstdsharp.port\0.7.3\lib\net7.0\ZstdSharp.dll
-C:\Users\Juan Antonio\.nuget\packages\microsoft.web.webview2\1.0.3179.45\runtimes\win-arm64\native\WebView2Loader.dll
-C:\Users\Juan Antonio\.nuget\packages\microsoft.web.webview2\1.0.3179.45\runtimes\win-x64\native\WebView2Loader.dll
-C:\Users\Juan Antonio\.nuget\packages\microsoft.web.webview2\1.0.3179.45\runtimes\win-x86\native\WebView2Loader.dll
-C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\bin\Debug\net8.0\DBModel.dll
-C:\Users\Juan Antonio\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\netcoreapp3.0\Microsoft.Web.WebView2.Core.dll
-C:\Users\Juan Antonio\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\netcoreapp3.0\Microsoft.Web.WebView2.WinForms.dll
-C:\Users\Juan Antonio\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\net5.0-windows10.0.17763.0\Microsoft.Web.WebView2.Wpf.dll
-C:\DAM2\M13\Project2\ProjecteBotigaSabates\DBModel\bin\Debug\net8.0\DBModel.pdb
-C:\Users\Juan Antonio\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\netcoreapp3.0\Microsoft.Web.WebView2.Core.xml
-C:\Users\Juan Antonio\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\netcoreapp3.0\Microsoft.Web.WebView2.WinForms.xml
-C:\Users\Juan Antonio\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\net5.0-windows10.0.17763.0\Microsoft.Web.WebView2.Wpf.xml
+C:\Users\isard\.nuget\packages\dnsclient\1.6.1\lib\net5.0\DnsClient.dll
+C:\Users\isard\.nuget\packages\microsoft.extensions.logging.abstractions\2.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\isard\.nuget\packages\mongodb.bson\3.2.1\lib\net6.0\MongoDB.Bson.dll
+C:\Users\isard\.nuget\packages\mongodb.driver\3.2.1\lib\net6.0\MongoDB.Driver.dll
+C:\Users\isard\.nuget\packages\sharpcompress\0.30.1\lib\net5.0\SharpCompress.dll
+C:\Users\isard\.nuget\packages\snappier\1.0.0\lib\net5.0\Snappier.dll
+C:\Users\isard\.nuget\packages\system.runtime.interopservices.windowsruntime\4.3.0\lib\netstandard1.3\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\Users\isard\.nuget\packages\uno.diagnostics.eventing\2.0.1\lib\net5.0\Uno.Diagnostics.Eventing.dll
+C:\Users\isard\.nuget\packages\uno.fonts.fluent\2.6.1\lib\netstandard1.0\Uno.Fonts.Fluent.dll
+C:\Users\isard\.nuget\packages\uno.foundation.logging\5.6.81\lib\net8.0\Uno.Foundation.Logging.dll
+C:\Users\isard\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.Foundation.dll
+C:\Users\isard\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.Composition.dll
+C:\Users\isard\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.Dispatching.dll
+C:\Users\isard\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.FluentTheme.dll
+C:\Users\isard\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.FluentTheme.v1.dll
+C:\Users\isard\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.FluentTheme.v2.dll
+C:\Users\isard\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.Toolkit.dll
+C:\Users\isard\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.UI.dll
+C:\Users\isard\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.Xaml.dll
+C:\Users\isard\.nuget\packages\uno.ui\5.6.81\lib\net8.0\Uno.dll
+C:\Users\isard\.nuget\packages\zstdsharp.port\0.7.3\lib\net7.0\ZstdSharp.dll
+C:\Users\isard\.nuget\packages\microsoft.web.webview2\1.0.3179.45\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\isard\.nuget\packages\microsoft.web.webview2\1.0.3179.45\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\isard\.nuget\packages\microsoft.web.webview2\1.0.3179.45\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\bin\Debug\net8.0\DBModel.dll
+C:\Users\isard\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\netcoreapp3.0\Microsoft.Web.WebView2.Core.dll
+C:\Users\isard\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\netcoreapp3.0\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\isard\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\net5.0-windows10.0.17763.0\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\DBModel\bin\Debug\net8.0\DBModel.pdb
+C:\Users\isard\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\netcoreapp3.0\Microsoft.Web.WebView2.Core.xml
+C:\Users\isard\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\netcoreapp3.0\Microsoft.Web.WebView2.WinForms.xml
+C:\Users\isard\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\net5.0-windows10.0.17763.0\Microsoft.Web.WebView2.Wpf.xml

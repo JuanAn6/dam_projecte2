@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\
 ProjecteBotigaSabates
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;HAS_UNO;UNO_HAS_FRAMEWORKELEMENT_MEASUREOVERRIDE;UNO_HAS_NO_IDEPENDENCYOBJECT
-C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\App.xaml
+C:\Users\isard\Desktop\repositiori\dam_projecte2-main\dam_projecte2-main\ProjecteBotigaSabates\ProjecteBotigaSabates\App.xaml
 9282453772
-31822253360
+31799818129
 162111970619
-22437150172
+224-763281832
 Components\UCOrderLine.xaml;Components\UCProduct.xaml;MainWindow.xaml;Views\BasketPage.xaml;Views\BuyPage.xaml;Views\ProductsPage.xaml;Views\SelectUserPage.xaml;Views\StartPage.xaml;Views\ViewProductPage.xaml;
 
 False

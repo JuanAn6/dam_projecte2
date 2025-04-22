@@ -1,0 +1,66 @@
+{
+	collectionName: 'factures',
+	aggregate: [
+		{ $match: { num: { $eq: $P{numFactura} } } },
+		{
+			$lookup: {
+				from: "dades_empresa",
+				let: {},
+				pipeline: [
+				  { $limit: 1 }
+				],
+				as: "dades_empresa"
+			}
+		},
+		{ $unwind: { path: "$dades_empresa", preserveNullAndEmptyArrays: true } },
+		{
+			$lookup: {
+				from: "clients",
+				localField: "client_id",
+				foreignField: "_id",
+				as: "client_info"
+			}
+		},
+		{ $unwind: { path: "$client_info", preserveNullAndEmptyArrays: true } },
+		{ $unwind: { path: "$lineas_factura", preserveNullAndEmptyArrays: true } },
+		{ $project: {
+			_id: 0,
+			num: 1,
+			data_factura: 1,
+			base_imposable: 1,
+			total: 1,
+			
+			"tarjeta.nom_tarjeta": 1,
+			"tarjeta.numero": 1,
+			
+			"enviament.preu_enviament":1,
+			
+			"lineas_factura.quantitat": 1,
+			"lineas_factura.preu": 1,
+			"lineas_factura.descompte": 1,
+			"lineas_factura.import_total": 1,
+			"lineas_factura.num_talla": 1,
+			"lineas_factura.producte.nom": 1,
+			"lineas_factura.producte.codi": 1,
+			"lineas_factura.varitat.color":1,
+			"lineas_factura.base":1,
+			"lineas_factura.impost":1,
+			"lineas_factura.descompte":1,
+			
+			"client_info.nom":1,
+			"client_info.cognom":1,
+			"client_info.email":1,
+			"client_info.direccio.adreca":1,
+			"client_info.direccio.cp":1,
+			"client_info.direccio.poblacio":1,
+			"client_info.direccio.pais":1,
+			
+			"dades_empresa.nif":1,
+			"dades_empresa.nom":1,
+			"dades_empresa.domicili_social":1,
+			"dades_empresa.ins_reg_merc":1
+			
+		}}
+		
+	]
+}

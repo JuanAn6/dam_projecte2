@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FacturaGenerica" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a9acda20-639e-48db-a5a9-2ff2a62ec616">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ProjectMongoDBAdapter"/>
+	<parameter name="numFactura" class="java.lang.String"/>
+	<queryString language="MongoDbQuery">
+		<![CDATA[{
+	collectionName: 'factures',
+	aggregate: [
+		{ $match: { num: { $eq: $P{numFactura} } } },
+		{
+			$lookup: {
+				from: "dades_empresa",
+				let: {},
+				pipeline: [
+				  { $limit: 1 }
+				],
+				as: "dades_empresa"
+			}
+		},
+		{ $unwind: { path: "$dades_empresa", preserveNullAndEmptyArrays: true } },
+		{
+			$lookup: {
+				from: "clients",
+				localField: "client_id",
+				foreignField: "_id",
+				as: "client_info"
+			}
+		},
+		{ $unwind: { path: "$client_info", preserveNullAndEmptyArrays: true } },
+		{ $unwind: { path: "$lineas_factura", preserveNullAndEmptyArrays: true } },
+		{ $project: {
+			_id: 0,
+			num: 1,
+			data_factura: 1,
+			base_imposable: 1,
+			total: 1,
+			
+			"tarjeta.nom_tarjeta": 1,
+			"tarjeta.numero": 1,
+			
+			"enviament.preu_enviament":1,
+			
+			"lineas_factura.quantitat": 1,
+			"lineas_factura.preu": 1,
+			"lineas_factura.descompte": 1,
+			"lineas_factura.import_total": 1,
+			"lineas_factura.num_talla": 1,
+			"lineas_factura.producte.nom": 1,
+			"lineas_factura.producte.codi": 1,
+			"lineas_factura.varitat.color":1,
+			"lineas_factura.base":1,
+			"lineas_factura.impost":1,
+			"lineas_factura.descompte":1,
+			
+			"client_info.nom":1,
+			"client_info.cognom":1,
+			"client_info.email":1,
+			"client_info.direccio.adreca":1,
+			"client_info.direccio.cp":1,
+			"client_info.direccio.poblacio":1,
+			"client_info.direccio.pais":1,
+			
+			"dades_empresa.nif":1,
+			"dades_empresa.nom":1,
+			"dades_empresa.domicili_social":1,
+			"dades_empresa.ins_reg_merc":1
+			
+		}}
+		
+	]
+}]]>
+	</queryString>
+	<field name="base_imposable" class="java.lang.Double"/>
+	<field name="client_info.cognom" class="java.lang.String"/>
+	<field name="client_info.direccio.adreca" class="java.lang.String"/>
+	<field name="client_info.direccio.cp" class="java.lang.String"/>
+	<field name="client_info.direccio.pais" class="java.lang.String"/>
+	<field name="client_info.direccio.poblacio" class="java.lang.String"/>
+	<field name="client_info.email" class="java.lang.String"/>
+	<field name="client_info.nom" class="java.lang.String"/>
+	<field name="dades_empresa.domicili_social" class="java.lang.String"/>
+	<field name="dades_empresa.ins_reg_merc" class="java.lang.String"/>
+	<field name="dades_empresa.nif" class="java.lang.String"/>
+	<field name="dades_empresa.nom" class="java.lang.String"/>
+	<field name="data_factura" class="java.util.Date"/>
+	<field name="enviament.preu_enviament" class="java.lang.Double"/>
+	<field name="lineas_factura.base" class="java.lang.Double"/>
+	<field name="lineas_factura.descompte" class="java.lang.Double"/>
+	<field name="lineas_factura.import_total" class="java.lang.Double"/>
+	<field name="lineas_factura.impost" class="java.lang.Double"/>
+	<field name="lineas_factura.num_talla" class="java.lang.Integer"/>
+	<field name="lineas_factura.preu" class="java.lang.Double"/>
+	<field name="lineas_factura.producte.codi" class="java.lang.String"/>
+	<field name="lineas_factura.producte.nom" class="java.lang.String"/>
+	<field name="lineas_factura.quantitat" class="java.lang.Integer"/>
+	<field name="lineas_factura.varitat.color" class="java.lang.String"/>
+	<field name="num" class="java.lang.String"/>
+	<field name="tarjeta.nom_tarjeta" class="java.lang.String"/>
+	<field name="tarjeta.numero" class="java.lang.String"/>
+	<field name="total" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="143" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="120" height="40" uuid="8566a25b-8986-48ef-a17d-81b9c6a22a1a"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Factura]]></text>
+			</staticText>
+			<textField pattern="dd-MM-yyyy" isBlankWhenNull="false">
+				<reportElement x="448" y="47" width="100" height="20" uuid="7aebbdcd-beca-4cbe-8a4f-89ce2f08609f"/>
+				<textFieldExpression><![CDATA[$F{data_factura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="348" y="47" width="100" height="20" uuid="8331d4ea-1698-4886-86ca-8b6009d9fc34"/>
+				<textFieldExpression><![CDATA[$F{num}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="348" y="33" width="100" height="14" uuid="d77a1ac5-4c6e-48d8-a6cf-be4b2054cfa3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nuemero]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="33" width="100" height="14" uuid="e1592c81-9665-4326-89f3-13e877f5907c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="100" height="14" uuid="67e781b3-3f0c-41cb-8dbd-f2ccaf93150e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dades del client]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="64" width="100" height="16" uuid="57f5465c-d8b6-4588-ae00-62d851ec1265">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{client_info.nom}+" "+$F{client_info.cognom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="80" width="170" height="16" uuid="88a63404-70ff-40d8-b417-680c031d73b0"/>
+				<textFieldExpression><![CDATA[$F{client_info.email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="96" width="280" height="40" uuid="bd48a189-32bf-4977-a108-dae3ccaa7342"/>
+				<textFieldExpression><![CDATA[$F{client_info.direccio.pais}+", "+$F{client_info.direccio.poblacio}+", "+$F{client_info.direccio.cp}+", "+$F{client_info.direccio.adreca}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="458" y="0" width="90" height="30" uuid="e86e5383-b898-4feb-92de-b45e5af8a241"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Juan Shoes]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="500" y="0" width="60" height="20" uuid="3b7dea44-4f91-41c6-95e5-e166327d7427">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1237891b-9fbb-4752-854a-2a0e91726899"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Import total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="0" width="40" height="20" uuid="508aba9d-e640-4f15-a88c-fda94adf120c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="36f146ab-00a3-41c1-8bfd-3b387a831a6e"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Talla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="150" height="20" uuid="91df03ff-d9b4-4198-9a63-498ed1228b11">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c973647e-3070-4eff-8e45-5fcebbbd987a"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Producte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="0" width="50" height="20" uuid="6802f57f-9450-43d7-ad40-c332bbdae5ac">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d231a07-5a58-449a-a721-6f8d0499dee0"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantitat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="50" height="20" uuid="b42019f9-1e9e-465f-bcc2-1230bbf0ac22">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ee679738-da2d-4cf5-a05e-f648308f13c6"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Preu /u]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="0" width="60" height="20" uuid="42e4f2cc-2f37-4510-8232-b682d17d7f3e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5c962c05-d20f-4d61-a6c2-ba290d40216c"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Color]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="60" height="20" uuid="ef03ca0c-e1a9-48a1-b1a0-9c8daa937c21">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e650364c-8de1-4c87-91b7-a0ae604c767b"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descompte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="0" width="40" height="20" uuid="4bb6bba3-6fa5-4d82-b875-97fb7d46536b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="25f72c79-781f-4a7c-a0cf-972c9363c6a8"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Impost]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="50" height="20" uuid="18a943de-0276-4d26-a2dc-1578c8b9e33f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a5ae53fc-fc76-4492-a6e3-2e4ffa8c7711"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Base]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField pattern="#,##0.00 € ">
+				<reportElement x="500" y="0" width="60" height="20" uuid="8c149f13-36e6-4556-aa4e-feb9ed37118e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1237891b-9fbb-4752-854a-2a0e91726899"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{lineas_factura.import_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="40" height="20" uuid="887d47dd-5335-4fbc-9d2f-4b395ab6e86e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="36f146ab-00a3-41c1-8bfd-3b387a831a6e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{lineas_factura.num_talla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="150" height="20" uuid="eabc522b-68dc-4af9-a55d-fdfde70e846e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c973647e-3070-4eff-8e45-5fcebbbd987a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{lineas_factura.producte.nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="50" height="20" uuid="9932137c-e4b2-4b7e-881d-ffce9dde5ec0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d231a07-5a58-449a-a721-6f8d0499dee0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{lineas_factura.quantitat}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00 € ">
+				<reportElement x="300" y="0" width="50" height="20" uuid="1e2d8929-91e3-4ec7-aa35-7555396c087e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ee679738-da2d-4cf5-a05e-f648308f13c6"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{lineas_factura.preu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="0" width="60" height="20" uuid="38cf0e83-617a-449e-a5eb-5c0e4b7baef8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5c962c05-d20f-4d61-a6c2-ba290d40216c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{lineas_factura.varitat.color}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="60" height="20" uuid="549cc03c-5e9f-41d0-93cc-1ff93101357c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e650364c-8de1-4c87-91b7-a0ae604c767b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{lineas_factura.descompte}+"%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="0" width="40" height="20" uuid="fad99f37-0798-4c01-951b-a2283c68c4b7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="25f72c79-781f-4a7c-a0cf-972c9363c6a8"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{lineas_factura.impost}+"%"]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00 € ">
+				<reportElement x="450" y="0" width="50" height="20" uuid="404c3b28-6b62-4896-99dd-9da967ae3efe">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a5ae53fc-fc76-4492-a6e3-2e4ffa8c7711"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{lineas_factura.base}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="27" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="89" splitType="Stretch">
+			<textField pattern="#,##0.00 € ">
+				<reportElement x="250" y="20" width="100" height="16" uuid="56fd505d-08b5-4bd6-998a-e2e6a3ee1ee3"/>
+				<textFieldExpression><![CDATA[$F{base_imposable}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00 € ">
+				<reportElement x="450" y="20" width="100" height="16" uuid="9aee52ea-200d-4880-b31c-68a8c2e21e0e"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="450" y="6" width="100" height="14" uuid="3b510d1b-e0b6-471b-9fc5-bce35edcc812"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="6" width="100" height="14" uuid="44953878-aa49-4385-9d28-d064678bb1aa"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Base]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="6" width="100" height="14" uuid="cec8741c-1582-4b75-90dd-1bd6d5200271"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Enviament]]></text>
+			</staticText>
+			<textField pattern="#,##0.00 € ">
+				<reportElement x="350" y="20" width="100" height="16" uuid="55e48fe2-05e1-4a57-9624-79f43d935abe"/>
+				<textFieldExpression><![CDATA[$F{enviament.preu_enviament}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="60" width="548" height="28" uuid="88a632ed-4453-4fae-8810-f47980f00e74"/>
+				<textFieldExpression><![CDATA[$F{dades_empresa.nom}+", "+$F{dades_empresa.nif}+", "+$F{dades_empresa.domicili_social}+", "+$F{dades_empresa.ins_reg_merc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

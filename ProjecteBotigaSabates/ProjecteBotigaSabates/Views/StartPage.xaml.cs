@@ -48,11 +48,8 @@ namespace ProjecteBotigaSabates.Views
 
         private void Button_Basket_Click(object sender, RoutedEventArgs e)
         {
-            //mainWindow.MainFrame.Navigate(new BasketPage(null));
-
-
-            Report.DownloadReport("F2025-000004");
-
+            mainWindow.MainFrame.Navigate(new BasketPage());
+            //Report.DownloadReport("F2025-000005");
         }
     }
 }

@@ -16,10 +16,10 @@ namespace DBModel.Models
         //Codi preparat amb ChatGPT! https://chatgpt.com/share/6806bbb6-4b7c-800d-b124-1c53ca422a44
         public static async Task DownloadReport(string num_fatura)
         {
-            string jasperUrl = "http://localhost:8080/jasperserver/rest_v2/reports/reports/Projete2/FaturaGeneria.pdf";
-            string outputPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FaturaGeneria.pdf");
+            string jasperUrl = "http://localhost:8080/jasperserver/rest_v2/reports/Projecte2/FacturaGenerica.pdf";
+            string outputPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FaturaGeneria_"+ num_fatura+".pdf");
             
-            string parametro = "numFactura=numFactura";
+            string parametro = "numFactura="+ num_fatura;
 
             string urlConParametros = $"{jasperUrl}?{parametro}";
 

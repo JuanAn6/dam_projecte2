@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj": {}
+    "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj": {}
   },
   "projects": {
-    "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\DBModel\\DBModel.csproj": {
+    "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\DBModel\\DBModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\DBModel\\DBModel.csproj",
+        "projectUniqueName": "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\DBModel\\DBModel.csproj",
         "projectName": "DBModel",
-        "projectPath": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\DBModel\\DBModel.csproj",
+        "projectPath": "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\DBModel\\DBModel.csproj",
         "packagesPath": "C:\\Users\\isard\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\DBModel\\obj\\",
+        "outputPath": "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\DBModel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -84,14 +84,14 @@
         }
       }
     },
-    "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj": {
+    "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj",
+        "projectUniqueName": "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj",
         "projectName": "ProjecteBotigaSabates",
-        "projectPath": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj",
+        "projectPath": "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj",
         "packagesPath": "C:\\Users\\isard\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\obj\\",
+        "outputPath": "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -113,8 +113,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\DBModel\\DBModel.csproj": {
-                "projectPath": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\DBModel\\DBModel.csproj"
+              "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\DBModel\\DBModel.csproj": {
+                "projectPath": "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\DBModel\\DBModel.csproj"
               }
             }
           }

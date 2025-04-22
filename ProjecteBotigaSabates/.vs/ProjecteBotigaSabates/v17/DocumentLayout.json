@@ -1,22 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\",
+  "WorkspaceRootPath": "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|c:\\users\\isard\\desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\projectebotigasabates\\projectebotigasabates\\views\\startpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|c:\\users\\isard\\desktop\\projecte2_garcia_juan_antonio\\dam_projecte2\\projectebotigasabates\\projectebotigasabates\\views\\startpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|solutionrelative:projectebotigasabates\\views\\startpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|c:\\users\\isard\\desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\projectebotigasabates\\projectebotigasabates\\views\\startpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|c:\\users\\isard\\desktop\\projecte2_garcia_juan_antonio\\dam_projecte2\\projectebotigasabates\\projectebotigasabates\\views\\startpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|solutionrelative:projectebotigasabates\\views\\startpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B02BACD-8C48-425F-82E8-212F6B92647A}|DBModel\\DBModel.csproj|c:\\users\\isard\\desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\projectebotigasabates\\dbmodel\\models\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B02BACD-8C48-425F-82E8-212F6B92647A}|DBModel\\DBModel.csproj|solutionrelative:dbmodel\\models\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|c:\\users\\isard\\desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\projectebotigasabates\\projectebotigasabates\\views\\buypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|solutionrelative:projectebotigasabates\\views\\buypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -64,51 +56,24 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "StartPage.xaml",
-              "DocumentMoniker": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\StartPage.xaml",
+              "DocumentMoniker": "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\StartPage.xaml",
               "RelativeDocumentMoniker": "ProjecteBotigaSabates\\Views\\StartPage.xaml",
-              "ToolTip": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\StartPage.xaml",
+              "ToolTip": "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\StartPage.xaml",
               "RelativeToolTip": "ProjecteBotigaSabates\\Views\\StartPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-22T08:48:07.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T08:48:07.052Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "StartPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\StartPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\StartPage.xaml.cs",
               "RelativeDocumentMoniker": "ProjecteBotigaSabates\\Views\\StartPage.xaml.cs",
-              "ToolTip": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\StartPage.xaml.cs",
+              "ToolTip": "C:\\Users\\isard\\Desktop\\projecte2_Garcia_Juan_Antonio\\dam_projecte2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\StartPage.xaml.cs",
               "RelativeToolTip": "ProjecteBotigaSabates\\Views\\StartPage.xaml.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAQwDUAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwDMAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-22T08:48:00.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Report.cs",
-              "DocumentMoniker": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\DBModel\\Models\\Report.cs",
-              "RelativeDocumentMoniker": "DBModel\\Models\\Report.cs",
-              "ToolTip": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\DBModel\\Models\\Report.cs",
-              "RelativeToolTip": "DBModel\\Models\\Report.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAADYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T08:28:27.847Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BuyPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\BuyPage.xaml.cs",
-              "RelativeDocumentMoniker": "ProjecteBotigaSabates\\Views\\BuyPage.xaml.cs",
-              "ToolTip": "C:\\Users\\isard\\Desktop\\repositiori\\dam_projecte2-main\\dam_projecte2-main\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\BuyPage.xaml.cs",
-              "RelativeToolTip": "ProjecteBotigaSabates\\Views\\BuyPage.xaml.cs",
-              "ViewState": "AgIAANkAAAAAAAAAAAAAAPMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T08:24:58.105Z",
               "EditorCaption": ""
             }
           ]

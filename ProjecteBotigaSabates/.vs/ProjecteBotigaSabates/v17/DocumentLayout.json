@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7B02BACD-8C48-425F-82E8-212F6B92647A}|DBModel\\DBModel.csproj|c:\\dam2\\m13\\project2\\projectebotigasabates\\dbmodel\\mongodbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B02BACD-8C48-425F-82E8-212F6B92647A}|DBModel\\DBModel.csproj|solutionrelative:dbmodel\\mongodbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B02BACD-8C48-425F-82E8-212F6B92647A}|DBModel\\DBModel.csproj|c:\\dam2\\m13\\project2\\projectebotigasabates\\dbmodel\\models\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B02BACD-8C48-425F-82E8-212F6B92647A}|DBModel\\DBModel.csproj|solutionrelative:dbmodel\\models\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|c:\\dam2\\m13\\project2\\projectebotigasabates\\projectebotigasabates\\views\\buypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{08C1A1CF-28C9-4E1A-B100-7B356ACD1A87}|ProjecteBotigaSabates\\ProjecteBotigaSabates.csproj|solutionrelative:projectebotigasabates\\views\\buypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -63,6 +71,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MongoDBConnection.cs",
+              "DocumentMoniker": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\DBModel\\MongoDBConnection.cs",
+              "RelativeDocumentMoniker": "DBModel\\MongoDBConnection.cs",
+              "ToolTip": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\DBModel\\MongoDBConnection.cs",
+              "RelativeToolTip": "DBModel\\MongoDBConnection.cs",
+              "ViewState": "AgIAACYCAAAAAAAAAAAAADUCAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T15:34:08.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Factura.cs",
+              "DocumentMoniker": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\DBModel\\Models\\Factura.cs",
+              "RelativeDocumentMoniker": "DBModel\\Models\\Factura.cs",
+              "ToolTip": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\DBModel\\Models\\Factura.cs",
+              "RelativeToolTip": "DBModel\\Models\\Factura.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T15:34:06.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "BuyPage.xaml.cs",
               "DocumentMoniker": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\BuyPage.xaml.cs",
               "RelativeDocumentMoniker": "ProjecteBotigaSabates\\Views\\BuyPage.xaml.cs",
@@ -75,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Report.cs",
               "DocumentMoniker": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\DBModel\\Models\\Report.cs",
               "RelativeDocumentMoniker": "DBModel\\Models\\Report.cs",
@@ -87,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "StartPage.xaml",
               "DocumentMoniker": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\StartPage.xaml",
               "RelativeDocumentMoniker": "ProjecteBotigaSabates\\Views\\StartPage.xaml",
@@ -98,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "StartPage.xaml.cs",
               "DocumentMoniker": "C:\\DAM2\\M13\\Project2\\ProjecteBotigaSabates\\ProjecteBotigaSabates\\Views\\StartPage.xaml.cs",
               "RelativeDocumentMoniker": "ProjecteBotigaSabates\\Views\\StartPage.xaml.cs",

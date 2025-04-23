@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\
+C:\Users\isard\Desktop\projecte2_Garcia_Juan_Antonio\dam_projecte2\ProjecteBotigaSabates\ProjecteBotigaSabates\obj\Debug\net8.0-windows\
 ProjecteBotigaSabates
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;HAS_UNO;UNO_HAS_FRAMEWORKELEMENT_MEASUREOVERRIDE;UNO_HAS_NO_IDEPENDENCYOBJECT;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\DAM2\M13\Project2\ProjecteBotigaSabates\ProjecteBotigaSabates\App.xaml
+C:\Users\isard\Desktop\projecte2_Garcia_Juan_Antonio\dam_projecte2\ProjecteBotigaSabates\ProjecteBotigaSabates\App.xaml
 9282453772
-31822253360
+31799818129
 191893660194
-22437150172
+224-1332950113
 Components\UCOrderLine.xaml;Components\UCProduct.xaml;MainWindow.xaml;Views\BasketPage.xaml;Views\BuyPage.xaml;Views\ProductsPage.xaml;Views\SelectUserPage.xaml;Views\StartPage.xaml;Views\ViewProductPage.xaml;
 
-False
+True
 

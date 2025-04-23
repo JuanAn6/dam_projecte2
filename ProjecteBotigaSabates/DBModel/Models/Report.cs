@@ -63,6 +63,7 @@ namespace DBModel.Models
 
         public static void SendMail(string mail)
         {
+            Debug.WriteLine("Send mail to: " + mail);
             try
             {
                 var smtpClient = new SmtpClient("smtp.gmail.com")

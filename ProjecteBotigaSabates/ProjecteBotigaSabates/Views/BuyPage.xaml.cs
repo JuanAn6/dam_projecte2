@@ -241,8 +241,7 @@ namespace ProjecteBotigaSabates.Views
             //Enviar el report(factura) per mail, també el guardare en filesystem
 
             Report.DownloadReport(f.Numero);
-
-
+            Report.SendMail(ClientConnected.AuthClient.Email);
 
             //Reinicia la cistella per poder continuar
             BasketData.Reset();

@@ -5,12 +5,12 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\isard\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Juan Antonio\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.13.2</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\isard\.nuget\packages\" />
+    <SourceRoot Include="C:\Users\Juan Antonio\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
@@ -19,6 +19,6 @@
     <Import Project="$(NuGetPackageRoot)propertychanged.fody\4.1.0\build\PropertyChanged.Fody.props" Condition="Exists('$(NuGetPackageRoot)propertychanged.fody\4.1.0\build\PropertyChanged.Fody.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgUno_UI Condition=" '$(PkgUno_UI)' == '' ">C:\Users\isard\.nuget\packages\uno.ui\5.6.81</PkgUno_UI>
+    <PkgUno_UI Condition=" '$(PkgUno_UI)' == '' ">C:\Users\Juan Antonio\.nuget\packages\uno.ui\5.6.81</PkgUno_UI>
   </PropertyGroup>
 </Project>

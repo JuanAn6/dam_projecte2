@@ -8,12 +8,13 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Diagnostics;
+using System.Net.Mail;
 
 namespace DBModel.Models
 {
     public static class Report
     {
-        //Codi preparat amb ChatGPT! https://chatgpt.com/share/6806bbb6-4b7c-800d-b124-1c53ca422a44
+        //Codi en el que me ajudat amb ChatGPT! https://chatgpt.com/share/6806bbb6-4b7c-800d-b124-1c53ca422a44
         public static async Task DownloadReport(string num_fatura)
         {
             string jasperUrl = "http://localhost:8080/jasperserver/rest_v2/reports/Projecte2/FacturaGenerica.pdf";
@@ -34,7 +35,7 @@ namespace DBModel.Models
 
                 try
                 {
-                    Debug.WriteLine("Descargando reporte...");
+                    Debug.WriteLine("Descarga de report...");
 
                     HttpResponseMessage response = await client.GetAsync(urlConParametros);
 
@@ -43,13 +44,13 @@ namespace DBModel.Models
                         byte[] fileBytes = await response.Content.ReadAsByteArrayAsync();
                         await File.WriteAllBytesAsync(outputPath, fileBytes);
 
-                        Debug.WriteLine($"Reporte guardado en: {outputPath}");
+                        Debug.WriteLine($"Report guardat: {outputPath}");
                     }
                     else
                     {
-                        Debug.WriteLine($"Error al descargar el reporte. Código: {response.StatusCode}");
+                        Debug.WriteLine($"Error al descarregar el report: {response.StatusCode}");
                         string error = await response.Content.ReadAsStringAsync();
-                        Debug.WriteLine($"Mensaje del servidor: {error}");
+                        Debug.WriteLine($"Missarge del server: {error}");
                     }
                 }
                 catch (Exception ex)
@@ -58,5 +59,36 @@ namespace DBModel.Models
                 }
             }
         }
+
+
+        public static void SendMail(string mail)
+        {
+            try
+            {
+                var smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential("juanantoniogarcia2025@gmail.com", "icft vpmh xuew hogy"),
+                    EnableSsl = true,
+                };
+
+                var message = new MailMessage
+                {
+                    From = new MailAddress("juanantoniogarcia2025@gmail.com"),
+                    Subject = "Juan Shoes Compra",
+                    Body = "<p>Des de la botiga de <b>Juan Shoes</b> agraïmg la teva compra.</p><p>Adjuntem la factura.</p><p>Salut!</p>",
+                    IsBodyHtml = true,
+                };
+                message.To.Add(mail);
+
+                smtpClient.Send(message);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error al enviar el mail!");
+            }
+        }
+
+
     }
 }

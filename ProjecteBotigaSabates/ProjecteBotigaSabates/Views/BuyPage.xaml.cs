@@ -57,11 +57,11 @@ namespace ProjecteBotigaSabates.Views
                 total_enviament = 0;
             }
 
-            tb_base_enviament.Text = "Shipping base: " + base_enviament + "€";
-            tb_total_enviament.Text = "Shipping total: " + total_enviament + "€";
+            tb_base_enviament.Text = "Shipping base: " + base_enviament.ToString("F2") + "€";
+            tb_total_enviament.Text = "Shipping total: " + total_enviament.ToString("F2") + "€";
 
-            tb_base_comanda.Text = "Base: " + total_base + "€";
-            tb_total_comanda.Text = "Total: " + (total_impost + total_enviament) + "€";
+            tb_base_comanda.Text = "Base: " + total_base.ToString("F2") + "€";
+            tb_total_comanda.Text = "Total: " + (total_impost + total_enviament).ToString("F2") + "€";
 
 
         }
@@ -240,8 +240,9 @@ namespace ProjecteBotigaSabates.Views
 
             //Enviar el report(factura) per mail, també el guardare en filesystem
 
-            Report.DownloadReport(f.Numero);
-            Report.SendMail(ClientConnected.AuthClient.Email);
+            await Report.DownloadReport(f.Numero);
+
+            Report.SendMail(ClientConnected.AuthClient.Email, f.Numero);
 
             //Reinicia la cistella per poder continuar
             BasketData.Reset();

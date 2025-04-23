@@ -78,8 +78,8 @@ namespace ProjecteBotigaSabates.Views
         {
             total_impost = LineasComanda.Sum(i => ((i.Quantitat * i.Vareitat.Preu) * (1 - (i.Vareitat.Descompte / 100))) * ((i.Impost.Percentatge / 100) + 1));
             total_base = LineasComanda.Sum(i => (i.Quantitat * i.Vareitat.Preu) * (1 - (i.Vareitat.Descompte / 100)));
-            tb_total_base.Text = "Base: " + total_base + "€";
-            tb_total_comanda.Text = "Total: "+ total_impost + "€";
+            tb_total_base.Text = "Base: " + total_base.ToString("F2") + "€";
+            tb_total_comanda.Text = "Total: "+ total_impost.ToString("F2") + "€";
 
             ChangeShippingPrice();
             ChangePreview();
@@ -114,9 +114,9 @@ namespace ProjecteBotigaSabates.Views
             tb_name.Text = prod.Nom + "";
 
             tb_color.Text = "Color: " + OrderLine.Vareitat.Color;
-            tb_preu.Text = "Preu /u: " + OrderLine.Vareitat.Preu;
+            tb_preu.Text = "Preu /u: " + OrderLine.Vareitat.Preu.ToString("F2");
 
-            tb_dto.Text = "Descompte: " + OrderLine.Vareitat.Descompte;
+            tb_dto.Text = "Descompte: " + OrderLine.Vareitat.Descompte.ToString("F2");
             tb_qunatitat.Text = "Quantitat: " + OrderLine.Quantitat;
 
             tb_talla.Text = "Talla: " + OrderLine.Talla.NumTalla + "";
@@ -132,11 +132,11 @@ namespace ProjecteBotigaSabates.Views
 
             if (prod.Impost != null)
             {
-                tb_impost.Text = "Impost: " + prod.Impost.Percentatge + "%";
-                tb_total_impost.Text = "Total + impost: "+total * ((prod.Impost.Percentatge / 100) + 1) + "€";
+                tb_impost.Text = "Impost: " + prod.Impost.Percentatge.ToString("F2") + "%";
+                tb_total_impost.Text = "Total + impost: "+(total * ((prod.Impost.Percentatge / 100) + 1)).ToString("F2") + "€";
             }
 
-            tb_base_imposable.Text = "Total: "+total + "€";
+            tb_base_imposable.Text = "Total: "+total.ToString("F2") + "€";
 
             
 
@@ -208,7 +208,7 @@ namespace ProjecteBotigaSabates.Views
             {
                 if (TipusEnviaments[index].PreuBase > total_base)
                 {
-                    tb_total_enviament.Text = "Shipping: " + TipusEnviaments[index].Preu + "€";
+                    tb_total_enviament.Text = "Shipping: " + TipusEnviaments[index].Preu.ToString("F2") + "€";
                 }
                 else
                 {

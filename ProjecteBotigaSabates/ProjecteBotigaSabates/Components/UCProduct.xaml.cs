@@ -89,8 +89,8 @@ namespace ProjecteBotigaSabates.Components
             if(vmvp != null)
             {
                 main_img.Source = vmvp.ImageUrl;
-                tb_preu.Text = "Price: " + vmvp.prod.Preu + " €";
-                tb_dto.Text = "Discount: " + vmvp.prod.Descompte + "% "+(vmvp.prod.Preu - (vmvp.prod.Preu * (vmvp.prod.Descompte / 100))) + "€";
+                tb_preu.Text = "Price: " + vmvp.prod.Preu.ToString("F2") + " €";
+                tb_dto.Text = "Discount: " + vmvp.prod.Descompte.ToString("F2") + "% "+(vmvp.prod.Preu - (vmvp.prod.Preu * (vmvp.prod.Descompte / 100))).ToString("F2") + "€";
                 tb_color.Text = "Color: " + vmvp.prod.Color;
             }
 

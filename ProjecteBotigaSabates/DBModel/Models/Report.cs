@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Diagnostics;
 using System.Net.Mail;
+using SharpCompress.Common;
 
 namespace DBModel.Models
 {
@@ -61,7 +62,7 @@ namespace DBModel.Models
         }
 
 
-        public static void SendMail(string mail)
+        public static void SendMail(string mail, string num_factura)
         {
             Debug.WriteLine("Send mail to: " + mail);
             try
@@ -80,7 +81,16 @@ namespace DBModel.Models
                     Body = "<p>Des de la botiga de <b>Juan Shoes</b> agraïmg la teva compra.</p><p>Adjuntem la factura.</p><p>Salut!</p>",
                     IsBodyHtml = true,
                 };
+
+                string file_path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FaturaGeneria_" + num_factura + ".pdf");
+                if (File.Exists(file_path))
+                {
+                    Attachment attachment = new Attachment(file_path);
+                    message.Attachments.Add(attachment);
+                }
+
                 message.To.Add(mail);
+                
 
                 smtpClient.Send(message);
             }

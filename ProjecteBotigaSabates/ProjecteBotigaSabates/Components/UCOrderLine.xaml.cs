@@ -64,9 +64,9 @@ namespace ProjecteBotigaSabates.Components
             tb_name.Text = Prod.Nom + "";
 
             tb_color.Text = "Color: "+OrderLine.Vareitat.Color;
-            tb_preu.Text = "Preu /u: " + OrderLine.Vareitat.Preu;
+            tb_preu.Text = "Preu /u: " + OrderLine.Vareitat.Preu.ToString("F2");
 
-            tb_dto.Text = "Descompte: " + OrderLine.Vareitat.Descompte;
+            tb_dto.Text = "Descompte: " + OrderLine.Vareitat.Descompte.ToString("F2");
             tb_qunatitat.Text = OrderLine.Quantitat+"";
 
             tb_talla.Text = "Talla: "+OrderLine.Talla.NumTalla+"";
@@ -82,12 +82,12 @@ namespace ProjecteBotigaSabates.Components
             
             if(Prod.Impost != null)
             {
-                tb_impost.Text = "Impost: "+Prod.Impost.Percentatge+"%";
-                tb_total.Text = total * ((Prod.Impost.Percentatge / 100) + 1) + "€";
+                tb_impost.Text = "Impost: "+Prod.Impost.Percentatge.ToString("F2") + "%";
+                tb_total.Text = (total * ((Prod.Impost.Percentatge / 100) + 1)).ToString("F2") + "€";
             }
             else
             {
-                tb_total.Text = total + "€";
+                tb_total.Text = total.ToString("F2") + "€";
             }
 
             

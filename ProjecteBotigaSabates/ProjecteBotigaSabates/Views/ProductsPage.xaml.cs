@@ -28,7 +28,7 @@ namespace ProjecteBotigaSabates.Views
         public ObservableCollection<Producte> Products { get; set; }
 
         private int numPage = 0;
-        private int productsPerPage = 1;
+        private int productsPerPage = 6;
         private int maxPage = 0;
         private int countProducts = 0;
 
@@ -58,7 +58,7 @@ namespace ProjecteBotigaSabates.Views
             mongoDB = new MongoDBConnection();
             countProducts = mongoDB.GetCountProducts();
             
-            productsPerPage = 5;
+            productsPerPage = 6;
             maxPage = countProducts / productsPerPage;
             numPage = 0;
 
@@ -112,7 +112,7 @@ namespace ProjecteBotigaSabates.Views
 
         private void Button_Next_Click(object sender, RoutedEventArgs e)
         {
-            if (numPage + 1 < maxPage)
+            if (numPage + 1 <= maxPage)
             {
                 numPage = numPage + 1;
                 ChangePage();
